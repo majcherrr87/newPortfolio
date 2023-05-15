@@ -21,6 +21,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
+    ".eslintrc",
     "src"
   ],
   "references": [{ "path": "./tsconfig.node.json"}]

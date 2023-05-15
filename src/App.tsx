@@ -1,15 +1,11 @@
+import React from 'react';
 
 function App() {
-
   return (
-    <>
-      <div>
-          <p >
-              Click on the Vite and React logos to learn more
-          </p>
-      </div>
-    </>
-  )
+    <div>
+      <p>Adrian Majcher</p>
+    </div>
+  );
 }
 
-export default App
+export default App;
