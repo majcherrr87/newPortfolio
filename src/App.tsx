@@ -1,11 +1,7 @@
 import React from 'react';
 
 function App() {
-  return (
-    <div>
-      <p>Adrian Majcher</p>
-    </div>
-  );
+  return <div>hej</div>;
 }
 
 export default App;

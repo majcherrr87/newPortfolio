@@ -23,5 +23,7 @@
     "@typescript-eslint",
     "prettier"
   ],
-  "rules": {}
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }
