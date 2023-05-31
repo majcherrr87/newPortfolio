@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AiOutlineLike } from 'react-icons/ai';
 
 const Header = () => {
-  const [bar, setBar] = useState(false);
+  const [bar, setBar] = useState<boolean>(false);
 
   return (
     <Container bar={bar}>
