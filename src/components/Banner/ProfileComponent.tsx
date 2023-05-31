@@ -70,7 +70,6 @@ const Texts = styled.div`
   h4 {
     padding: 1rem 0;
     font-weight: 500;
-
     span {
       color: ${({ theme }) => theme.colors.green};
     }
@@ -166,4 +165,3 @@ const Profile = styled.div`
     }
   }
 `;
-//@TODO 31:52 https://www.youtube.com/watch?v=xbyoqfwCFE8&list=PLnrbKP8gLKSIGuvvBgBiBYkXzAxefzu4L&index=3&t=886s

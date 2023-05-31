@@ -5,6 +5,7 @@ import Header from './components/Banner/Header';
 
 import './index.css';
 import ProfileComponent from './components/Banner/ProfileComponent';
+import Services from './components/Service/Services';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <ProfileComponent />
         </Banner>
+        <Services />
       </Container>
     </ThemeProvider>
   );
@@ -25,4 +27,8 @@ const Container = styled.div``;
 const Banner = styled.div`
   background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
   height: 100vh;
+  @media (max-width: 640px) {
+    height: 100%;
+    padding-bottom: 1rem;
+  }
 `;

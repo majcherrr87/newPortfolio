@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <Container bar={bar}>
-      <Logo >
+      <Logo>
         <span>
           <AiOutlineLike />
         </span>
@@ -61,6 +61,7 @@ const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 100;
       .bar {
         position: absolute;
         width: 100%;
@@ -103,7 +104,7 @@ const Logo = styled.div`
 `;
 const Nav = styled.div`
   @media (max-width: 640px) {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     background-color: ${({ theme }) => theme.colors.green};
@@ -119,6 +120,7 @@ const Nav = styled.div`
     height: ${({ bar }) => (bar ? '100vh' : '0')};
     transition: height 400ms ease-in-out;
     overflow: hidden;
+    z-index: 99;
   }
   span {
     margin-left: 1rem;
