@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import SliderComp from './Slider';
+import React from 'react';
 
-const Projects = () => {
+const Projects = (): React.FC => {
   return (
     <Container>
       <h1>
@@ -30,7 +31,7 @@ const Container = styled.div`
   h1 {
     font-size: 1.9rem;
     span {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${({ theme }) => theme.colors.main};
     }
   }
   p {

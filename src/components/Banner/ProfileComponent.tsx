@@ -17,7 +17,7 @@ const ProfileComponent = () => {
           ad, aliquid at dolor laudantium natus optio possimus quisquam suscipit
           tenetur.
         </p>
-        <button>Let`s talk0</button>
+        <button>Let`s talk</button>
         <Social>
           <p>Check out my</p>
           <div className="social-icons">
@@ -41,6 +41,7 @@ const ProfileComponent = () => {
       </Texts>
       <Profile>
         <img
+          loading="lazy"
           src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
           alt="profile"
         />
@@ -57,10 +58,10 @@ const Container = styled.div`
   width: 80%;
   max-width: 1280px;
   margin: 0 auto;
-  @media (max-width: 840px) {
+  @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
   }
-  @media (max-width: 640px) {
+  @media (max-width: ${({ theme }) => theme.size.sm}) {
     flex-direction: column;
   }
 `;
@@ -71,12 +72,12 @@ const Texts = styled.div`
     padding: 1rem 0;
     font-weight: 500;
     span {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${({ theme }) => theme.colors.main};
     }
   }
 
   h1 {
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.main};
     font-size: 2rem;
     font-family: 'Secular One', sans-serif;
     letter-spacing: 2px;
@@ -97,7 +98,7 @@ const Texts = styled.div`
     padding: 0.7rem 2rem;
     margin-top: 3rem;
     cursor: pointer;
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.main};
     border: none;
     color: #fff;
     font-weight: 500;
@@ -130,7 +131,7 @@ const Social = styled.div`
       width: 2.3rem;
       height: 2rem;
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      background-color: ${({ theme }) => theme.colors.green};
+      background-color: ${({ theme }) => theme.colors.main};
       position: relative;
       transition: all 400ms ease-in-out;
       :hover {
@@ -157,7 +158,7 @@ const Profile = styled.div`
     @media (max-width: 660px) {
       width: 18rem;
     }
-    @media (max-width: 640px) {
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
       width: 100%;
     }
     :hover {

@@ -38,11 +38,11 @@ const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 3rem 0;
-  @media (max-width: 840px) {
+  @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
   }
   h4 > span {
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.main};
   }
   h1 {
     padding-top: 1rem;

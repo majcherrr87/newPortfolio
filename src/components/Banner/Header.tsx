@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AiOutlineLike } from 'react-icons/ai';
 
 const Header = () => {
-  const [bar, setBar] = useState<boolean>(false);
+  const [bar, setBar] = useState(false);
 
   return (
     <Container bar={bar}>
@@ -53,7 +53,7 @@ const Container = styled.div`
   .bars {
     display: none;
   }
-  @media (max-width: 640px) {
+  @media (max-width: ${({ theme }) => theme.size.sm}) {
     .bars {
       width: 40px;
       height: 40px;
@@ -61,7 +61,7 @@ const Container = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 100;
+      z-index: ${({ theme }) => theme.position[10]};
       .bar {
         position: absolute;
         width: 100%;
@@ -95,7 +95,7 @@ const Logo = styled.div`
   gap: 0.5rem;
   span {
     font-size: 1.8rem;
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.main};
   }
   h1 {
     font-size: 1.2rem;
@@ -103,11 +103,11 @@ const Logo = styled.div`
   }
 `;
 const Nav = styled.div`
-  @media (max-width: 640px) {
+  @media (max-width: ${({ theme }) => theme.size.sm}) {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.main};
     left: 0;
     right: 0;
     top: 0;
@@ -120,7 +120,7 @@ const Nav = styled.div`
     height: ${({ bar }) => (bar ? '100vh' : '0')};
     transition: height 400ms ease-in-out;
     overflow: hidden;
-    z-index: 99;
+    z-index: ${({ theme }) => theme.position[9]};
   }
   span {
     margin-left: 1rem;
