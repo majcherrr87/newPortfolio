@@ -1,6 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
 import SliderComp from './Slider';
-import React from 'react';
+
+import './style.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = (): React.FC => {
   return (
@@ -24,10 +28,13 @@ export default Projects;
 
 const Container = styled.div`
   width: 80%;
-  max-width: 1280px;
+  max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   padding: 3rem 0;
   text-align: center;
+  @media (max-width: ${({ theme }) => theme.size.md}) {
+    width: 90%;
+  }
   h1 {
     font-size: 1.9rem;
     span {
@@ -39,6 +46,9 @@ const Container = styled.div`
     margin: 0 auto;
     padding: 1rem 0;
     font-size: 0.9rem;
+    @media (max-width: ${({ theme }) => theme.size.sm500}) {
+      width: 90%;
+    }
   }
 `;
 const Slide = styled.div``;

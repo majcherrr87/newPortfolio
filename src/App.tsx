@@ -5,10 +5,9 @@ import Header from './components/Banner/Header';
 import ProfileComponent from './components/Banner/ProfileComponent';
 import Services from './components/Service/Services';
 import Projects from './components/Projects/Projects';
+import Clients from './components/Clients/Clients';
 
 import './index.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (
@@ -22,6 +21,7 @@ function App() {
         <Project>
           <Projects />
         </Project>
+        <Clients />
       </Container>
     </ThemeProvider>
   );

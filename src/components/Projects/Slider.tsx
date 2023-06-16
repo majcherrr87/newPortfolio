@@ -1,6 +1,9 @@
+import { useRef } from 'react';
 import Slider from 'react-slick';
 import Project from './Project';
 import { data } from './Slider-data';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import styled from 'styled-components';
 
 const settings = {
   className: 'center',
@@ -11,14 +14,16 @@ const settings = {
   slidesToShow: 3,
   slidesToScroll: 4,
   initialSlide: 0,
+  arrows: false,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 990,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 3,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         infinite: true,
         dots: false,
+        centerMode: false,
       },
     },
     {
@@ -27,6 +32,7 @@ const settings = {
         slidesToShow: 1,
         slidesToScroll: 2,
         initialSlide: 2,
+        centerMode: false,
       },
     },
     {
@@ -34,18 +40,53 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        centerMode: false,
       },
     },
   ],
 };
 const SliderComp = () => {
-  console.log(data);
+  const arrowRef = useRef(null);
+  let sliderProject = '';
+  sliderProject = data.map((item, index) => (
+    <Project item={item} key={index} />
+  ));
+
   return (
-    <Slider {...settings}>
-      {data.map((item, index) => (
-        <Project item={item} key={index} />
-      ))}
-    </Slider>
+    <Container>
+      <Slider ref={arrowRef} {...settings}>
+        {sliderProject}
+      </Slider>
+      <Buttons>
+        <button onClick={() => arrowRef.current.slickPrev()} className="back">
+          <IoIosArrowBack />
+        </button>
+        <button onClick={() => arrowRef.current.slickNext()} className="next">
+          <IoIosArrowForward />
+        </button>
+      </Buttons>
+    </Container>
   );
 };
 export default SliderComp;
+
+const Container = styled.div`
+  position: relative;
+`;
+
+const Buttons = styled.div`
+  button {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.main};
+    border: none;
+    position: absolute;
+    top: 45%;
+    right: -1rem;
+  }
+  .back {
+    left: -1rem;
+  }
+`;

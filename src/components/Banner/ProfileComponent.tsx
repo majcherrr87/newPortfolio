@@ -56,7 +56,7 @@ const Container = styled.div`
   gap: 2rem;
   padding-top: 2rem;
   width: 80%;
-  max-width: 1280px;
+  max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;

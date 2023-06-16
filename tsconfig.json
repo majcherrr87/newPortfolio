@@ -6,7 +6,6 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["src/*"],
-//      "images/*": ["public/assets/images/*"]
     },
 
     /* Bundler mode */

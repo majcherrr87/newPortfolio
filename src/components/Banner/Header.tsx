@@ -18,10 +18,10 @@ const Header = () => {
           <a href="#">Home</a>
         </span>
         <span>
-          <a href="#">Services</a>
+          <a href="#service">Services</a>
         </span>
         <span>
-          <a href="#">Project</a>
+          <a href="#project">Project</a>
         </span>
         <span>
           <a href="#">Testimonials</a>
@@ -42,7 +42,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1280px;
+  max-width: ${({ theme }) => theme.size.ld};
   width: 80%;
   gap: 2rem;
   margin: 0 auto;
