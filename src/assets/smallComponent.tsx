@@ -10,4 +10,15 @@ export const H1Title = styled.h1`
   padding-top: 1rem;
   text-transform: capitalize;
 `;
-//TODO: 1:06:50 https://youtu.be/xbyoqfwCFE8?t=4010
+export const Title = styled.h1`
+  font-size: 1.9rem;
+`;
+export const Disc = styled.p`
+  width: 28rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  @media (max-width: calc(${({ theme }) => theme.size.sm} - 140px)) {
+    width: 90%;
+  }
+`;

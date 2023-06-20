@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { ProjectDataType } from '@/components/Projects/Slider-data';
 
-const Project = (props) => {
-  const { img, disc } = props.item;
+const Project = ({ item }) => {
+  const { img, disc }: ProjectDataType = item;
   return (
     <Container className="project">
       <img src={img} alt="project" />
@@ -19,7 +20,7 @@ export default Project;
 
 const Container = styled.div`
   height: 10rem;
-  background-color: #4e5156;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
   margin: 0 0.5rem;
   padding: 0.5rem;
   border-radius: 5px;

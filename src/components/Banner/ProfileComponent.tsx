@@ -117,7 +117,7 @@ const Social = styled.div`
 
   p {
     font-size: 0.9rem;
-    @media (max-width: 690px) {
+    @media (max-width: calc(${({ theme }) => theme.size.sm} + 50px)) {
       font-size: 0.7rem;
     }
   }
@@ -152,10 +152,10 @@ const Profile = styled.div`
     width: 25rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
-    @media (max-width: 790px) {
+    @media (max-width: calc(${({ theme }) => theme.size.md} - 50px)) {
       width: 20rem;
     }
-    @media (max-width: 660px) {
+    @media (max-width: calc(${({ theme }) => theme.size.sm} + 40px)) {
       width: 18rem;
     }
     @media (max-width: ${({ theme }) => theme.size.sm}) {

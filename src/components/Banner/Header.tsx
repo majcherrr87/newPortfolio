@@ -24,7 +24,7 @@ const Header = () => {
           <a href="#project">Project</a>
         </span>
         <span>
-          <a href="#">Testimonials</a>
+          <a href="#clients">Testimonials</a>
         </span>
         <span>
           <a href="#">Portfolio</a>
@@ -47,7 +47,7 @@ const Container = styled.div`
   gap: 2rem;
   margin: 0 auto;
   padding: 1.5rem 0;
-  @media (max-width: 763px) {
+  @media (max-width: calc(${({ theme }) => theme.size.md} - 80px)) {
     width: 90%;
   }
   .bars {

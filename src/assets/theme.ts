@@ -1,9 +1,13 @@
 const theme = {
   colors: {
     main: '#01be96',
+    background:
+      'linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%)',
+    lightGrey: '#4e5156',
   },
+
   size: {
-    sm500: '500px',
+    xs: '500px',
     sm: '640px',
     md: '840px',
     ld: '1280px',

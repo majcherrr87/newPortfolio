@@ -31,7 +31,7 @@ export default App;
 
 const Container = styled.div``;
 const Banner = styled.div`
-  background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
+  background: ${({ theme }) => theme.colors.background};
   height: 100vh;
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     height: 100%;
@@ -39,5 +39,7 @@ const Banner = styled.div`
   }
 `;
 const Project = styled.div`
-  background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
+  background: ${({ theme }) => theme.colors.background};
 `;
+
+//TODO: https://youtu.be/xbyoqfwCFE8?t=5265

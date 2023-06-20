@@ -1,54 +1,13 @@
 import { useRef } from 'react';
 import Slider from 'react-slick';
 import Project from './Project';
-import { data } from './Slider-data';
+import { data, settings } from './Slider-data';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import styled from 'styled-components';
 
-const settings = {
-  className: 'center',
-  centerMode: true,
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 4,
-  initialSlide: 0,
-  arrows: false,
-  responsive: [
-    {
-      breakpoint: 990,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-        centerMode: false,
-      },
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 2,
-        initialSlide: 2,
-        centerMode: false,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false,
-      },
-    },
-  ],
-};
 const SliderComp = () => {
   const arrowRef = useRef(null);
-  let sliderProject = '';
-  sliderProject = data.map((item, index) => (
+  let sliderProject = data.map((item, index) => (
     <Project item={item} key={index} />
   ));
 
