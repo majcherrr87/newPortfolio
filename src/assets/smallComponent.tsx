@@ -10,6 +10,11 @@ export const H1Title = styled.h1`
   padding-top: 1rem;
   text-transform: capitalize;
 `;
+export const H1Footer = styled.h1`
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
+`;
 export const Title = styled.h1`
   font-size: 1.9rem;
 `;

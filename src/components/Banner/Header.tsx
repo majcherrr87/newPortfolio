@@ -6,7 +6,7 @@ const Header = () => {
   const [bar, setBar] = useState(false);
 
   return (
-    <Container bar={bar}>
+    <Container bar={bar} id="home">
       <Logo>
         <span>
           <AiOutlineLike />
@@ -15,7 +15,7 @@ const Header = () => {
       </Logo>
       <Nav bar={bar}>
         <span>
-          <a href="#">Home</a>
+          <a href="#home">Home</a>
         </span>
         <span>
           <a href="#service">Services</a>
@@ -27,7 +27,7 @@ const Header = () => {
           <a href="#clients">Testimonials</a>
         </span>
         <span>
-          <a href="#">Portfolio</a>
+          <a href="#footer">Portfolio</a>
         </span>
       </Nav>
       <div className="bars">

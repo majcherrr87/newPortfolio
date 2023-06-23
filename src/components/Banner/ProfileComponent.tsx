@@ -2,50 +2,55 @@ import styled from 'styled-components';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { GiEarthAmerica } from 'react-icons/gi';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { Slide } from 'react-awesome-reveal';
 
 const ProfileComponent = () => {
   return (
     <Container>
-      <Texts>
-        <h4>
-          Hello <span>I`am</span>
-        </h4>
-        <h1>Adrian Majcher</h1>
-        <h3>Junior web developer</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          ad, aliquid at dolor laudantium natus optio possimus quisquam suscipit
-          tenetur.
-        </p>
-        <button>Let`s talk</button>
-        <Social>
-          <p>Check out my</p>
-          <div className="social-icons">
-            <span>
-              <a href="#">
-                <AiOutlineInstagram />
-              </a>
-            </span>
-            <span>
-              <a href="#">
-                <GiEarthAmerica />
-              </a>
-            </span>
-            <span>
-              <a href="#">
-                <FaLinkedinIn />
-              </a>
-            </span>
-          </div>
-        </Social>
-      </Texts>
-      <Profile>
-        <img
-          loading="lazy"
-          src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-          alt="profile"
-        />
-      </Profile>
+      <Slide direction="left">
+        <Texts>
+          <h4>
+            Hello <span>I`am</span>
+          </h4>
+          <h1>Adrian Majcher</h1>
+          <h3>Junior web developer</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium ad, aliquid at dolor laudantium natus optio possimus
+            quisquam suscipit tenetur.
+          </p>
+          <button>Let`s talk</button>
+          <Social>
+            <p>Check out my</p>
+            <div className="social-icons">
+              <span>
+                <a href="#">
+                  <AiOutlineInstagram />
+                </a>
+              </span>
+              <span>
+                <a href="#">
+                  <GiEarthAmerica />
+                </a>
+              </span>
+              <span>
+                <a href="#">
+                  <FaLinkedinIn />
+                </a>
+              </span>
+            </div>
+          </Social>
+        </Texts>
+      </Slide>
+      <Slide direction="right">
+        <Profile>
+          <img
+            loading="lazy"
+            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+            alt="profile"
+          />
+        </Profile>
+      </Slide>
     </Container>
   );
 };

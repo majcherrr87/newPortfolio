@@ -6,6 +6,8 @@ import ProfileComponent from './components/Banner/ProfileComponent';
 import Services from './components/Service/Services';
 import Projects from './components/Projects/Projects';
 import Clients from './components/Clients/Clients';
+import Footer from './components/Footer/Footer';
+import { Fade } from 'react-awesome-reveal';
 
 import './index.css';
 
@@ -14,14 +16,19 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <Banner>
-          <Header />
-          <ProfileComponent />
+          <Fade>
+            <Header />
+            <ProfileComponent />
+          </Fade>
         </Banner>
         <Services />
-        <Project>
+        <LightColor>
           <Projects />
-        </Project>
+        </LightColor>
         <Clients />
+        <LightColor>
+          <Footer />
+        </LightColor>
       </Container>
     </ThemeProvider>
   );
@@ -38,8 +45,6 @@ const Banner = styled.div`
     padding-bottom: 2rem;
   }
 `;
-const Project = styled.div`
+const LightColor = styled.div`
   background: ${({ theme }) => theme.colors.background};
 `;
-
-//TODO: https://youtu.be/xbyoqfwCFE8?t=5265

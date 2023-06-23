@@ -5,6 +5,7 @@ import ClientSlider from '../../components/Clients/ClientSlider';
 import { clients, settings } from './Clients-data';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useRef } from 'react';
+import { Slide } from 'react-awesome-reveal';
 
 const Clients = () => {
   const arrowRef = useRef(null);
@@ -12,8 +13,10 @@ const Clients = () => {
   clientDisc = clients.map((item, i) => <ClientSlider item={item} key={i} />);
   return (
     <Container id="clients">
-      <Span>testimonials</Span>
-      <H1Title>what client say</H1Title>
+      <Slide direction="up">
+        <Span>testimonials</Span>
+        <H1Title>what client say</H1Title>
+      </Slide>
       <Testimonials>
         <Slider ref={arrowRef} {...settings}>
           {clientDisc}

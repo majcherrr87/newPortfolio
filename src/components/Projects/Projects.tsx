@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SliderComp from './Slider';
 import { Disc, Span, Title } from '../../assets/smallComponent';
+import { Zoom } from 'react-awesome-reveal';
 
 import './style.css';
 import 'slick-carousel/slick/slick.css';
@@ -10,15 +11,17 @@ import 'slick-carousel/slick/slick-theme.css';
 const Projects = (): React.FC => {
   return (
     <Container id="project">
-      <Title>
-        Recent <Span>Projects</Span>
-      </Title>
-      <Disc>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi
-        fuga quas. Aspernatur autem consequatur esse, facere modi molestiae
-        nihil officia quas qui ratione repudiandae, tempora vero vitae? Magni,
-        voluptas!
-      </Disc>
+      <Zoom>
+        <Title>
+          Recent <Span>Projects</Span>
+        </Title>
+        <Disc>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi
+          fuga quas. Aspernatur autem consequatur esse, facere modi molestiae
+          nihil officia quas qui ratione repudiandae, tempora vero vitae? Magni,
+          voluptas!
+        </Disc>
+      </Zoom>
       <Slide>
         <SliderComp />
       </Slide>
