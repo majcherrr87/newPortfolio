@@ -6,8 +6,33 @@ import { HiOutlineMailOpen } from 'react-icons/hi';
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from 'react-icons/ai';
 import { BsFacebook, BsSlack } from 'react-icons/bs';
 import { FiMail, FiPhoneCall } from 'react-icons/fi';
+import { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Footer = () => {
+  const [message, setMessage] = useState('');
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_z03hcrd',
+        'template_x5pb2kr',
+        form.current,
+        'BG1c2DDI-NkQ3m80R'
+      )
+      .then(() => {
+        setMessage('✅ Wiadomość została wysłana');
+      });
+    setTimeout(() => {
+      setMessage('');
+    }, 5000);
+
+    e.target.reset();
+  };
+
   return (
     <Container id="footer">
       <Profile>
@@ -68,24 +93,25 @@ const Footer = () => {
       </Profile>
 
       <Form>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <div className="name">
             <span>
               <CgProfile />
             </span>
-            <input type="text" placeholder="Fullname..." required />
+            <input type="text" name="name" placeholder="Fullname..." required />
           </div>
           <div className="email">
             <span>
               <MdAlternateEmail />
             </span>
-            <input type="email" placeholder="Email..." required />
+            <input type="email" name="email" placeholder="Email..." required />
           </div>
           <div className="name">
             <span className="messageIcon">
               <FiMail />
             </span>
             <textarea
+              name="message"
               cols="30"
               rows="10"
               placeholder="Message..."
@@ -94,7 +120,8 @@ const Footer = () => {
               maxLength="500"
             ></textarea>
           </div>
-          <button>Submit</button>
+          <button type="submit">Submit</button>
+          <span className="message">{message}</span>
         </form>
       </Form>
     </Container>
@@ -232,6 +259,9 @@ const Form = styled.div`
       :hover {
         filter: drop-shadow(0px 6px 5px #01be9551);
       }
+    }
+    span.message {
+      margin-left: 1rem;
     }
   }
 `;
