@@ -2,55 +2,50 @@ import styled from 'styled-components';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { GiEarthAmerica } from 'react-icons/gi';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { Slide } from 'react-awesome-reveal';
 
 const ProfileComponent = () => {
   return (
     <Container>
-      <Slide direction="left">
-        <Texts>
-          <h4>
-            Hello <span>I`am</span>
-          </h4>
-          <h1>Adrian Majcher</h1>
-          <h3>Junior web developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium ad, aliquid at dolor laudantium natus optio possimus
-            quisquam suscipit tenetur.
-          </p>
-          <button>Let`s talk</button>
-          <Social>
-            <p>Check out my</p>
-            <div className="social-icons">
-              <span>
-                <a href="#">
-                  <AiOutlineInstagram />
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <GiEarthAmerica />
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <FaLinkedinIn />
-                </a>
-              </span>
-            </div>
-          </Social>
-        </Texts>
-      </Slide>
-      <Slide direction="right">
-        <Profile>
-          <img
-            loading="lazy"
-            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-            alt="profile"
-          />
-        </Profile>
-      </Slide>
+      <Texts>
+        <h4>
+          Hello <span>I`am</span>
+        </h4>
+        <h1>Adrian Majcher</h1>
+        <h3>Junior web developer</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+          ad, aliquid at dolor laudantium natus optio possimus quisquam suscipit
+          tenetur.
+        </p>
+        <button>Let`s talk</button>
+        <Social>
+          <p>Check out my</p>
+          <div className="social-icons">
+            <span>
+              <a href="#">
+                <AiOutlineInstagram />
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <GiEarthAmerica />
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <FaLinkedinIn />
+              </a>
+            </span>
+          </div>
+        </Social>
+      </Texts>
+      <Profile>
+        <img
+          loading="lazy"
+          src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+          alt="profile"
+        />
+      </Profile>
     </Container>
   );
 };
@@ -59,15 +54,16 @@ export default ProfileComponent;
 const Container = styled.div`
   display: flex;
   gap: 2rem;
-  padding-top: 2rem;
+  //padding-top: 2rem;
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
-  margin: 0 auto;
+  margin: 6rem auto;
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
   }
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     flex-direction: column;
+    margin: 0 auto;
   }
 `;
 const Texts = styled.div`
@@ -107,10 +103,14 @@ const Texts = styled.div`
     border: none;
     color: #fff;
     font-weight: 500;
-    filter: drop-shadow(0px 10px 10px #01be9551);
+    filter: drop-shadow(
+      0px 10px 10px ${({ theme }) => theme.colors.main + '51'}
+    );
 
     :hover {
-      filter: drop-shadow(0px 10px 10px #01be9570);
+      filter: drop-shadow(
+        0px 10px 10px ${({ theme }) => theme.colors.main + '70'}
+      );
     }
   }
 `;

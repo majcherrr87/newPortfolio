@@ -7,7 +7,6 @@ import Services from './components/Service/Services';
 import Projects from './components/Projects/Projects';
 import Clients from './components/Clients/Clients';
 import Footer from './components/Footer/Footer';
-import { Fade } from 'react-awesome-reveal';
 
 import './index.css';
 
@@ -16,10 +15,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container>
         <Banner>
-          <Fade>
-            <Header />
-            <ProfileComponent />
-          </Fade>
+          <Header />
+          <ProfileComponent />
         </Banner>
         <Services />
         <LightColor>

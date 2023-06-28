@@ -15,19 +15,29 @@ const Header = () => {
       </Logo>
       <Nav bar={bar}>
         <span>
-          <a href="#home">Home</a>
+          <a href="#home" onClick={() => setBar(!bar)}>
+            Home
+          </a>
         </span>
         <span>
-          <a href="#service">Services</a>
+          <a href="#service" onClick={() => setBar(!bar)}>
+            Services
+          </a>
         </span>
         <span>
-          <a href="#project">Project</a>
+          <a href="#project" onClick={() => setBar(!bar)}>
+            Project
+          </a>
         </span>
         <span>
-          <a href="#clients">Testimonials</a>
+          <a href="#clients" onClick={() => setBar(!bar)}>
+            Testimonials
+          </a>
         </span>
         <span>
-          <a href="#footer">Portfolio</a>
+          <a href="#footer" onClick={() => setBar(!bar)}>
+            Portfolio
+          </a>
         </span>
       </Nav>
       <div className="bars">
@@ -36,6 +46,7 @@ const Header = () => {
     </Container>
   );
 };
+// 520000019331214020857335
 export default Header;
 
 const Container = styled.div`
@@ -50,24 +61,31 @@ const Container = styled.div`
   @media (max-width: calc(${({ theme }) => theme.size.md} - 80px)) {
     width: 90%;
   }
+
   .bars {
     display: none;
   }
+
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     .bars {
       width: 40px;
       height: 40px;
-      position: relative;
+      position: fixed;
+      background: ${({ theme }) => theme.colors.lightGrey + '80'};
+      right: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: 5px;
       z-index: ${({ theme }) => theme.position[10]};
+
       .bar {
-        position: absolute;
-        width: 100%;
+        position: fixed;
+        width: 2rem;
         height: 2px;
         background-color: ${({ bar }) => (bar ? 'transparent' : '#fff')};
         transition: all 100ms ease-in-out;
+
         :before,
         :after {
           content: '';
@@ -77,10 +95,12 @@ const Container = styled.div`
           position: absolute;
           transition: all 400ms ease-in-out;
         }
+
         :before {
           transform: ${({ bar }) =>
             bar ? 'rotate(45deg)' : 'translateY(10px)'};
         }
+
         :after {
           transform: ${({ bar }) =>
             bar ? 'rotate(-45deg)' : 'translateY(-10px)'};

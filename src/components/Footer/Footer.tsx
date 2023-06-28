@@ -6,100 +6,96 @@ import { HiOutlineMailOpen } from 'react-icons/hi';
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from 'react-icons/ai';
 import { BsFacebook, BsSlack } from 'react-icons/bs';
 import { FiMail, FiPhoneCall } from 'react-icons/fi';
-import { Slide, Zoom } from 'react-awesome-reveal';
 
 const Footer = () => {
   return (
     <Container id="footer">
       <Profile>
-        <Slide direction="left" delay={1}>
-          <H1Title>Portfolio</H1Title>
-        </Slide>
-        <Slide direction="left" delay={200}>
-          <div className="address">
-            <H1Footer>Address:</H1Footer>
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
-          </div>
-        </Slide>
+        <H1Title>Portfolio</H1Title>
 
-        <Slide direction="left" delay={400}>
-          <div className="links">
-            <H1Footer>Contact me diractly:</H1Footer>
-            <div>
-              <span>
-                <FiPhoneCall />
-              </span>
-              <a href="tel:513354369">513354369</a>
-            </div>
-            <div>
-              <span>
-                <HiOutlineMailOpen />
-              </span>
-              <a href="mailto:majcherrr87@gmail.com">majcherrr87@gmail.com</a>
-            </div>
-          </div>
-        </Slide>
+        <div className="address">
+          <H1Footer>Address:</H1Footer>
+          <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+        </div>
 
-        <Slide direction="left" delay={600}>
-          <div className="profiles">
-            <H1Footer>Check my profiles</H1Footer>
-            <div className="icons">
-              <span>
-                <a href="#">
-                  <AiFillGithub />
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <AiFillLinkedin />
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <BsFacebook />
-                </a>
-              </span>
-              <span>
-                <a href="#">
-                  <BsSlack />
-                </a>
-              </span>
-            </div>
+        <div className="links">
+          <H1Footer>Contact me diractly:</H1Footer>
+          <div>
+            <span>
+              <FiPhoneCall />
+            </span>
+            <a href="tel:513354369">513354369</a>
           </div>
-        </Slide>
-        <Zoom>
-          <ArrowUp>
-            <a href="#home">
-              <AiOutlineArrowUp />
-            </a>
-          </ArrowUp>
-        </Zoom>
+          <div>
+            <span>
+              <HiOutlineMailOpen />
+            </span>
+            <a href="mailto:majcherrr87@gmail.com">majcherrr87@gmail.com</a>
+          </div>
+        </div>
+
+        <div className="profiles">
+          <H1Footer>Check my profiles</H1Footer>
+          <div className="icons">
+            <span>
+              <a href="#">
+                <AiFillGithub />
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <AiFillLinkedin />
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <BsFacebook />
+              </a>
+            </span>
+            <span>
+              <a href="#">
+                <BsSlack />
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <ArrowUp>
+          <a href="#home">
+            <AiOutlineArrowUp />
+          </a>
+        </ArrowUp>
       </Profile>
 
       <Form>
-        <Slide direction="right">
-          <form>
-            <div className="name">
-              <span>
-                <CgProfile />
-              </span>
-              <input type="text" placeholder="Fullname..." />
-            </div>
-            <div className="email">
-              <span>
-                <MdAlternateEmail />
-              </span>
-              <input type="email" placeholder="Email..." />
-            </div>
-            <div className="name">
-              <span className="messageIcon">
-                <FiMail />
-              </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
-            </div>
-            <button>Submit</button>
-          </form>
-        </Slide>
+        <form>
+          <div className="name">
+            <span>
+              <CgProfile />
+            </span>
+            <input type="text" placeholder="Fullname..." required />
+          </div>
+          <div className="email">
+            <span>
+              <MdAlternateEmail />
+            </span>
+            <input type="email" placeholder="Email..." required />
+          </div>
+          <div className="name">
+            <span className="messageIcon">
+              <FiMail />
+            </span>
+            <textarea
+              cols="30"
+              rows="10"
+              placeholder="Message..."
+              required
+              minLength="10"
+              maxLength="500"
+            ></textarea>
+          </div>
+          <button>Submit</button>
+        </form>
       </Form>
     </Container>
   );
@@ -144,7 +140,7 @@ const Profile = styled.div`
         color: lightgray;
 
         :hover {
-          color: ${({ theme }) => theme.colors.main};
+          color: ${({ theme }) => theme.colors.lightGrey};
         }
       }
     }

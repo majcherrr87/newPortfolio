@@ -3,39 +3,30 @@ import { MdDesignServices } from 'react-icons/md';
 import { CgWebsite } from 'react-icons/cg';
 import Card from './Card';
 import { H1Title, Span } from '../../assets/smallComponent';
-import { Slide } from 'react-awesome-reveal';
 
 const Services = () => {
   return (
     <Container id="service">
-      <Slide direction="down">
-        <h4>
-          My <Span>services</Span>
-        </h4>
-        <H1Title>What I Do</H1Title>
-      </Slide>
+      <h4>
+        My <Span>services</Span>
+      </h4>
+      <H1Title>What I Do</H1Title>
       <Cards>
-        <Slide direction="left">
-          <Card
-            Icon={MdDesignServices}
-            title={'ui/ux designer'}
-            disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
-          />
-        </Slide>
-        <Slide direction="up">
-          <Card
-            Icon={MdDesignServices}
-            title={'graphic designer'}
-            disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
-          />
-        </Slide>
-        <Slide direction="right">
-          <Card
-            Icon={CgWebsite}
-            title={'web designer'}
-            disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
-          />
-        </Slide>
+        <Card
+          Icon={MdDesignServices}
+          title={'ui/ux designer'}
+          disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
+        />
+        <Card
+          Icon={MdDesignServices}
+          title={'graphic designer'}
+          disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
+        />
+        <Card
+          Icon={CgWebsite}
+          title={'web designer'}
+          disc={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. At impedit inventore ipsum officiis perspiciatis sit voluptate.`}
+        />
       </Cards>
     </Container>
   );
