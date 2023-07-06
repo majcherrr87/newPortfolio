@@ -7,6 +7,7 @@ import Services from './components/Service/Services';
 import Projects from './components/Projects/Projects';
 import Clients from './components/Clients/Clients';
 import Footer from './components/Footer/Footer';
+import Test from './components/Test';
 
 import './index.css';
 
@@ -26,6 +27,7 @@ function App() {
         <LightColor>
           <Footer />
         </LightColor>
+        <Test />
       </Container>
     </ThemeProvider>
   );

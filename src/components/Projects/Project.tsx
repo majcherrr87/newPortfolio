@@ -10,7 +10,7 @@ const Project = ({ item }) => {
         <h1>Description</h1>
         <p>
           {disc}
-          <a href="#">demo</a>
+          <a href="#service">demo</a>
         </p>
       </div>
     </Container>
