@@ -1,53 +1,88 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import styled from 'styled-components';
 import { AiOutlineLike } from 'react-icons/ai';
+import { GoGear } from 'react-icons/go';
+import { reducer, initialState } from '../../utils/reducer/reducer';
+import { Actions } from '../../utils/reducer/actions';
+import theme from '../../assets/theme';
+import pol from '../../assets/img/img-pol.png';
+import gbr from '../../assets/img/img-gbr.png';
 
 const Header = () => {
-  const [bar, setBar] = useState(false);
+  const LinkName = ['Home', 'Service', 'Project', 'Clients', 'Contact'];
+  const [{ mainColor, btnOption, hamburgerMenu }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
+  const colors = theme.colors.selectColors;
 
   return (
-    <Container bar={bar} id="home">
-      <Logo>
+    <Container bar={hamburgerMenu} id="Home">
+      <Logo mainColor={mainColor}>
         <span>
           <AiOutlineLike />
         </span>
         <h1>Portfolio</h1>
       </Logo>
-      <Nav bar={bar}>
-        <span>
-          <a href="#home" onClick={() => setBar(!bar)}>
-            Home
-          </a>
+      <Nav bar={hamburgerMenu}>
+        {LinkName.map((link, index) => {
+          return (
+            <span key={index}>
+              <a
+                href={`#${link}`}
+                onClick={() =>
+                  dispatch({ type: Actions.TOGGLE_HAMBURGER_MENU })
+                }
+              >
+                {link}
+              </a>
+            </span>
+          );
+        })}
+        <span onClick={() => dispatch({ type: Actions.TOGGLE_COLOR_CHANGER })}>
+          <GoGear />
         </span>
-        <span>
-          <a href="#service" onClick={() => setBar(!bar)}>
-            Services
-          </a>
-        </span>
-        <span>
-          <a href="#project" onClick={() => setBar(!bar)}>
-            Project
-          </a>
-        </span>
-        <span>
-          <a href="#clients" onClick={() => setBar(!bar)}>
-            Testimonials
-          </a>
-        </span>
-        <span>
-          <a href="#footer" onClick={() => setBar(!bar)}>
-            Portfolio
-          </a>
-        </span>
+        <Options btnOption={btnOption}>
+          <div className="container-color-list">
+            <img src={pol} alt="" />
+            <h4>Wybierz kolor</h4>
+            <div className="color-list">
+              {colors.map((color, index) => {
+                return (
+                  <DivColor
+                    key={index}
+                    item={color}
+                    onClick={() =>
+                      dispatch({
+                        type: Actions.CHANGE_MAIN_COLOR,
+                        payload: color,
+                      })
+                    }
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </Options>
       </Nav>
-      <div className="bars">
-        <div className="bar" onClick={() => setBar(!bar)}></div>
+      <div
+        className="bars"
+        onClick={() => dispatch({ type: Actions.TOGGLE_HAMBURGER_MENU })}
+      >
+        <div className="bar"></div>
       </div>
     </Container>
   );
 };
-// 520000019331214020857335
 export default Header;
+
+const DivColor = styled.div`
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: ${({ item }) => item};
+`;
 
 const Container = styled.div`
   display: flex;
@@ -111,11 +146,12 @@ const Container = styled.div`
 `;
 const Logo = styled.div`
   display: flex;
+
   align-items: center;
   gap: 0.5rem;
   span {
     font-size: 1.8rem;
-    color: ${({ theme }) => theme.colors.main};
+    color: ${({ mainColor }) => mainColor};
   }
   h1 {
     font-size: 1.2rem;
@@ -123,6 +159,9 @@ const Logo = styled.div`
   }
 `;
 const Nav = styled.div`
+  display: flex;
+  gap: 1rem;
+  position: relative;
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     position: fixed;
     display: flex;
@@ -143,7 +182,7 @@ const Nav = styled.div`
     z-index: ${({ theme }) => theme.position[9]};
   }
   span {
-    margin-left: 1rem;
+    color: #fff;
     a {
       text-decoration: none;
       color: #fff;
@@ -168,6 +207,35 @@ const Nav = styled.div`
       :hover {
         opacity: 0.7;
       }
+    }
+  }
+  span:last-of-type {
+    font-size: 1.3rem;
+    position: relative;
+    cursor: pointer;
+  }
+`;
+const Options = styled.div`
+  position: absolute;
+  right: 25%;
+  top: 2rem;
+  z-index: ${({ theme }) => theme.position[5]};
+  .container-color-list {
+    text-align: center;
+    color: darkred;
+    position: absolute;
+    padding: 1rem;
+    background: white;
+    visibility: ${({ btnOption }) => (btnOption ? 'visible' : 'hidden')};
+
+    .color-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    img {
+      cursor: pointer;
     }
   }
 `;

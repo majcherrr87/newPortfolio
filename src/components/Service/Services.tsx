@@ -6,7 +6,7 @@ import { H1Title, Span } from '../../assets/smallComponent';
 
 const Services = () => {
   return (
-    <Container id="service">
+    <Container id="Service">
       <h4>
         My <Span>services</Span>
       </h4>

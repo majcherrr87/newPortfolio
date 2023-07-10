@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const Projects = (): React.FC => {
   return (
-    <Container id="project">
+    <Container id="Project">
       <Title>
         Recent <Span>Projects</Span>
       </Title>

@@ -11,7 +11,7 @@ const Clients = () => {
   let clientDisc = '';
   clientDisc = clients.map((item, i) => <ClientSlider item={item} key={i} />);
   return (
-    <Container id="clients">
+    <Container id="Clients">
       <Span>testimonials</Span>
       <H1Title>what client say</H1Title>
       <Testimonials>

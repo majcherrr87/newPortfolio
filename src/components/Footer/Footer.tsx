@@ -34,7 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <Container id="footer">
+    <Container id="Contact">
       <Profile>
         <H1Title>Portfolio</H1Title>
 
@@ -86,7 +86,7 @@ const Footer = () => {
         </div>
 
         <ArrowUp>
-          <a href="#home">
+          <a href="#Home">
             <AiOutlineArrowUp />
           </a>
         </ArrowUp>
@@ -213,7 +213,7 @@ const ArrowUp = styled.div`
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     position: absolute;
     right: 1rem;
-    bottom: 0rem;
+    bottom: 0;
   }
 `;
 const Form = styled.div`

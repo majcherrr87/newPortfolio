@@ -1,22 +1,16 @@
 export enum Actions {
-  UPDATE_NAME = 'updateName',
-  UPDATE_SURNAME = 'updateSurname',
-  UPDATE_AGE = 'updateAge',
-  RESET = 'reset',
+  CHANGE_MAIN_COLOR = 'changeMainColor',
+  TOGGLE_COLOR_CHANGER = 'openColorChanger',
+  TOGGLE_HAMBURGER_MENU = 'toggleHamburgerMenu',
 }
 export type InitialStateTypes = {
-  name: string;
-  surname: string;
-  age: number;
+  mainColor: string;
+  btnOption: boolean;
+  hamburgerMenu: string;
 };
-export type ReducerDestructuringTypes = [InitialStateTypes, ActionTypes];
-
-type UpdateState = {
+export type ActionTypes = {
   type: Actions;
   payload: number | string;
 };
-type ResetState = {
-  type: Actions.RESET;
-};
 
-export type ActionTypes = UpdateState | ResetState;
+export type ReducerDestructuringTypes = [InitialStateTypes, ActionTypes];

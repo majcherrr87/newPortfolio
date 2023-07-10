@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import { AiOutlineInstagram } from 'react-icons/ai';
 import { GiEarthAmerica } from 'react-icons/gi';
 import { FaLinkedinIn } from 'react-icons/fa';
+import profileImg from '../../assets/img/Adrian.png';
+import { useReducer } from 'react';
+import { initialState, reducer } from '../../utils/reducer/reducer';
 
 const ProfileComponent = () => {
+  const [{ mainColor }, dispatch] = useReducer(reducer, initialState);
+
   return (
     <Container>
-      <Texts>
+      <Texts dd={mainColor}>
         <h4>
           Hello <span>I`am</span>
         </h4>
@@ -40,11 +45,7 @@ const ProfileComponent = () => {
         </Social>
       </Texts>
       <Profile>
-        <img
-          loading="lazy"
-          src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
-          alt="profile"
-        />
+        <img loading="lazy" src={profileImg} alt="profile" />
       </Profile>
     </Container>
   );
@@ -54,7 +55,6 @@ export default ProfileComponent;
 const Container = styled.div`
   display: flex;
   gap: 2rem;
-  //padding-top: 2rem;
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 6rem auto;
@@ -73,7 +73,7 @@ const Texts = styled.div`
     padding: 1rem 0;
     font-weight: 500;
     span {
-      color: ${({ theme }) => theme.colors.main};
+      color: ${({ dd }) => dd};
     }
   }
 
