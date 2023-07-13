@@ -11,7 +11,7 @@ const ProfileComponent = () => {
 
   return (
     <Container>
-      <Texts dd={mainColor}>
+      <Texts color={mainColor}>
         <h4>
           Hello <span>I`am</span>
         </h4>
@@ -73,7 +73,7 @@ const Texts = styled.div`
     padding: 1rem 0;
     font-weight: 500;
     span {
-      color: ${({ dd }) => dd};
+      color: ${({ color }: string) => color};
     }
   }
 

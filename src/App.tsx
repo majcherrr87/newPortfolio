@@ -7,6 +7,7 @@ import Services from './components/Service/Services';
 import Projects from './components/Projects/Projects';
 import Clients from './components/Clients/Clients';
 import Footer from './components/Footer/Footer';
+import Calculator from './components/Test/Calculator';
 import './index.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <LightColor>
           <Footer />
         </LightColor>
+        <Calculator />
       </Container>
     </ThemeProvider>
   );

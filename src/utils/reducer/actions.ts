@@ -2,6 +2,7 @@ export enum Actions {
   CHANGE_MAIN_COLOR = 'changeMainColor',
   TOGGLE_COLOR_CHANGER = 'openColorChanger',
   TOGGLE_HAMBURGER_MENU = 'toggleHamburgerMenu',
+  ALL = 'all',
 }
 export type InitialStateTypes = {
   mainColor: string;

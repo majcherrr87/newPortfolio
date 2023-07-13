@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import { AiOutlineLike } from 'react-icons/ai';
 import { GoGear } from 'react-icons/go';
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <Container bar={hamburgerMenu} id="Home">
-      <Logo mainColor={mainColor}>
+      <Logo color={mainColor}>
         <span>
           <AiOutlineLike />
         </span>
@@ -146,12 +146,11 @@ const Container = styled.div`
 `;
 const Logo = styled.div`
   display: flex;
-
   align-items: center;
   gap: 0.5rem;
   span {
     font-size: 1.8rem;
-    color: ${({ mainColor }) => mainColor};
+    color: ${({ color }) => color};
   }
   h1 {
     font-size: 1.2rem;

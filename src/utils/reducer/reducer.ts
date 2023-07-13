@@ -16,6 +16,8 @@ export function reducer(prevState = initialState, action: ActionTypes) {
       return { ...prevState, btnOption: !prevState.btnOption };
     case Actions.TOGGLE_HAMBURGER_MENU:
       return { ...prevState, hamburgerMenu: !prevState.hamburgerMenu };
+    case Actions.ALL:
+      return { ...prevState };
     default:
       return prevState;
   }
