@@ -5,7 +5,7 @@ import { Actions } from '../reducer/actions';
 interface ContextType {
   mainColor: string;
   lang: string;
-  changeMainColor: () => void;
+  changeMainColor: (color: string) => void;
   changeLang: () => void;
   changeIndexMainProject: () => void;
 }

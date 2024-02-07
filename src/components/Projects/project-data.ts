@@ -1,3 +1,7 @@
+import img1 from '../../assets/img/project/project1.webp';
+import fdf from '../../assets/video/fdf.webm';
+import proj1 from '../../assets/video/qqqq.webm';
+
 export interface ProjectDataType {
   id: number;
   lang: string;
@@ -11,10 +15,6 @@ interface Project {
   linkDemo: string;
   src: string;
 }
-
-import img1 from '../../assets/img/project/project1.webp';
-import fdf from '../../assets/video/fdf.webm';
-import proj1 from '../../assets/video/qqqq.webm';
 
 export const project_data: ProjectDataType[] = [
   {
@@ -54,7 +54,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661323980/Yt-portfolio/ui3_akynn4.png',
+        src: img1,
       },
       {
         index: 4,
@@ -62,7 +62,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661323979/Yt-portfolio/ui1_n3uiaz.png',
+        src: img1,
       },
     ],
   },
@@ -84,7 +84,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661324074/Yt-portfolio/ui4_jku3ol.png',
+        src: img1,
       },
       {
         index: 2,
@@ -92,7 +92,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661323981/Yt-portfolio/ui2_wtollo.png',
+        src: img1,
       },
       {
         index: 3,
@@ -100,7 +100,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661323980/Yt-portfolio/ui3_akynn4.png',
+        src: img1,
       },
       {
         index: 4,
@@ -108,7 +108,7 @@ export const project_data: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: 'https://res.cloudinary.com/ghazni/image/upload/v1661323979/Yt-portfolio/ui1_n3uiaz.png',
+        src: img1,
       },
     ],
   },

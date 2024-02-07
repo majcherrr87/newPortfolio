@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import profileImg from '../../assets/img/home/Adrian.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
-import headerData from './header-data';
-import IconBxlReact from '../../../src/assets/svg/react';
-import IconStyledComponents from '../../../src/assets/svg/styled';
-import IconTypescript from '../../../src/assets/svg/typescript';
-import IconRedux from '../../../src/assets/svg/redux';
+import { headerData } from './header-data';
+import IconBxlReact from '../../assets/svg/react';
+import IconStyledComponents from '../../assets/svg/styled';
+import IconTypescript from '../../assets/svg/typescript';
+import IconRedux from '../../assets/svg/redux';
 import IconJavascript from '../../assets/svg/javascript';
-import { socialProfile } from '../../components/Footer/footer-data';
+import { socialProfile } from '../Footer/footer-data';
 import { VisitCounter } from '../VisitCounter/VisitCounter';
 
-const ProfileComponent = () => {
+function ProfileComponent() {
   const { mainColor, lang } = useMyContext();
   const {
     txtHello,
@@ -67,7 +67,7 @@ const ProfileComponent = () => {
       </Profile>
     </Container>
   );
-};
+}
 export default ProfileComponent;
 
 const Container = styled.div`

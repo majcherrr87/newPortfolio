@@ -3,7 +3,7 @@ import { data, ProjectDataType } from './Slider-data';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { loadConfigFromFile } from 'vite';
 
-const Project = ({ item }) => {
+function Project({ item }) {
   const { src, disc, title, index }: ProjectDataType = item;
   const { changeIndexMainProject } = useMyContext();
 
@@ -18,7 +18,7 @@ const Project = ({ item }) => {
       </div>
     </Container>
   );
-};
+}
 export default Project;
 
 const Container = styled.div`

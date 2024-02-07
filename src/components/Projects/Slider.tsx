@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
 
-const SliderComp = () => {
+function SliderComp() {
   const arrowRef = useRef(null);
   const { lang } = useMyContext();
   const { projects }: ProjectDataType = selectLang(project_data, lang);
@@ -32,7 +32,7 @@ const SliderComp = () => {
       </Buttons>
     </Container>
   );
-};
+}
 export default SliderComp;
 
 const Container = styled.div`

@@ -7,16 +7,15 @@ import IconMarkGithub16 from '../../assets/svg/github';
 import { mainProject_data, dataType } from './mainProject-data';
 import { project_data, ProjectDataType } from '../Projects/project-data';
 import React, { useState } from 'react';
-import { FeaturedProject } from './FeaturedProject';
+import FeaturedProject from './FeaturedProject';
 
-const MainProject = () => {
+function MainProject() {
   const { mainColor, lang, indexMainProject } = useMyContext();
   const { txtTitleFirst, txtTitleSecond, txtButton }: dataType = selectLang(
     mainProject_data,
     lang
   );
 
-  console.log(indexMainProject, mainColor);
   const { projects }: ProjectDataType = selectLang(project_data, lang);
   return (
     <Container id="MainProject">
@@ -29,24 +28,17 @@ const MainProject = () => {
         project={0}
         txtButton={txtButton}
         isReversed={false}
-      ></FeaturedProject>
+      />
 
       <FeaturedProject
         projects={projects}
         project={1}
         txtButton={txtButton}
         isReversed={true}
-      ></FeaturedProject>
-
-      {/*<FeaturedProject*/}
-      {/*  projects={projects}*/}
-      {/*  project={2}*/}
-      {/*  txtButton={txtButton}*/}
-      {/*  isReversed={false}*/}
-      {/*></FeaturedProject>*/}
+      />
     </Container>
   );
-};
+}
 //TODO: po wybraniu projektu z listy pozostałych projektów tu powinno sie pojawić dodadkowyc component
 export default MainProject;
 

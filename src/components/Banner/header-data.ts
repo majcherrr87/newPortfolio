@@ -1,10 +1,11 @@
 import Cv_pol from '../../assets/pdf/CV-POL_AdrianMajcher.pdf';
 import Cv_eng from '../../assets/pdf/CV-ENG_AdrianMajcher.pdf';
 
-interface dataType {
+export interface HeaderDataType {
   id: number;
   lang: string;
   linkName: string[];
+  linkId: string[];
   txtOptionalMenu: string;
   txtHello: string;
   txtIam: string;
@@ -16,7 +17,7 @@ interface dataType {
   txtSocial: string;
 }
 
-const data: dataType[] = [
+export const headerData: HeaderDataType[] = [
   {
     id: 1,
     lang: 'POL',
@@ -50,4 +51,3 @@ const data: dataType[] = [
     txtSocial: 'Check out my',
   },
 ];
-export default data;

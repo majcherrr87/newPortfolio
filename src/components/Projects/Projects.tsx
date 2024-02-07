@@ -10,7 +10,7 @@ import './style.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Projects = (): React.FC => {
+function Projects() {
   const { mainColor, lang } = useMyContext();
   const { txtTitleFirst, txtTitleSecond, disc }: ProjectDataType = selectLang(
     data,
@@ -27,7 +27,7 @@ const Projects = (): React.FC => {
       </Slide>
     </Container>
   );
-};
+}
 export default Projects;
 
 const Container = styled.div`

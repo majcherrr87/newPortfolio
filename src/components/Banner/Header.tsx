@@ -1,16 +1,16 @@
 import { useState } from 'react';
+import { AiOutlineLike } from 'react-icons/ai';
+import { GoGear } from 'react-icons/go';
 import styled from 'styled-components';
 import theme from '../../assets/theme';
 import POL from '../../assets/img/home/img-pol.webp';
 import ENG from '../../assets/img/home/img-gbr.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
-import { AiOutlineLike } from 'react-icons/ai';
-import { GoGear } from 'react-icons/go';
 import { selectLang } from '../../utils/changeLang';
-import headerData from './header-data';
+import { headerData, HeaderDataType } from './header-data';
 
-const Header = () => {
+function Header() {
   const [btnOption, setBtnOption] = useState(false);
   const [hamburgerMenu, setHamburgerMenu] = useState(false);
   const { changeMainColor, mainColor, lang, changeLang } = useMyContext();
@@ -26,9 +26,9 @@ const Header = () => {
         <h1>Portfolio</h1>
       </Logo>
       <Nav bar={hamburgerMenu}>
-        {linkName.map((link, index) => {
+        {linkName.map((link: string, index: number) => {
           return (
-            <span key={index}>
+            <span key={link}>
               <a
                 href={`#${linkId[index]}`}
                 onClick={() => setHamburgerMenu(!hamburgerMenu)}
@@ -38,12 +38,13 @@ const Header = () => {
             </span>
           );
         })}
-        <span onClick={() => setBtnOption(!btnOption)}>
+        <span role="none" onClick={() => setBtnOption(!btnOption)}>
           <GoGear />
         </span>
         <Options btnOption={btnOption}>
           <div className="container-color-list">
             <img
+              role="none"
               src={lang === 'POL' ? ENG : POL}
               alt="lang"
               onClick={() => changeLang()}
@@ -53,7 +54,7 @@ const Header = () => {
               {colors.map((color, index) => {
                 return (
                   <DivColor
-                    key={index}
+                    key={color}
                     item={color}
                     onClick={() => changeMainColor(color)}
                   />
@@ -63,15 +64,19 @@ const Header = () => {
           </div>
         </Options>
       </Nav>
-      <div className="bars" onClick={() => setHamburgerMenu(!hamburgerMenu)}>
-        <div className="bar"></div>
+      <div
+        role="none"
+        className="bars"
+        onClick={() => setHamburgerMenu(!hamburgerMenu)}
+      >
+        <div className="bar" />
       </div>
     </Container>
   );
-};
+}
 export default Header;
 
-const DivColor = styled.div`
+const DivColor = styled.div<{ item: string }>`
   cursor: pointer;
   width: 2rem;
   height: 2rem;
@@ -79,16 +84,16 @@ const DivColor = styled.div`
   background-color: ${({ item }) => item};
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ bar: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: ${({ theme }) => theme.size.ld};
+  max-width: ${(props) => props.theme.size.ld};
   width: 80%;
   gap: 2rem;
   margin: 0 auto;
   padding: 1.5rem 0;
-  @media (max-width: calc(${({ theme }) => theme.size.md} - 80px)) {
+  @media (max-width: calc(${(props) => props.theme.size.md} - 80px)) {
     width: 90%;
   }
 
@@ -96,18 +101,18 @@ const Container = styled.div`
     display: none;
   }
 
-  @media (max-width: ${({ theme }) => theme.size.sm}) {
+  @media (max-width: ${(props) => props.theme.size.sm}) {
     .bars {
       width: 40px;
       height: 40px;
       position: fixed;
-      background: ${({ theme }) => theme.colors.lightGrey + '80'};
+      background: ${(props) => props.theme.colors.lightGrey + 80};
       right: 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 5px;
-      z-index: ${({ theme }) => theme.position[10]};
+      z-index: ${(props) => props.theme.position[10]};
 
       .bar {
         position: fixed;
@@ -152,15 +157,15 @@ const Logo = styled.div`
     font-weight: 600;
   }
 `;
-const Nav = styled.div`
+const Nav = styled.div<{ bar: boolean }>`
   display: grid;
   column-gap: 1rem;
   grid-template-columns: repeat(6, auto);
-  @media (max-width: ${({ theme }) => theme.size.sm}) {
+  @media (max-width: ${(props) => props.theme.size.sm}) {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: ${({ theme }) => theme.colors.main};
+    background-color: ${(props) => props.theme.colors.main};
     inset: 0;
     justify-content: flex-start;
     align-items: center;
@@ -171,7 +176,7 @@ const Nav = styled.div`
     height: ${({ bar }) => (bar ? '100vh' : '0')};
     transition: all 400ms ease-in-out;
     overflow: hidden;
-    z-index: ${({ theme }) => theme.position[9]};
+    z-index: ${(props) => props.theme.position[9]};
   }
   span {
     color: #fff;
@@ -207,14 +212,14 @@ const Nav = styled.div`
     cursor: pointer;
   }
 `;
-const Options = styled.div`
-  z-index: ${({ theme }) => theme.position[5]};
+const Options = styled.div<{ btnOption: boolean }>`
+  z-index: ${(props) => props.theme.position[5]};
   grid-column-start: -3;
-  @media (max-width: calc(${({ theme }) => theme.size.md} - 80px)) {
+  @media (max-width: calc(${(props) => props.theme.size.md} - 80px)) {
     //790
     grid-column-start: -4;
   }
-  @media (max-width: ${({ theme }) => theme.size.sm}) {
+  @media (max-width: ${(props) => props.theme.size.sm}) {
     //790
     transform: translateX(-5rem);
   }

@@ -44,13 +44,13 @@ export default PortfolioView;
 
 const Container = styled.div``;
 const Banner = styled.div`
-  background: ${({ theme }) => theme.colors.background};
+  background: ${(props) => props.theme.colors.background};
   height: 100vh;
-  @media (max-width: ${({ theme }) => theme.size.sm}) {
+  @media (max-width: ${(props) => props.theme.size.sm}) {
     height: 100%;
     padding-bottom: 2rem;
   }
 `;
 const LightColor = styled.div`
-  background: ${({ theme }) => theme.colors.background};
+  background: ${(props) => props.theme.colors.background};
 `;

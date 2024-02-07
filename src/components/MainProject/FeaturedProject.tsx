@@ -1,13 +1,13 @@
+import React from 'react';
 import styled from 'styled-components';
 import IconMarkGithub16 from '../../assets/svg/github';
-import React from 'react';
 
-export const FeaturedProject = ({
+export default function FeaturedProject({
   projects,
   txtButton,
   isReversed,
   project,
-}) => {
+}) {
   return (
     <Container isReversed={isReversed}>
       <LeftSiteProject>
@@ -27,7 +27,7 @@ export const FeaturedProject = ({
       </RightSiteProject>
     </Container>
   );
-};
+}
 const Container = styled.div`
   display: flex;
   padding: 2rem;

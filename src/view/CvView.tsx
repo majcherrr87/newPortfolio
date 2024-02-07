@@ -1,9 +1,9 @@
 import styled, { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 import { lightThemeCv, darkThemeCv } from '../components/cv/themeCv';
 
 import { Nav } from '../components/cv/Nav/Nav';
 import { CVMain } from '../components/cv/CVMain';
-import { useState } from 'react';
 
 function CvView() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
