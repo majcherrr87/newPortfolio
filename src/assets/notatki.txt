@@ -1,0 +1,6 @@
+sprawdzić co to jest 'vite static site generation'
+oraz tak z ciekawości 'vite server side rendering'
+Dodać reCaptcha do obsługi e-mila
+
+Problem z importami
+Problem z State głównym
