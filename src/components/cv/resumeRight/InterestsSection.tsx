@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaHeadphonesAlt } from 'react-icons/fa';
 import { BiSolidPlaneAlt, BiBook, BiDumbbell } from 'react-icons/bi';
 
-export const InterestsSection = () => {
+export function InterestsSection() {
   return (
     <ContainerSection id="interests">
       <h2 className="section-title">Interests</h2>
@@ -30,7 +30,7 @@ export const InterestsSection = () => {
       </Container>
     </ContainerSection>
   );
-};
+}
 const ContainerSection = styled.div`
   padding: 1.5rem;
 `;

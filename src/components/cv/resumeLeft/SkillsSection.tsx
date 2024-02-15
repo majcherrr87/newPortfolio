@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-type dataType = [[string], [string]];
+type DataType = [string[], string[]];
 
-export const SkillsSection = () => {
-  const data: dataType = [
+export function SkillsSection() {
+  const data: DataType = [
     ['JavaScript', 'TypeScript', 'StyledComponent', 'React'],
     ['Node', 'Express', 'SQL'],
   ];
@@ -12,11 +12,11 @@ export const SkillsSection = () => {
       <h2 className="section-title">Skills</h2>
 
       <Content>
-        {data.map((tab, index) => (
-          <ul key={index}>
-            {tab.map((item, i) => (
-              <li key={i}>
-                <span></span>
+        {data.map((tab) => (
+          <ul key={tab[0]}>
+            {tab.map((item) => (
+              <li key={item}>
+                <span />
                 {item}
               </li>
             ))}
@@ -25,7 +25,7 @@ export const SkillsSection = () => {
       </Content>
     </Container>
   );
-};
+}
 const Container = styled.section`
   padding: 1.5rem;
 `;

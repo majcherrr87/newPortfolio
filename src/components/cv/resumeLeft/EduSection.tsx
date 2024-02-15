@@ -1,20 +1,24 @@
 import styled from 'styled-components';
-export type dataType = {
+
+export type DataType = {
+  id: string;
   name: string;
   direction: string;
   city: string;
   years: string;
 };
 
-export const EduSection = () => {
-  const data: dataType[] = [
+export function EduSection() {
+  const data: DataType[] = [
     {
+      id: '1',
       name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I ADMINISTRACJI',
       direction: 'Inżynier Oprogramowania',
       city: 'Zamość',
       years: '2013 - 2017',
     },
     {
+      id: '2',
       name: 'LICEUM PROFILOWANE',
       direction: 'o profilu Zarządzanie informacją',
       city: 'Hrubieszów',
@@ -27,11 +31,11 @@ export const EduSection = () => {
       <h2 className="section-title">Edukacja</h2>
 
       <Education>
-        {data.map(({ name, direction, years, city }, index, tab) => (
-          <Content key={index}>
+        {data.map(({ id, name, direction, years, city }, index, tab) => (
+          <Content key={id}>
             <Time>
-              <span className="rounder"></span>
-              {index < tab.length - 1 ? <span className="line"></span> : null}
+              <span className="rounder" />
+              {index < tab.length - 1 ? <span className="line" /> : null}
             </Time>
             <Data>
               <h3>{name}</h3>
@@ -45,7 +49,7 @@ export const EduSection = () => {
       </Education>
     </Container>
   );
-};
+}
 const Container = styled.section`
   padding: 1.5rem;
 `;

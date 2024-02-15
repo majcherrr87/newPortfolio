@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import { BsArrowUpSquare } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
-import footer from '@/components/Footer/Footer';
+import { VisibleBtnScrollTypes } from '../CvTypes';
 
-export const ScrollTop = ({ isVisibleMenu }) => {
+export function ScrollTop({ isVisibleMenu }: VisibleBtnScrollTypes) {
   const [isVisibleBtnScroll, setIsVisibleBtnScroll] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      window.scrollY > 200
-        ? setIsVisibleBtnScroll(true)
-        : setIsVisibleBtnScroll(false);
-    });
+    const handleScroll = () => {
+      setIsVisibleBtnScroll(window.scrollY > 200);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -23,8 +27,8 @@ export const ScrollTop = ({ isVisibleMenu }) => {
       {BsArrowUpSquare()}
     </Top>
   );
-};
-const Top = styled.a`
+}
+const Top = styled.a<{ isVisibleBtnScroll: boolean }>`
   position: fixed;
   right: 1rem;
   bottom: ${({ isVisibleBtnScroll }) => (isVisibleBtnScroll ? '5rem' : '-20%')};

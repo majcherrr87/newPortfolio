@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { ResumeLeft } from './resumeLeft/ResumeLeft';
 import { ResumeRight } from './resumeRight/ResumeRight';
+import { CvSwitchThemeType } from './CvTypes';
 
-export const CVMain = ({ switchTheme }) => {
+export function CVMain({ switchTheme }: CvSwitchThemeType) {
   return (
     <MainContainer>
       <Resume>
@@ -11,7 +12,7 @@ export const CVMain = ({ switchTheme }) => {
       </Resume>
     </MainContainer>
   );
-};
+}
 const MainContainer = styled.main`
   width: 100%;
   @media screen and (min-width: 968px) {

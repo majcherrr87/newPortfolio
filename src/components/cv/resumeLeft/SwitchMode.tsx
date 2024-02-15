@@ -1,18 +1,19 @@
 import { BiMoon, BiSun } from 'react-icons/bi';
 import styled from 'styled-components';
 import { useState } from 'react';
+import { CvSwitchThemeType } from '../CvTypes';
 
-export const SwitchMode = ({ switchTheme }) => {
+export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
   const [isMoonIcon, setIsMoonIcon] = useState(true);
   const handleClick = () => {
-    switchTheme((prev) => !prev);
+    switchTheme((prevMode) => !prevMode);
     setIsMoonIcon((prev) => !prev);
   };
 
   return (
     <Switch onClick={handleClick}>{isMoonIcon ? BiMoon() : BiSun()}</Switch>
   );
-};
+}
 
 const Switch = styled.span`
   position: absolute;
@@ -24,4 +25,5 @@ const Switch = styled.span`
   cursor: pointer;
   :hover {
     color: ${({ theme }) => theme.colors.title_color};
+  }
 `;

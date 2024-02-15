@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-import { Content, Data, Time } from '../resumeLeft/EduSection';
 import { BiCheck } from 'react-icons/bi';
+import { Content, Data, Time } from '../resumeLeft/EduSection';
 
-type dataType = {
+type DataType = {
+  id: string;
   name: string;
   description?: string;
   details: string[];
 };
 
-export const ExperienceSection = () => {
-  const data: dataType[] = [
+export function ExperienceSection() {
+  const data: DataType[] = [
     {
+      id: '1',
       name: 'MEGA KURS JAVASCRIPTU',
       description:
         '14-miesięczny kurs JavaScriptu. Przygotowujący uczestników do pracy jako junior JavaScript Developer, na kursie poznałem między innymi:',
@@ -21,6 +23,7 @@ export const ExperienceSection = () => {
       ],
     },
     {
+      id: '2',
       name: 'KURS STACJONARNY - PROGRAMISTA PHP',
       description:
         '6-miesięczny stacjonarny kurs programowania w języku PHP na którym uczyłem się między innymi:',
@@ -31,6 +34,7 @@ export const ExperienceSection = () => {
       ],
     },
     {
+      id: '3',
       name: 'KURSY ON-LINE',
       details: [
         'Programowanie w JavaScript',
@@ -45,18 +49,18 @@ export const ExperienceSection = () => {
     <ContainerSection id="experience">
       <h2 className="section-title">KURSY I SZKOLENIA</h2>
       <Container>
-        {data.map(({ name, description, details }, index, tab) => (
-          <Content key={index}>
+        {data.map(({ id, name, description, details }, index, tab) => (
+          <Content key={id}>
             <Time>
-              <span className="rounder"></span>
-              {index < tab.length - 1 ? <span className="line"></span> : null}
+              <span className="rounder" />
+              {index < tab.length - 1 ? <span className="line" /> : null}
             </Time>
             <Data>
               <h3>{name}</h3>
               <p>{description}</p>
               <ul>
-                {details.map((item, i) => (
-                  <li key={i}>
+                {details.map((item) => (
+                  <li key={item}>
                     <div>
                       <BiCheck /> {item}
                     </div>
@@ -69,7 +73,7 @@ export const ExperienceSection = () => {
       </Container>
     </ContainerSection>
   );
-};
+}
 const ContainerSection = styled.div`
   padding: 1.5rem;
 `;

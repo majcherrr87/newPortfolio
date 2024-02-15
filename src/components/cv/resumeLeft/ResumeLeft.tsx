@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import { HomeSection } from '../resumeLeft/HomeSection';
-import { SocialSection } from '../resumeLeft/SocialSection';
-import { ProfileSection } from '../resumeLeft/ProfileSection';
-import { EduSection } from '../resumeLeft/EduSection';
-import { SkillsSection } from '../resumeLeft/SkillsSection';
+import { HomeSection } from './HomeSection';
+import { SocialSection } from './SocialSection';
+import { ProfileSection } from './ProfileSection';
+import { EduSection } from './EduSection';
+import { SkillsSection } from './SkillsSection';
 import { LanguagesSection } from './LanguagesSection';
+import { CvSwitchThemeType } from '../CvTypes';
 
-export const ResumeLeft = ({ switchTheme }) => {
+export function ResumeLeft({ switchTheme }: CvSwitchThemeType) {
   return (
     <Container>
       <HomeSection switchTheme={switchTheme} />
@@ -17,7 +18,7 @@ export const ResumeLeft = ({ switchTheme }) => {
       <LanguagesSection />
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   @media screen and (min-width: 968px) {

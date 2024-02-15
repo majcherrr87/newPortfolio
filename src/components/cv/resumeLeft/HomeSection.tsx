@@ -1,24 +1,33 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import CvLink from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
 import { BiEnvelope, BiPhone } from 'react-icons/bi';
 import { TbWorldWww } from 'react-icons/tb';
 import { SwitchMode } from './SwitchMode';
-import { DownloadFdf } from './downloadFdf';
-import { Link } from 'react-router-dom';
+import { Download } from './download';
+import CvLink from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
+import { CvSwitchThemeType } from '../CvTypes';
 
-export const HomeSection = ({ switchTheme }) => {
+export function HomeSection({ switchTheme }: CvSwitchThemeType) {
   const [userAvatar, setUserAvatar] = useState('');
   const [userWww, setUserWww] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`https://api.github.com/users/majcherrr87`);
-      const data = await res.json();
-      setUserAvatar(data.avatar_url);
-      setUserWww(data.blog);
+      try {
+        const res = await fetch(`https://api.github.com/users/majcherrr87`);
+        if (!res.ok) {
+          throw new Error('Failed to fetch user data');
+        }
+        const data = await res.json();
+        setUserAvatar(data.avatar_url);
+        setUserWww(data.blog);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
     };
-    return () => fetchData();
+
+    fetchData();
   }, []);
 
   return (
@@ -36,7 +45,11 @@ export const HomeSection = ({ switchTheme }) => {
             </BtnDownload>
           </HomeData>
           <HomeAddress>
-            <a target="_blank" href={'http://www.' + userWww}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`http://www.${userWww} `}
+            >
               {TbWorldWww()} {userWww}
             </a>
             <Link to="mailto:majcherrr87@gmail.com">
@@ -46,11 +59,11 @@ export const HomeSection = ({ switchTheme }) => {
           </HomeAddress>
         </HomeContainer>
         <SwitchMode switchTheme={switchTheme} />
-        <DownloadFdf />
+        <Download />
       </CVSection>
     </CVResumeLeft>
   );
-};
+}
 
 const CVResumeLeft = styled.div``;
 const CVSection = styled.section`

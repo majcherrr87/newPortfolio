@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ProfileSection = () => {
+export function ProfileSection() {
   return (
     <Container id="profile">
       <h2 className="section-title">Profil</h2>
@@ -10,7 +10,7 @@ export const ProfileSection = () => {
       </p>
     </Container>
   );
-};
+}
 const Container = styled.section`
   padding: 1.5rem;
   p {

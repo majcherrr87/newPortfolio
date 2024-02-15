@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LanguagesSection = () => {
+export function LanguagesSection() {
   const data = ['Polski (ojczysty)', 'Angielski (B2)'];
   return (
     <ContainerSection id="languages">
@@ -8,16 +8,16 @@ export const LanguagesSection = () => {
 
       <Container>
         <ul>
-          {data.map((item, index) => (
-            <li key={index}>
-              <span></span> {item}
+          {data.map((item) => (
+            <li key={item}>
+              <span /> {item}
             </li>
           ))}
         </ul>
       </Container>
     </ContainerSection>
   );
-};
+}
 const ContainerSection = styled.div`
   padding: 1.5rem;
 `;

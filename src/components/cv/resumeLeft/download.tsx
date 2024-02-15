@@ -2,13 +2,13 @@ import { FaRegFilePdf } from 'react-icons/fa6';
 import styled from 'styled-components';
 import Cv from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
 
-export const DownloadFdf = () => {
+export function Download() {
   return (
     <a href={Cv} download>
       <Icon>{FaRegFilePdf()}</Icon>
     </a>
   );
-};
+}
 
 const Icon = styled.span`
   display: none;

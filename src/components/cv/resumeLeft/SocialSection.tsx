@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { BsLinkedin, BsGithub, BsInstagram } from 'react-icons/bs';
+import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-export const SocialSection = () => {
+export function SocialSection() {
   return (
     <Container>
       <h2 className="section-title">SOCIAL</h2>
@@ -19,7 +19,7 @@ export const SocialSection = () => {
       </Social>
     </Container>
   );
-};
+}
 const Container = styled.section`
   display: grid;
   padding: 1.5rem;

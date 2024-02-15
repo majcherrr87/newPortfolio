@@ -1,12 +1,13 @@
-import { Content, ContainerSection, Container } from './ProjectsSection';
 import { LiaCertificateSolid } from 'react-icons/lia';
-type dataType = {
+import { Content, ContainerSection, Container } from './ProjectsSection';
+
+type DataType = {
   name: string;
   link: string;
 };
 
-export const CertificateSection = () => {
-  const data: dataType[] = [
+export function CertificateSection() {
+  const data: DataType[] = [
     {
       name: 'Kurs programista PHP',
       link: 'https://www.alx.pl/certyfikat/adrian-majcher/9a73e1ffdf7b415eb22e0ac70384827f/',
@@ -24,15 +25,15 @@ export const CertificateSection = () => {
     <ContainerSection id="certificates">
       <h2 className="section-title">Certyfikaty</h2>
       <Container>
-        {data.map(({ name, link }, index) => (
-          <Content key={index}>
+        {data.map(({ name, link }) => (
+          <Content key={name}>
             <div>
               <LiaCertificateSolid />
               <h3>{name}</h3>
             </div>
 
             <p>
-              <a href={link} target="_blank">
+              <a href={link} target="_blank" rel="noopener noreferrer">
                 {link}
               </a>
             </p>
@@ -41,4 +42,4 @@ export const CertificateSection = () => {
       </Container>
     </ContainerSection>
   );
-};
+}

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { BiGridAlt } from 'react-icons/bi';
 import { navData } from './nav-data';
 import { ScrollTop } from './ScrollTop';
 
-export const Nav = () => {
+export function Nav() {
   const [isToggleMenu, setIsToggleMenu] = useState(false);
 
   const handleClick = () => {
@@ -17,9 +16,9 @@ export const Nav = () => {
       <a href="#home">Adrian Majcher</a>
       <CvNavMenu toggleMenu={isToggleMenu}>
         <ul>
-          {navData[1].item.map(({ link, name, icon }, index) => {
+          {navData[1].item.map(({ link, name, icon }) => {
             return (
-              <li key={index} onClick={handleClick}>
+              <li role="none" key={name} onClick={handleClick}>
                 <a href={`${link}`}>
                   {icon()} {name}
                 </a>
@@ -34,7 +33,7 @@ export const Nav = () => {
       <ScrollTop isVisibleMenu={setIsToggleMenu} />
     </CvNav>
   );
-};
+}
 const CvNav = styled.nav`
   max-width: 968px;
   width: calc(100% - 3rem);
@@ -53,7 +52,7 @@ const CvNav = styled.nav`
     margin-right: auto;
   }
 `;
-const CvNavMenu = styled.div`
+const CvNavMenu = styled.div<{ toggleMenu: boolean }>`
   ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

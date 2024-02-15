@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-type dataType = {
+type DataType = {
   name: string;
   description: string;
   link: string[];
 };
 
-export const ProjectsSection = () => {
-  const data: dataType[] = [
+export function ProjectsSection() {
+  const data: DataType[] = [
     {
       name: 'Head Hunter [NestJS React TypeScript]',
       description:
@@ -40,13 +40,13 @@ export const ProjectsSection = () => {
     <ContainerSection id="projects">
       <h2 className="section-title">Projekty</h2>
       <Container>
-        {data.map(({ name, description, link }, index) => (
-          <Content key={index}>
+        {data.map(({ name, description, link }) => (
+          <Content key={name}>
             <h3>{name}</h3>
             <ul>
-              {link.map((el, i) => (
-                <li key={i}>
-                  <a href={el} target="_blank">
+              {link.map((el) => (
+                <li key={el}>
+                  <a href={el} target="_blank" rel="noopener noreferrer">
                     {el}
                   </a>
                 </li>
@@ -58,7 +58,7 @@ export const ProjectsSection = () => {
       </Container>
     </ContainerSection>
   );
-};
+}
 export const ContainerSection = styled.div`
   padding: 1.5rem;
 `;
