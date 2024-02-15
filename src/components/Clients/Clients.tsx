@@ -1,19 +1,21 @@
-import styled from 'styled-components';
-import { H1Title, Span } from '../../assets/smallComponent';
-import Slider from 'react-slick';
-import ClientSlider from '../../components/Clients/ClientSlider';
-import { clients, settings, langData } from './Clients-data';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useRef } from 'react';
+import styled from 'styled-components';
+import Slider from 'react-slick';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { H1Title, Span } from '../../assets/smallComponent';
+import ClientSlider from './ClientSlider';
+import { clients, settings, langData } from './Clients-data';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
 
-const Clients = () => {
-  const arrowRef = useRef(null);
+function Clients() {
+  const arrowRef = useRef<Slider>(null);
   const { mainColor, lang } = useMyContext();
   const { title, subTitle } = selectLang(langData, lang);
-  let clientDisc = '';
-  clientDisc = clients.map((item, i) => <ClientSlider item={item} key={i} />);
+  let clientDisc = [];
+  clientDisc = clients.map((item) => (
+    <ClientSlider item={item} key={item.name} />
+  ));
   return (
     <Container id="Clients" color={mainColor}>
       <Span color={mainColor}>{title}</Span>
@@ -23,17 +25,27 @@ const Clients = () => {
           {clientDisc}
         </Slider>
         <Buttons color={mainColor}>
-          <button onClick={() => arrowRef.current.slickPrev()}>
+          <button
+            type="button"
+            onClick={() =>
+              arrowRef.current ? arrowRef.current.slickPrev() : null
+            }
+          >
             <IoIosArrowBack />
           </button>
-          <button onClick={() => arrowRef.current.slickNext()}>
+          <button
+            type="button"
+            onClick={() =>
+              arrowRef.current ? arrowRef.current.slickNext() : null
+            }
+          >
             <IoIosArrowForward />
           </button>
         </Buttons>
       </Testimonials>
     </Container>
   );
-};
+}
 export default Clients;
 
 const Container = styled.div`

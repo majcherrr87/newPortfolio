@@ -1,10 +1,10 @@
-export type CopyrightData = {
+export type CopyrightDataType = {
   id: number;
   lang: string;
   txt: string;
 };
 
-export const CopyrightData: CopyrightData[] = [
+export const CopyrightData: CopyrightDataType[] = [
   {
     id: 1,
     lang: 'POL',

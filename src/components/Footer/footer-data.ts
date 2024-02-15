@@ -47,14 +47,17 @@ export const FooterData: FooterDataType[] = [
 
 export const socialProfile = [
   {
+    id: '1',
     href: 'https://github.com/majcherrr87',
     icon: AiFillGithub,
   },
   {
+    id: '2',
     href: 'https://www.linkedin.com/in/adrian-majcher-46a529163/',
     icon: AiFillLinkedin,
   },
   {
+    id: '3',
     href: 'https://www.facebook.com/adrian.majcher.568',
     icon: BsFacebook,
   },

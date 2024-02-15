@@ -8,7 +8,7 @@ import ENG from '../../assets/img/home/img-gbr.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
 import { selectLang } from '../../utils/changeLang';
-import { headerData, HeaderDataType } from './header-data';
+import { headerData } from './header-data';
 
 function Header() {
   const [btnOption, setBtnOption] = useState(false);
@@ -51,7 +51,7 @@ function Header() {
             />
             <h4>{txtOptionalMenu}</h4>
             <div className="color-list">
-              {colors.map((color, index) => {
+              {colors.map((color) => {
                 return (
                   <DivColor
                     key={color}

@@ -4,9 +4,15 @@ import { AiOutlineStar } from 'react-icons/ai';
 import { ClientsDatatype } from './Clients-data';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
-const ClientSlider = ({ item }) => {
-  const { name, disc, start, position, img_url }: ClientsDatatype = item;
+function ClientSlider({ item }: { item: ClientsDatatype }) {
+  const { name, disc, start, position, imgUrl } = item;
   const { mainColor } = useMyContext();
+
+  const startsArray = [];
+  for (let i = 1; i <= start; i += 1) {
+    startsArray.push(i);
+  }
+
   return (
     <Container>
       <Header color={mainColor}>
@@ -14,18 +20,16 @@ const ClientSlider = ({ item }) => {
           <IoIosQuote />
         </span>
         <div className="stars">
-          {Array(start)
-            .fill()
-            .map((_, i) => (
-              <span className="star" key={i}>
-                <AiOutlineStar />
-              </span>
-            ))}
+          {startsArray.map((star) => (
+            <span className="star" key={star}>
+              <AiOutlineStar />
+            </span>
+          ))}
         </div>
       </Header>
       <Body>{disc}</Body>
       <Footer>
-        <img src={img_url} alt={name} />
+        <img src={imgUrl} alt={name} />
         <div className="details">
           <h1>{name}</h1>
           <p>{position}</p>
@@ -33,7 +37,7 @@ const ClientSlider = ({ item }) => {
       </Footer>
     </Container>
   );
-};
+}
 export default ClientSlider;
 
 const Container = styled.div`

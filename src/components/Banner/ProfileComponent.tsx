@@ -35,20 +35,20 @@ function ProfileComponent() {
         <h3>Junior web developer</h3>
         <p>{txtLong}</p>
         <CvButtons>
-          <a href={linkBtnShowCv} target="_blank">
-            <button>{txtBtnShowCv}</button>
+          <a href={linkBtnShowCv} target="_blank" rel="noopener noreferrer">
+            <button type="button">{txtBtnShowCv}</button>
           </a>
           <a href={linkBtnDownloadCv} download>
-            <button>{txtBtnDownloadCv}</button>
+            <button type="button">{txtBtnDownloadCv}</button>
           </a>
         </CvButtons>
 
         <Social color={mainColor}>
           <p>{txtSocial}</p>
           <div className="social-icons">
-            {socialProfile.map(({ icon, href }, index) => (
-              <span key={index}>
-                <a href={href} target="_blank">
+            {socialProfile.map(({ icon, href, id }) => (
+              <span key={id}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
                   {icon()}
                 </a>
               </span>
@@ -84,7 +84,7 @@ const Container = styled.div`
     margin: 0 auto;
   }
 `;
-const Texts = styled.div`
+const Texts = styled.div<{ color: string }>`
   flex: 1;
   position: relative;
   display: flex;
@@ -94,7 +94,7 @@ const Texts = styled.div`
     padding: 1rem 0;
     font-weight: 500;
     span {
-      color: ${({ color }: string) => color};
+      color: ${({ color }) => color};
     }
   }
 
@@ -124,10 +124,10 @@ const Texts = styled.div`
     border: none;
     color: #fff;
     font-weight: 500;
-    filter: drop-shadow(0px 10px 10px ${({ color }) => color + '51'});
+    filter: drop-shadow(0px 10px 10px ${({ color }) => color + 51});
 
     :hover {
-      filter: drop-shadow(0px 10px 10px ${({ color }) => color + '70'});
+      filter: drop-shadow(0px 10px 10px ${({ color }) => color + 70});
     }
   }
 `;
@@ -169,7 +169,7 @@ const Social = styled.div`
     }
   }
 `;
-const Profile = styled.div`
+const Profile = styled.div<{ color: string }>`
   display: flex;
   flex: 1;
   justify-content: center;
@@ -177,7 +177,7 @@ const Profile = styled.div`
 
   img#my {
     width: 16rem;
-    filter: drop-shadow(0px 10px 10px ${({ color }) => color + '70'});
+    filter: drop-shadow(0px 10px 10px ${({ color }) => color + 70});
     transition: transform 400ms ease-in-out;
     z-index: 2;
 

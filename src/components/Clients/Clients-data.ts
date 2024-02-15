@@ -1,53 +1,54 @@
-export type ClientsDatatype = {
-  name: string;
-  position: string;
-  img_url: string;
-  start: number;
-  disc: string;
-};
-
 import avatar1 from '../../assets/img/avatar/avatar1.webp';
 import avatar2 from '../../assets/img/avatar/avatar2.webp';
 import avatar3 from '../../assets/img/avatar/avatar3.webp';
 import avatar4 from '../../assets/img/avatar/avatar4.webp';
+
+export type ClientsDatatype = {
+  name: string;
+  position: string;
+  imgUrl: string;
+  start: number;
+  disc: string;
+};
+
 export const clients: ClientsDatatype[] = [
   {
     name: 'Pawel Tatarata',
     position: 'Tester oprogramowania w Craftware',
-    img_url: avatar2,
+    imgUrl: avatar2,
     start: 3,
     disc: 'Solidny partner, polecam',
   },
   {
     name: 'Andrzej Tracz',
     position: 'Specjalista ds. automatyki w Caterpillar Inc.',
-    img_url: avatar3,
+    imgUrl: avatar3,
     start: 4,
     disc: 'Rzetelny i dokładny deweloper, polecam współpracę',
   },
   {
     name: 'Rafał Pośpiech',
     position: 'RTR Specialist w firmie Bystronic',
-    img_url: avatar4,
+    imgUrl: avatar4,
     start: 5,
     disc: 'Bardzo polecam Wszystkim! Doskonała współpraca!',
   },
   {
     name: 'Ilona Majcher',
     position: 'PMO / CANAL+ Poland / Project Portfolio Management ',
-    img_url: avatar1,
+    imgUrl: avatar1,
     start: 2,
     disc: 'Polecam! Solidna osoba :)',
   },
 ];
 
-type langDataType = {
+type LangDataType = {
   lang: string;
   title: string;
   subTitle: string;
 };
 
-export const langData: langDataType[] = [
+export const langData: LangDataType[] = [
   {
     lang: 'POL',
     title: 'Świadectwa',
