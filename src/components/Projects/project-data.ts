@@ -5,9 +5,9 @@ import proj1 from '../../assets/video/qqqq.webm';
 export interface ProjectDataType {
   id: number;
   lang: string;
-  projects: Project[];
+  projects: ProjectType[];
 }
-interface Project {
+export interface ProjectType {
   index: number;
   title: string;
   disc: string;
@@ -16,7 +16,7 @@ interface Project {
   src: string;
 }
 
-export const project_data: ProjectDataType[] = [
+export const ProjectData: ProjectDataType[] = [
   {
     id: 1,
     lang: 'POL',

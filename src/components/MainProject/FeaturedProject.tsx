@@ -1,17 +1,19 @@
-import React from 'react';
 import styled from 'styled-components';
 import IconMarkGithub16 from '../../assets/svg/github';
+import { MainProjectTypes } from './MainProjectTypes';
 
 export default function FeaturedProject({
   projects,
   txtButton,
   isReversed,
   project,
-}) {
+}: MainProjectTypes) {
   return (
     <Container isReversed={isReversed}>
       <LeftSiteProject>
-        <video src={projects[project].src} autoPlay loop />
+        <video src={projects[project].src} autoPlay loop>
+          <track kind="captions" />
+        </video>
       </LeftSiteProject>
       <RightSiteProject isReversed={isReversed}>
         <h1>{projects[project].title}</h1>
@@ -21,14 +23,14 @@ export default function FeaturedProject({
             <IconMarkGithub16 />
           </a>
           <a href={projects[project].linkDemo}>
-            <button>{txtButton}</button>
+            <button type="button">{txtButton}</button>
           </a>
         </ShowProject>
       </RightSiteProject>
     </Container>
   );
 }
-const Container = styled.div`
+const Container = styled.div<{ isReversed: boolean }>`
   display: flex;
   padding: 2rem;
   border: 1px solid #000;
@@ -60,7 +62,7 @@ const LeftSiteProject = styled.div`
     border-radius: 2rem;
   }
 `;
-const RightSiteProject = styled.div`
+const RightSiteProject = styled.div<{ isReversed: boolean }>`
   width: 50%;
   flex: 1;
   display: flex;

@@ -1,15 +1,13 @@
+import { useRef, useState, FormEvent } from 'react';
 import styled from 'styled-components';
-import { H1Footer, H1Title } from '../../assets/smallComponent';
 import { MdAlternateEmail } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
-import { HiOutlineMailOpen } from 'react-icons/hi';
-import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from 'react-icons/ai';
-import { BsFacebook, BsMessenger, BsWhatsapp } from 'react-icons/bs';
-import { FiMail, FiPhoneCall } from 'react-icons/fi';
-import { useMyContext } from '../../utils/context/ContextProvider';
-import { useRef, useState } from 'react';
+import { AiOutlineArrowUp } from 'react-icons/ai';
+import { FiMail } from 'react-icons/fi';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useMyContext } from '../../utils/context/ContextProvider';
+import { H1Footer, H1Title } from '../../assets/smallComponent';
 import { selectLang } from '../../utils/changeLang';
 import {
   FooterData,
@@ -17,14 +15,13 @@ import {
   FooterDataType,
   contactProfile,
 } from './footer-data';
-import { ad } from 'vitest/dist/types-3c7dbfa5';
 
-const Footer = () => {
+function Footer() {
   const { mainColor, lang } = useMyContext();
   const [message, setMessage] = useState('');
   const [captchaIsDone, setCaptchaIsDone] = useState(false);
   const key = '6LfntZYnAAAAAEKlmNCyDwFjvmRKsEFMnAi31N2n';
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const {
     txtAddress,
     txtContact,
@@ -41,10 +38,10 @@ const Footer = () => {
     setCaptchaIsDone(true);
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (captchaIsDone) {
+    if (captchaIsDone && form.current) {
       emailjs
         .sendForm(
           'service_z03hcrd',
@@ -60,7 +57,7 @@ const Footer = () => {
         setCaptchaIsDone(false);
       }, 5000);
 
-      e.target.reset();
+      e.currentTarget.reset();
     }
   };
 
@@ -76,10 +73,10 @@ const Footer = () => {
 
         <div className="links">
           <H1Footer>{txtContact}:</H1Footer>
-          {contactProfile.map(({ name, icon, address }, index) => (
-            <div key={index}>
+          {contactProfile.map(({ id, name, icon, address }) => (
+            <div key={id}>
               <span>{icon()}</span>
-              <a href={address} target="_blank">
+              <a href={address} target="_blank" rel="noopener noreferrer">
                 {name}
               </a>
             </div>
@@ -89,9 +86,9 @@ const Footer = () => {
         <div className="profiles">
           <H1Footer>{txtProfile}</H1Footer>
           <div className="icons">
-            {socialProfile.map(({ icon, href }, index) => (
-              <span key={index}>
-                <a href={href} target="_blank">
+            {socialProfile.map(({ id, icon, href }) => (
+              <span key={id}>
+                <a href={href} target="_blank" rel="noopener noreferrer">
                   {icon()}
                 </a>
               </span>
@@ -131,13 +128,13 @@ const Footer = () => {
             </span>
             <textarea
               name="message"
-              cols="30"
-              rows="10"
+              cols={30}
+              rows={10}
               placeholder={txtFormMessage}
               required
-              minLength="10"
-              maxLength="500"
-            ></textarea>
+              minLength={10}
+              maxLength={500}
+            />
           </div>
 
           <ReCAPTCHA
@@ -152,7 +149,7 @@ const Footer = () => {
       </Form>
     </Container>
   );
-};
+}
 export default Footer;
 
 const Container = styled.div`

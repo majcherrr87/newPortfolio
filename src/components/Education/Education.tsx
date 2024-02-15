@@ -6,7 +6,7 @@ import { H1Title, Span } from '../../assets/smallComponent';
 import wszia from '../../assets/img/courses/wsiza.webp';
 import { dataEducation, EducationDataType } from './edukation-data';
 
-export const Education = () => {
+export function Education() {
   const { mainColor, lang } = useMyContext();
   const { sectionTitle, name, description, data }: EducationDataType =
     selectLang(dataEducation, lang);
@@ -25,7 +25,7 @@ export const Education = () => {
       </Content>
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   width: 80%;

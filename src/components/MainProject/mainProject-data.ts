@@ -1,4 +1,4 @@
-export interface dataType {
+export interface DataType {
   id: number;
   lang: string;
   txtTitleFirst: string;
@@ -6,7 +6,7 @@ export interface dataType {
   txtButton: string;
 }
 
-export const mainProject_data: dataType[] = [
+export const mainProjectData: DataType[] = [
   {
     id: 1,
     lang: 'POL',

@@ -1,32 +1,42 @@
 import { useRef } from 'react';
+import styled from 'styled-components';
 import Slider from 'react-slick';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import Project from './Project';
 import { settings } from './Slider-data';
-import { project_data, ProjectDataType } from '../Projects/project-data';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import styled from 'styled-components';
+import { ProjectData, ProjectDataType } from './project-data';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
 
 function SliderComp() {
-  const arrowRef = useRef(null);
+  const arrowRef = useRef<Slider>(null);
   const { lang } = useMyContext();
-  const { projects }: ProjectDataType = selectLang(project_data, lang);
+  const { projects }: ProjectDataType = selectLang(ProjectData, lang);
 
-  let sliderProject = projects.map((item, index) => (
-    <Project item={item} key={index} />
-  ));
+  const handlePrev = () => {
+    if (arrowRef.current) {
+      arrowRef.current.slickPrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (arrowRef.current) {
+      arrowRef.current.slickNext();
+    }
+  };
 
   return (
     <Container>
       <Slider ref={arrowRef} {...settings}>
-        {sliderProject}
+        {projects.map((item) => (
+          <Project item={item} key={item.index} />
+        ))}
       </Slider>
       <Buttons>
-        <button onClick={() => arrowRef.current.slickPrev()} className="back">
+        <button type="button" onClick={handlePrev} className="back">
           <IoIosArrowBack />
         </button>
-        <button onClick={() => arrowRef.current.slickNext()} className="next">
+        <button type="button" onClick={handleNext} className="next">
           <IoIosArrowForward />
         </button>
       </Buttons>

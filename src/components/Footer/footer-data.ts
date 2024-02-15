@@ -64,21 +64,25 @@ export const socialProfile = [
 ];
 export const contactProfile = [
   {
+    id: '1',
     name: '513 354 369',
     address: 'tel:513354369',
     icon: FiPhoneCall,
   },
   {
+    id: '2',
     name: 'majcherrr87@gmail.com',
     address: 'mailto:majcherrr87@gmail.com',
     icon: FiMail,
   },
   {
+    id: '3',
     name: 'Messenger',
     address: 'https://m.me/adrian.majcher.568',
     icon: BsMessenger,
   },
   {
+    id: '4',
     name: 'WhatsApp',
     address: 'https://api.whatsapp.com/send?phone=513354369',
     icon: BsWhatsapp,

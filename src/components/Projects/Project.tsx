@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { data, ProjectDataType } from './Slider-data';
 import { useMyContext } from '../../utils/context/ContextProvider';
-import { loadConfigFromFile } from 'vite';
+import { ProjectType } from './project-data';
 
-function Project({ item }) {
-  const { src, disc, title, index }: ProjectDataType = item;
+function Project({ item }: { item: ProjectType }) {
+  const { src, disc, title, index }: ProjectType = item;
   const { changeIndexMainProject } = useMyContext();
 
   return (

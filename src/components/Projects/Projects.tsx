@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import SliderComp from './Slider';
 import { Disc, Span, Title } from '../../assets/smallComponent';

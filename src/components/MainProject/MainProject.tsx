@@ -1,22 +1,19 @@
 import styled from 'styled-components';
-
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
-import { H1Title, Span, Title } from '../../assets/smallComponent';
-import IconMarkGithub16 from '../../assets/svg/github';
-import { mainProject_data, dataType } from './mainProject-data';
-import { project_data, ProjectDataType } from '../Projects/project-data';
-import React, { useState } from 'react';
+import { Span, Title } from '../../assets/smallComponent';
+import { mainProjectData, DataType } from './mainProject-data';
+import { ProjectData, ProjectDataType } from '../Projects/project-data';
 import FeaturedProject from './FeaturedProject';
 
 function MainProject() {
-  const { mainColor, lang, indexMainProject } = useMyContext();
-  const { txtTitleFirst, txtTitleSecond, txtButton }: dataType = selectLang(
-    mainProject_data,
+  const { mainColor, lang } = useMyContext();
+  const { txtTitleFirst, txtTitleSecond, txtButton }: DataType = selectLang(
+    mainProjectData,
     lang
   );
 
-  const { projects }: ProjectDataType = selectLang(project_data, lang);
+  const { projects }: ProjectDataType = selectLang(ProjectData, lang);
   return (
     <Container id="MainProject">
       <Title>
@@ -34,12 +31,11 @@ function MainProject() {
         projects={projects}
         project={1}
         txtButton={txtButton}
-        isReversed={true}
+        isReversed
       />
     </Container>
   );
 }
-//TODO: po wybraniu projektu z listy pozostałych projektów tu powinno sie pojawić dodadkowyc component
 export default MainProject;
 
 const Container = styled.div`
