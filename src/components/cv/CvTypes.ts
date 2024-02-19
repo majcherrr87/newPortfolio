@@ -1,5 +1,5 @@
 export type CvSwitchThemeType = {
-  switchTheme: (prevMode: boolean) => void;
+  switchTheme: [boolean, (value: boolean) => void];
 };
 
 export type VisibleBtnScrollTypes = {

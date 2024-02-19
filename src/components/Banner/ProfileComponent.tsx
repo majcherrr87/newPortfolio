@@ -59,10 +59,10 @@ function ProfileComponent() {
       </Texts>
       <Profile color={mainColor}>
         <img id="my" loading="lazy" src={profileImg} alt="Adrian Majcher" />
-        <IconBxlReact id="react" />
-        <IconStyledComponents id="styled" />
-        <IconTypescript id="typescript" />
-        <IconRedux id="redux" />
+        <IconBxlReact />
+        <IconStyledComponents />
+        <IconTypescript />
+        <IconRedux />
         <IconJavascript />
       </Profile>
     </Container>

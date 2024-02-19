@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function Eye_svg() {
+function EyeSvg() {
   return (
     <EyeIcon fill="#000000" viewBox="0 -2.96 15.929 15.929">
       <path
@@ -16,4 +16,4 @@ const EyeIcon = styled.svg`
   height: 1.5rem;
 `;
 
-export default Eye_svg;
+export default EyeSvg;

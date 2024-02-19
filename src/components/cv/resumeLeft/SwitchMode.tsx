@@ -5,8 +5,10 @@ import { CvSwitchThemeType } from '../CvTypes';
 
 export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
   const [isMoonIcon, setIsMoonIcon] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = switchTheme;
+
   const handleClick = () => {
-    switchTheme((prevMode) => !prevMode);
+    setIsDarkTheme(!isDarkTheme);
     setIsMoonIcon((prev) => !prev);
   };
 

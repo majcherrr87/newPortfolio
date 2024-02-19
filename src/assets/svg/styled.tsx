@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function IconStyledComponents(props) {
+function IconStyledComponents() {
   return (
     <StyledIcon
       viewBox="0 0 32 32"

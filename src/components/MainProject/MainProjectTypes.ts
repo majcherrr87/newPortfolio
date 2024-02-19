@@ -1,7 +1,7 @@
-import { Project } from '../Projects/project-data';
+import { ProjectType } from '../Projects/project-data';
 
 export interface MainProjectTypes {
-  projects: Project[];
+  projects: ProjectType[];
   txtButton: string;
   project: number;
   isReversed: boolean;

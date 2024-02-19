@@ -12,7 +12,7 @@ function CvView() {
         <Header>
           <Nav />
         </Header>
-        <CVMain switchTheme={setIsDarkTheme} />
+        <CVMain switchTheme={[isDarkTheme, setIsDarkTheme]} />
       </Container>
     </ThemeProvider>
   );
