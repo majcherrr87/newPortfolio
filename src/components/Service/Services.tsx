@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { nanoid } from 'nanoid';
 import Card from './Card';
 import { H1Title, Span } from '../../assets/smallComponent';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
-import serviceData from './service-data';
+import serviceData, { CardType } from './service-data';
 
-const Services = () => {
+function Services() {
   const { mainColor, lang } = useMyContext();
   const { txtTitleFirst, txtTitleSecond, txtTitleBig, card } = selectLang(
     serviceData,
@@ -18,10 +19,9 @@ const Services = () => {
       </h4>
       <H1Title>{txtTitleBig}</H1Title>
       <Cards>
-        {card.map(({ img, title, disc, link, skills }, index) => (
+        {card.map(({ img, title, disc, link, skills }: CardType) => (
           <Card
-            key={index}
-            color={mainColor}
+            key={nanoid()}
             link={link}
             img={img}
             title={title}
@@ -32,7 +32,7 @@ const Services = () => {
       </Cards>
     </Container>
   );
-};
+}
 export default Services;
 
 const Container = styled.div`

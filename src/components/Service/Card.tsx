@@ -1,28 +1,23 @@
 import styled from 'styled-components';
+import { nanoid } from 'nanoid';
+import { CardType } from './service-data';
 
-type propsType = {
-  color: string;
-
-  title: string;
-  disc: string;
-};
-
-const Card = ({ link, img, title, disc, skills }: propsType) => {
+function Card({ link, img, title, disc, skills }: CardType) {
   return (
     <Container>
-      <a href={link} target="_blank">
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <img src={img} alt="" />
       </a>
       <h1>{title}</h1>
       <p>{disc}</p>
       <ul>
-        {skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
+        {skills.map((skill) => (
+          <li key={nanoid()}>{skill}</li>
         ))}
       </ul>
     </Container>
   );
-};
+}
 export default Card;
 
 const Container = styled.div`

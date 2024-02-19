@@ -2,15 +2,15 @@ import udemy from '../../assets/img/courses/udemy.webp';
 import alx from '../../assets/img/courses/alx.webp';
 import megaK from '../../assets/img/courses/megak.webp';
 
-interface dataType {
+interface DataType {
   id: number;
   lang: string;
   txtTitleFirst: string;
   txtTitleSecond: string;
   txtTitleBig: string;
-  card: cardType[];
+  card: CardType[];
 }
-interface cardType {
+export interface CardType {
   img: string;
   title: string;
   disc: string;
@@ -18,7 +18,7 @@ interface cardType {
   skills: string[];
 }
 
-const data: dataType[] = [
+const data: DataType[] = [
   {
     id: 1,
     lang: 'POL',

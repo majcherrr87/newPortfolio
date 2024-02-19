@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Eye_svg from '../../assets/svg/eye_svg';
+import { nanoid } from 'nanoid';
+import EyeSvg from '../../assets/svg/EyeSvg';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
-export const VisitCounter = () => {
+export function VisitCounter() {
   const [counter, setCounter] = useState('');
   const { mainColor, lang } = useMyContext();
 
@@ -17,32 +18,36 @@ export const VisitCounter = () => {
             ? '/v1/counter?id=visit'
             : '/v1/counter?id=visit&hit=true',
           baseURL: 'https://api.api-ninjas.com',
-          headers: { 'X-Api-Key': 'yXIxAV2O9sSIOvjTYZOeD9uoX5kesVXR88WVRcNb' },
-          contentType: 'application/json',
+          headers: {
+            'X-Api-Key': 'yXIxAV2O9sSIOvjTYZOeD9uoX5kesVXR88WVRcNb',
+            'Content-Type': 'application/json',
+          },
         })
         .then((res) => {
           setCounter(res.data.value.toString());
           sessionStorage.setItem('counter', 'true');
         })
         .catch((err) => {
-          console.log('something went wrong', err);
+          console.error('something went wrong', err);
         });
-    return () => getCounter();
+    getCounter();
+
+    return () => {};
   }, []);
 
   return (
     <Container>
-      <p>Wyświetlenia </p>
+      <p>{lang === 'POL' ? 'Wyświetlenia' : 'Views'}</p>
 
       <Counter color={mainColor}>
-        <Eye_svg />
-        {counter.split('').map((num, index) => (
-          <p key={index}>{Number(num)}</p>
+        <EyeSvg />
+        {counter.split('').map((num) => (
+          <p key={nanoid()}>{Number(num)}</p>
         ))}
       </Counter>
     </Container>
   );
-};
+}
 const Container = styled.div`
   display: flex;
   gap: 0.5rem;

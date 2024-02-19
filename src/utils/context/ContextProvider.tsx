@@ -1,18 +1,29 @@
-import { createContext, useContext, useReducer } from 'react';
+import { ReactNode, createContext, useContext, useReducer } from 'react';
 import { initialState, reducer } from '../reducer/reducer';
 import { Actions } from '../reducer/actions';
 
 interface ContextType {
   mainColor: string;
   lang: string;
+  indexMainProject: number;
   changeMainColor: (color: string) => void;
   changeLang: () => void;
-  changeIndexMainProject: () => void;
+  changeIndexMainProject: (index: number) => void;
+}
+interface ContextProviderProps {
+  children: ReactNode;
 }
 
-export const Context = createContext();
+export const Context = createContext<ContextType>({
+  mainColor: '',
+  lang: '',
+  indexMainProject: 0,
+  changeMainColor: () => {},
+  changeLang: () => {},
+  changeIndexMainProject: () => {},
+});
 
-export const ContextProvider = ({ children }) => {
+export function ContextProvider({ children }: ContextProviderProps) {
   const [{ mainColor, lang, indexMainProject }, dispatch] = useReducer(
     reducer,
     initialState
@@ -46,7 +57,7 @@ export const ContextProvider = ({ children }) => {
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
-};
+}
 
 export const useMyContext = () => {
   const context: ContextType = useContext(Context);
