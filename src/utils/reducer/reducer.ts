@@ -5,13 +5,15 @@ export const initialState: InitialStateTypes = {
   lang: 'POL',
   indexMainProject: 0,
 };
-export function reducer(prevState = initialState, action: ActionTypes) {
-  const { type, payload } = action;
-  switch (type) {
+export function reducer(
+  prevState: InitialStateTypes,
+  action: ActionTypes
+): InitialStateTypes {
+  switch (action.type) {
     case Actions.CHANGE_MAIN_COLOR:
       return {
         ...prevState,
-        mainColor: payload,
+        mainColor: action.payload,
       };
     case Actions.CHANGE_LANG:
       return {
@@ -21,9 +23,9 @@ export function reducer(prevState = initialState, action: ActionTypes) {
     case Actions.CHANGE_INDEX_MAIN_PROJECT:
       return {
         ...prevState,
-        indexMainProject: payload,
+        indexMainProject: action.payload,
       };
     default:
-      throw new Error(`No case for type ${type} found in reducer`);
+      return prevState;
   }
 }

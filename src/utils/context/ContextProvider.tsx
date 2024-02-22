@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useReducer } from 'react';
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useReducer,
+  useMemo,
+} from 'react';
 import { initialState, reducer } from '../reducer/reducer';
 import { Actions } from '../reducer/actions';
 
@@ -14,14 +20,7 @@ interface ContextProviderProps {
   children: ReactNode;
 }
 
-export const Context = createContext<ContextType>({
-  mainColor: '',
-  lang: '',
-  indexMainProject: 0,
-  changeMainColor: () => {},
-  changeLang: () => {},
-  changeIndexMainProject: () => {},
-});
+export const Context = createContext<ContextType | null>(null);
 
 export function ContextProvider({ children }: ContextProviderProps) {
   const [{ mainColor, lang, indexMainProject }, dispatch] = useReducer(
@@ -47,21 +46,25 @@ export function ContextProvider({ children }: ContextProviderProps) {
     });
   };
 
-  const value: ContextType = {
-    mainColor,
-    lang,
-    indexMainProject,
-    changeMainColor,
-    changeIndexMainProject,
-    changeLang,
-  };
+  const value = useMemo(
+    () => ({
+      mainColor,
+      lang,
+      indexMainProject,
+      changeMainColor,
+      changeLang,
+      changeIndexMainProject,
+    }),
+    [mainColor, lang, indexMainProject]
+  );
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
 export const useMyContext = () => {
-  const context: ContextType = useContext(Context);
-
+  const context = useContext(Context);
+  if (!context) {
+    throw new Error('useMyContext must be used within a ContextProvider');
+  }
   return context;
 };
-// https://www.youtube.com/watch?v=lSh9RyYcnPA&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&index=12
