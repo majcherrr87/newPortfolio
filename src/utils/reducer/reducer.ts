@@ -3,7 +3,7 @@ import { Actions, ActionTypes, InitialStateTypes } from './actions';
 export const initialState: InitialStateTypes = {
   mainColor: '#01be96',
   lang: 'POL',
-  indexMainProject: 0,
+  indexMainProject: 1,
 };
 export function reducer(
   prevState: InitialStateTypes,

@@ -165,7 +165,7 @@ const Nav = styled.div<{ bar: boolean }>`
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: ${(props) => props.theme.colors.main};
+    background-color: ${(props) => props.theme.colors.lightGrey};
     inset: 0;
     justify-content: flex-start;
     align-items: center;

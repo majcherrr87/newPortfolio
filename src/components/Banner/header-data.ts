@@ -21,8 +21,8 @@ export const headerData: HeaderDataType[] = [
   {
     id: 1,
     lang: 'POL',
-    linkName: ['Start', 'Kursy', 'Projecty', 'Klienci', 'Kontakt'],
-    linkId: ['Home', 'Service', 'Project', 'Clients', 'Contact'],
+    linkName: ['Start', 'Projecty', 'Kursy', 'Klienci', 'Kontakt'],
+    linkId: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
     txtOptionalMenu: 'Wybierz kolor',
     txtHello: 'Cześć ',
     txtIam: 'Jestem',
@@ -36,8 +36,8 @@ export const headerData: HeaderDataType[] = [
   {
     id: 2,
     lang: 'ENG',
-    linkName: ['Home', 'Service', 'Project', 'Clients', 'Contact'],
-    linkId: ['Home', 'Service', 'Project', 'Clients', 'Contact'],
+    linkName: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
+    linkId: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
     txtOptionalMenu: 'Select Color',
     txtHello: 'Hello ',
     txtIam: 'I`am',

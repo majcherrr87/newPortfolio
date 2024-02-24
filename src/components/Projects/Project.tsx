@@ -3,12 +3,12 @@ import { useMyContext } from '../../utils/context/ContextProvider';
 import { ProjectType } from './project-data';
 
 function Project({ item }: { item: ProjectType }) {
-  const { src, disc, title, index }: ProjectType = item;
+  const { srcImg, disc, title, index }: ProjectType = item;
   const { changeIndexMainProject } = useMyContext();
 
   return (
     <Container className="project">
-      <img src={src} alt="project" />
+      <img src={srcImg} alt="project" />
       <div className="disc">
         <a href="#MainProject" onClick={() => changeIndexMainProject(index)}>
           <h1>{title}</h1>

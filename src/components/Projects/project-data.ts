@@ -1,4 +1,8 @@
 import img1 from '../../assets/img/project/project1.webp';
+import img2 from '../../assets/img/project/project2.webp';
+import img3 from '../../assets/img/project/project3.webp';
+import img4 from '../../assets/img/project/project4.webp';
+import img5 from '../../assets/img/project/project5.webp';
 import fdf from '../../assets/video/fdf.webm';
 import proj1 from '../../assets/video/qqqq.webm';
 
@@ -13,7 +17,8 @@ export interface ProjectType {
   disc: string;
   linkGitHub: string;
   linkDemo: string;
-  src: string;
+  srcImg: string;
+  srcVideo: string;
 }
 
 export const ProjectData: ProjectDataType[] = [
@@ -23,46 +28,51 @@ export const ProjectData: ProjectDataType[] = [
     projects: [
       {
         index: 0,
-        title: 'Moja strona',
+        title: 'Fabryka dobrej formy',
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się 
         To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .
         To jest polski text który jeswiadomo co tu wpisać to się zmieni .
         To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać ttu wpisać to się zmieni .zmieni .`,
         linkGitHub: `#`,
         linkDemo: `#`,
-        src: fdf,
+        srcImg: img1,
+        srcVideo: fdf,
       },
       {
         index: 1,
-        title: '@ui/ux designer PL',
+        title: 'Portfolio',
         disc: `To jest polski text którę zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: proj1,
+        srcImg: img2,
+        srcVideo: proj1,
       },
       {
         index: 2,
-        title: '@ui/ux designer PL',
+        title: 'Project 3',
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img3,
+        srcVideo: '',
       },
       {
         index: 3,
-        title: 'ui/ux designer PL',
+        title: 'Project 4',
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img4,
+        srcVideo: '',
       },
       {
         index: 4,
-        title: 'ui/ux designer PL',
+        title: 'Project 5',
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img5,
+        srcVideo: '',
       },
     ],
   },
@@ -76,7 +86,8 @@ export const ProjectData: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img1,
+        srcVideo: '',
       },
       {
         index: 1,
@@ -84,7 +95,8 @@ export const ProjectData: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img2,
+        srcVideo: '',
       },
       {
         index: 2,
@@ -92,7 +104,8 @@ export const ProjectData: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img3,
+        srcVideo: '',
       },
       {
         index: 3,
@@ -100,7 +113,8 @@ export const ProjectData: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img4,
+        srcVideo: '',
       },
       {
         index: 4,
@@ -108,7 +122,8 @@ export const ProjectData: ProjectDataType[] = [
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
         linkGitHub: ``,
         linkDemo: ``,
-        src: img1,
+        srcImg: img5,
+        srcVideo: '',
       },
     ],
   },

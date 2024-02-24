@@ -7,7 +7,7 @@ import { ProjectData, ProjectDataType } from '../Projects/project-data';
 import FeaturedProject from './FeaturedProject';
 
 function MainProject() {
-  const { mainColor, lang } = useMyContext();
+  const { mainColor, lang, indexMainProject } = useMyContext();
   const { txtTitleFirst, txtTitleSecond, txtButton }: DataType = selectLang(
     mainProjectData,
     lang
@@ -15,7 +15,7 @@ function MainProject() {
 
   const { projects }: ProjectDataType = selectLang(ProjectData, lang);
   return (
-    <Container id="MainProject">
+    <Container id="Project">
       <Title>
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </Title>
@@ -26,13 +26,14 @@ function MainProject() {
         txtButton={txtButton}
         isReversed={false}
       />
-
-      <FeaturedProject
-        projects={projects}
-        project={1}
-        txtButton={txtButton}
-        isReversed
-      />
+      <div id="MainProject">
+        <FeaturedProject
+          projects={projects}
+          project={indexMainProject}
+          txtButton={txtButton}
+          isReversed
+        />
+      </div>
     </Container>
   );
 }
@@ -43,11 +44,13 @@ const Container = styled.div`
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   padding: 3rem 0;
-
   h1 {
     text-align: center;
   }
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
+  }
+  #MainProject {
+    padding-top: 1rem;
   }
 `;

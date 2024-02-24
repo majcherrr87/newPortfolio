@@ -16,7 +16,7 @@ function Projects() {
     lang
   );
   return (
-    <Container id="Project">
+    <Container>
       <Title>
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </Title>

@@ -7,9 +7,14 @@ export function Copyright() {
   const { lang } = useMyContext();
   const { txt } = selectLang(CopyrightData, lang);
 
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
     <Container>
-      <h1>{txt} &copy; Adrian Majcher</h1>
+      <h1>
+        {txt} &copy; Adrian Majcher {year}
+      </h1>
     </Container>
   );
 }
@@ -19,6 +24,10 @@ const Container = styled.div`
     font-size: 0.9rem;
     font-weight: normal;
     text-align: center;
-    margin: 0.5rem;
+    margin: 3rem;
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      margin: 1rem;
+      font-size: 0.7rem;
+    }
   }
 `;

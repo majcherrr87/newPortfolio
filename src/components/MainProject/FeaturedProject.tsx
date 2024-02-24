@@ -11,13 +11,21 @@ export default function FeaturedProject({
   return (
     <Container isReversed={isReversed}>
       <LeftSiteProject>
-        <video src={projects[project].src} autoPlay loop>
-          <track kind="captions" />
-        </video>
+        {projects[project].srcVideo !== '' ? (
+          <video autoPlay loop muted>
+            <source src={projects[project].srcVideo} type="video/mp4" />
+            <track kind="captions" />
+            <p>`Sorry, Your Browser Doesn`t Support Embedded Videos.</p>
+          </video>
+        ) : (
+          <img src={projects[project].srcImg} alt="" />
+        )}
       </LeftSiteProject>
       <RightSiteProject isReversed={isReversed}>
-        <h1>{projects[project].title}</h1>
-        <p>{projects[project].disc}</p>
+        <div>
+          <h1>{projects[project].title}</h1>
+          <p>{projects[project].disc}</p>
+        </div>
         <ShowProject>
           <a href={projects[project].linkGitHub}>
             <IconMarkGithub16 />
@@ -51,6 +59,7 @@ const Container = styled.div<{ isReversed: boolean }>`
 
 const LeftSiteProject = styled.div`
   width: 50%;
+  display: flex;
   flex: 1;
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     width: 100%;
@@ -58,6 +67,7 @@ const LeftSiteProject = styled.div`
   img,
   video {
     width: 100%;
+    object-fit: cover;
     border: 1px solid #000;
     border-radius: 2rem;
   }
@@ -68,9 +78,13 @@ const RightSiteProject = styled.div<{ isReversed: boolean }>`
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: ${({ isReversed }) => (isReversed ? 'flex-end' : 'flex-start')};
-  p {
+  div > h1 {
+    text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
+    margin-bottom: 1rem;
+  }
+  div > p {
     text-align: justify;
   }
   @media (max-width: calc(${({ theme }) => theme.size.md} + 150px)) {
