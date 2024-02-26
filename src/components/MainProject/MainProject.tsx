@@ -43,7 +43,7 @@ const Container = styled.div`
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 2rem 0;
   h1 {
     text-align: center;
   }

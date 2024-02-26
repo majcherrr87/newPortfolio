@@ -11,14 +11,14 @@ export default function FeaturedProject({
   return (
     <Container isReversed={isReversed}>
       <LeftSiteProject>
-        {projects[project].srcVideo !== '' ? (
-          <video autoPlay loop muted>
+        {projects[project].srcVideo === '' ? (
+          <img src={projects[project].srcImg} key={project} alt="" />
+        ) : (
+          <video key={project} autoPlay loop muted>
             <source src={projects[project].srcVideo} type="video/mp4" />
             <track kind="captions" />
             <p>`Sorry, Your Browser Doesn`t Support Embedded Videos.</p>
           </video>
-        ) : (
-          <img src={projects[project].srcImg} alt="" />
         )}
       </LeftSiteProject>
       <RightSiteProject isReversed={isReversed}>
@@ -94,6 +94,12 @@ const RightSiteProject = styled.div<{ isReversed: boolean }>`
   }
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     width: 100%;
+    & {
+      align-items: center;
+      div > h1 {
+        text-align: center;
+      }
+    }
   }
 `;
 const ShowProject = styled.div`

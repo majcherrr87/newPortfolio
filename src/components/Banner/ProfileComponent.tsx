@@ -46,9 +46,14 @@ function ProfileComponent() {
         <Social color={mainColor}>
           <p>{txtSocial}</p>
           <div className="social-icons">
-            {socialProfile.map(({ icon, href, id }) => (
+            {socialProfile.map(({ icon, href, id, ariaLabel }) => (
               <span key={id}>
-                <a href={href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={ariaLabel}
+                >
                   {icon()}
                 </a>
               </span>

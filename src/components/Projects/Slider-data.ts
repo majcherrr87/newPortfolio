@@ -12,14 +12,14 @@ export const data: ProjectDataType[] = [
     lang: 'POL',
     txtTitleFirst: 'Wszystkie',
     txtTitleSecond: 'Projecty',
-    disc: 'To jest polski text. Amet commodi fuga quas. Aspernatur autem consequatur esse, facere modi molestiae nihil officia quas qui ratione repudiandae, tempora vero vitae? Magni, voluptas!',
+    disc: 'To jest polski text. Amet commodi',
   },
   {
     id: 2,
     lang: 'ENG',
     txtTitleFirst: 'Recent',
     txtTitleSecond: 'Projects',
-    disc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi fuga quas. Aspernatur autem consequatur esse, facere modi molestiae nihil officia quas qui ratione repudiandae, tempora vero vitae? Magni, voluptas!',
+    disc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi !',
   },
 ];
 export const settings = {

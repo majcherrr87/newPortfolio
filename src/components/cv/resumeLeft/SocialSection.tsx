@@ -11,7 +11,7 @@ export function SocialSection() {
           {BsGithub()} majcherrr87
         </Link>
         <Link
-          to="https://github.https://www.linkedin.com/in/adrian-majcher-46a529163//majcherrr87"
+          to="https://www.linkedin.com/in/adrian-majcher-46a529163/"
           target="_blank"
         >
           {BsLinkedin()} adrian-majcher-46a529163

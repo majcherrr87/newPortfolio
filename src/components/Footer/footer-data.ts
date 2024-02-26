@@ -49,16 +49,19 @@ export const socialProfile = [
   {
     id: '1',
     href: 'https://github.com/majcherrr87',
+    ariaLabel: 'Read more about me on GitHub',
     icon: AiFillGithub,
   },
   {
     id: '2',
     href: 'https://www.linkedin.com/in/adrian-majcher-46a529163/',
+    ariaLabel: 'Read more about me on Linkedin',
     icon: AiFillLinkedin,
   },
   {
     id: '3',
     href: 'https://www.facebook.com/adrian.majcher.568',
+    ariaLabel: 'Read more about me on Facebook',
     icon: BsFacebook,
   },
 ];
