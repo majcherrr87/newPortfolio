@@ -87,7 +87,7 @@ export const ProjectData: ProjectDataType[] = [
         linkGitHub: ``,
         linkDemo: ``,
         srcImg: img1,
-        srcVideo: '',
+        srcVideo: fdf,
       },
       {
         index: 1,
@@ -96,7 +96,7 @@ export const ProjectData: ProjectDataType[] = [
         linkGitHub: ``,
         linkDemo: ``,
         srcImg: img2,
-        srcVideo: '',
+        srcVideo: proj1,
       },
       {
         index: 2,
