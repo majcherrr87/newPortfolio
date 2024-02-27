@@ -1,5 +1,5 @@
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { BsFacebook, BsMessenger, BsWhatsapp } from 'react-icons/bs';
+import { BsDiscord, BsMessenger, BsWhatsapp } from 'react-icons/bs';
 import { FiMail, FiPhoneCall } from 'react-icons/fi';
 
 export type FooterDataType = {
@@ -60,9 +60,9 @@ export const socialProfile = [
   },
   {
     id: '3',
-    href: 'https://www.facebook.com/adrian.majcher.568',
-    ariaLabel: 'Read more about me on Facebook',
-    icon: BsFacebook,
+    href: 'https://www.discordapp.com/users/917000525038387211',
+    ariaLabel: 'Read more about me on Discord',
+    icon: BsDiscord,
   },
 ];
 export const contactProfile = [

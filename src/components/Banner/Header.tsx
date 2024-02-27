@@ -169,7 +169,7 @@ const Nav = styled.div<{ bar: boolean }>`
     inset: 0;
     justify-content: flex-start;
     align-items: center;
-    padding-top: ${({ bar }) => (bar ? '6rem' : '0')};
+    padding-top: ${({ bar }) => (bar ? '3rem' : '0')};
     gap: 2rem;
     font-size: 2rem;
     font-weight: 700;
@@ -177,7 +177,11 @@ const Nav = styled.div<{ bar: boolean }>`
     transition: all 400ms ease-in-out;
     overflow: hidden;
     z-index: ${(props) => props.theme.position[9]};
+    @media screen and (max-height: 720px) {
+      gap: 1rem;
+    }
   }
+
   span {
     color: #fff;
     a {
