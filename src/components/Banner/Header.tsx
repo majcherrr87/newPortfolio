@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import theme from '../../assets/theme';
 import POL from '../../assets/img/home/img-pol.webp';
 import ENG from '../../assets/img/home/img-gbr.webp';
+import Portfolio from '../../assets/svg/portfolio';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
 import { selectLang } from '../../utils/changeLang';
@@ -23,7 +24,9 @@ function Header() {
         <span>
           <AiOutlineLike />
         </span>
-        <h1>Portfolio</h1>
+        {/* <h1>Portfolio</h1> */}
+
+        <Portfolio />
       </Logo>
       <Nav bar={hamburgerMenu}>
         {linkName.map((link: string, index: number) => {
@@ -151,10 +154,6 @@ const Logo = styled.div`
   span {
     font-size: 1.8rem;
     color: ${({ color }) => color};
-  }
-  h1 {
-    font-size: 1.2rem;
-    font-weight: 600;
   }
 `;
 const Nav = styled.div<{ bar: boolean }>`
