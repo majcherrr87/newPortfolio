@@ -1,5 +1,5 @@
+import { useLayoutEffect } from 'react';
 import styled from 'styled-components';
-
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
 import { H1Title, Span } from '../../assets/smallComponent';
@@ -10,12 +10,13 @@ export function Education() {
   const { mainColor, lang } = useMyContext();
   const { sectionTitle, name, description, data }: EducationDataType =
     selectLang(dataEducation, lang);
+
   return (
-    <Container>
-      <h4>
+    <Container id="Education">
+      <h4 id="Education-title">
         Edu<Span color={mainColor}>{sectionTitle}</Span>
       </h4>
-      <Content>
+      <Content id="Education-content">
         <img src={wszia} alt={name} />
         <div>
           <H1Title>{name}</H1Title>
@@ -27,7 +28,7 @@ export function Education() {
   );
 }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;

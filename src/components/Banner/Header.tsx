@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 import { AiOutlineLike } from 'react-icons/ai';
 import { GoGear } from 'react-icons/go';
 import styled from 'styled-components';
@@ -7,7 +8,6 @@ import POL from '../../assets/img/home/img-pol.webp';
 import ENG from '../../assets/img/home/img-gbr.webp';
 import Portfolio from '../../assets/svg/portfolio';
 import { useMyContext } from '../../utils/context/ContextProvider';
-
 import { selectLang } from '../../utils/changeLang';
 import { headerData } from './header-data';
 
@@ -24,7 +24,6 @@ function Header() {
         <span>
           <AiOutlineLike />
         </span>
-        {/* <h1>Portfolio</h1> */}
 
         <Portfolio />
       </Logo>
@@ -87,7 +86,7 @@ const DivColor = styled.div<{ item: string }>`
   background-color: ${({ item }) => item};
 `;
 
-const Container = styled.div<{ bar: boolean }>`
+const Container = styled.header<{ bar: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -156,7 +155,7 @@ const Logo = styled.div`
     color: ${({ color }) => color};
   }
 `;
-const Nav = styled.div<{ bar: boolean }>`
+const Nav = styled.nav<{ bar: boolean }>`
   display: grid;
   column-gap: 1rem;
   grid-template-columns: repeat(6, auto);

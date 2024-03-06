@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import IconMarkGithub16 from '../../assets/svg/github';
 import { MainProjectTypes } from './MainProjectTypes';
@@ -8,8 +10,19 @@ export default function FeaturedProject({
   isReversed,
   project,
 }: MainProjectTypes) {
+  const { ref: fratureProjectRef, inView } = useInView();
+  const [view, setView] = useState(false);
+  useEffect(() => {
+    if (inView) setView(true);
+  }, [inView]);
+
   return (
-    <Container isReversed={isReversed}>
+    <Container
+      isReversed={isReversed}
+      id="FeaturedProject"
+      ref={fratureProjectRef}
+      className={`${view && 'visible'}`}
+    >
       <LeftSiteProject>
         {projects[project].srcVideo === '' ? (
           <img src={projects[project].srcImg} key={project} alt="" />
@@ -38,7 +51,7 @@ export default function FeaturedProject({
     </Container>
   );
 }
-const Container = styled.div<{ isReversed: boolean }>`
+const Container = styled.article<{ isReversed: boolean }>`
   display: flex;
   padding: 2rem;
   border: 1px solid #000;

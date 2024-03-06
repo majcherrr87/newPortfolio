@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import SliderComp from './Slider';
 import { Disc, Span, Title } from '../../assets/smallComponent';
@@ -15,13 +16,14 @@ function Projects() {
     data,
     lang
   );
+
   return (
-    <Container>
-      <Title>
+    <Container id="allProject">
+      <Title id="allProject-title">
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </Title>
-      <Disc>{disc}</Disc>
-      <Slide>
+      <Disc id="allProject-description">{disc}</Disc>
+      <Slide id="allProject-slide">
         <SliderComp />
       </Slide>
     </Container>
@@ -29,7 +31,7 @@ function Projects() {
 }
 export default Projects;
 
-const Container = styled.div`
+const Container = styled.section`
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;

@@ -42,8 +42,8 @@ function PortfolioView() {
 
 export default PortfolioView;
 
-const Container = styled.div``;
-const Banner = styled.div`
+const Container = styled.main``;
+const Banner = styled.section`
   background: ${(props) => props.theme.colors.background};
   height: 100vh;
   @media (max-width: ${(props) => props.theme.size.sm}) {

@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
 import profileImg from '../../assets/img/home/Adrian.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
@@ -26,7 +28,7 @@ function ProfileComponent() {
 
   return (
     <Container>
-      <Texts color={mainColor}>
+      <Texts color={mainColor} className="kot">
         <h4>
           {txtHello}
           <span>{txtIam}</span>
@@ -75,12 +77,13 @@ function ProfileComponent() {
 }
 export default ProfileComponent;
 
-const Container = styled.div`
+const Container = styled.article`
   display: flex;
   gap: 2rem;
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 6rem auto;
+
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
   }
@@ -94,6 +97,13 @@ const Texts = styled.div<{ color: string }>`
   position: relative;
   display: flex;
   flex-direction: column;
+  animation: animateTexts 1s;
+
+  @keyframes animateTexts {
+    from {
+      transform: translateX(-100%);
+    }
+  }
 
   h4 {
     padding: 1rem 0;
@@ -179,6 +189,13 @@ const Profile = styled.div<{ color: string }>`
   flex: 1;
   justify-content: center;
   position: relative;
+  animation: animateProfile 1s;
+
+  @keyframes animateProfile {
+    from {
+      transform: translateX(100%);
+    }
+  }
 
   img#my {
     width: 16rem;

@@ -20,7 +20,7 @@ function Card({ link, img, title, disc, skills }: CardType) {
 }
 export default Card;
 
-const Container = styled.div`
+const Container = styled.article`
   background: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;

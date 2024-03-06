@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
 import Card from './Card';
@@ -12,13 +13,14 @@ function Services() {
     serviceData,
     lang
   );
+
   return (
     <Container id="Service">
-      <h4>
+      <h4 id="service-titleSecond">
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </h4>
-      <H1Title>{txtTitleBig}</H1Title>
-      <Cards>
+      <H1Title id="service-title">{txtTitleBig}</H1Title>
+      <Cards id="kot">
         {card.map(({ img, title, disc, link, skills }: CardType) => (
           <Card
             key={nanoid()}
@@ -35,7 +37,7 @@ function Services() {
 }
 export default Services;
 
-const Container = styled.div`
+const Container = styled.section`
   width: 80%;
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
