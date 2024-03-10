@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useInView } from 'react-intersection-observer';
 import profileImg from '../../assets/img/home/Adrian.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';

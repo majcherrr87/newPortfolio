@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 import { AiOutlineLike } from 'react-icons/ai';
 import { GoGear } from 'react-icons/go';
