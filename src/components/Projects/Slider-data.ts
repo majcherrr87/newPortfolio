@@ -11,15 +11,15 @@ export const data: ProjectDataType[] = [
     id: 1,
     lang: 'POL',
     txtTitleFirst: 'Wszystkie',
-    txtTitleSecond: 'Projecty',
-    disc: 'To jest polski text. Amet commodi',
+    txtTitleSecond: 'Projekty',
+    disc: 'Kliknij w opis aby dowiedzieć się więcej',
   },
   {
     id: 2,
     lang: 'ENG',
     txtTitleFirst: 'Recent',
     txtTitleSecond: 'Projects',
-    disc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi !',
+    disc: 'Click on the description to learn more',
   },
 ];
 export const settings = {

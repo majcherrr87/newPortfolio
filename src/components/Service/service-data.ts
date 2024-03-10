@@ -24,7 +24,7 @@ const data: DataType[] = [
     lang: 'POL',
     txtTitleFirst: 'Moje',
     txtTitleSecond: 'Kursy',
-    txtTitleBig: 'Co robię',
+    txtTitleBig: 'Zdobyta wiedza',
     card: [
       {
         img: megaK,
@@ -73,7 +73,7 @@ const data: DataType[] = [
     lang: 'ENG',
     txtTitleFirst: 'My',
     txtTitleSecond: 'Courses',
-    txtTitleBig: 'What I Do',
+    txtTitleBig: 'Acquired knowledge',
     card: [
       {
         img: megaK,

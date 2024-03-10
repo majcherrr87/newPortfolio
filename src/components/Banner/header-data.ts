@@ -21,12 +21,12 @@ export const headerData: HeaderDataType[] = [
   {
     id: 1,
     lang: 'POL',
-    linkName: ['Start', 'Projecty', 'Kursy', 'Klienci', 'Kontakt'],
+    linkName: ['Start', 'Projecty', 'Kursy', 'Polecenia', 'Kontakt'],
     linkId: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
     txtOptionalMenu: 'Wybierz kolor',
     txtHello: 'Cześć ',
     txtIam: 'Jestem',
-    txtLong: `Tu będzie jakiś dłuższy text, teraz tak tylko na próbę coś tam napisałem żeby było. Tralala lalal kot lisa to naklepszy kot na świecie`,
+    txtLong: `Jestem początkującym programistą JavaScript z pasją do tworzenia pięknych i funkcjonalnych stron internetowych. Posiadam doświadczenie w pracy z różnymi narzędziami frontendu, takimi jak React, TypeScript, HTML i CSS. W wolnym czasie lubię tworzyć gry webowe i uczyć się nowych technologii.`,
     txtBtnShowCv: 'Zobacz CV',
     linkBtnShowCv: '/cv',
     txtBtnDownloadCv: 'Pobierz CV',
@@ -36,14 +36,12 @@ export const headerData: HeaderDataType[] = [
   {
     id: 2,
     lang: 'ENG',
-    linkName: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
+    linkName: ['Home', 'Project', 'Service', 'Reviews', 'Contact'],
     linkId: ['Home', 'Project', 'Service', 'Clients', 'Contact'],
     txtOptionalMenu: 'Select Color',
     txtHello: 'Hello ',
     txtIam: 'I`am',
-    txtLong: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-          ad, aliquid at dolor laudantium natus optio possimus quisquam suscipit
-          tenetur.`,
+    txtLong: `I am a beginner JavaScript developer with a passion for creating beautiful and functional web pages. I have experience working with various frontend tools, such as React, TypeScript, HTML, and CSS. In my free time, I enjoy creating web games and learning new technologies.`,
     txtBtnShowCv: 'Watch CV',
     linkBtnShowCv: '/cv',
     txtBtnDownloadCv: 'Download CV',
