@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -16,8 +17,19 @@ function Clients() {
   clientDisc = clients.map((item) => (
     <ClientSlider item={item} key={item.name} />
   ));
+
+  const { ref: ServicesRef, inView } = useInView();
+  const [view, setView] = useState('');
+  useEffect(() => {
+    if (inView) setView('visible');
+  }, [inView]);
   return (
-    <Container id="Clients" color={mainColor}>
+    <Container
+      id="Clients"
+      color={mainColor}
+      ref={ServicesRef}
+      className={view}
+    >
       <Span color={mainColor}>{title}</Span>
       <H1Title>{subTitle}</H1Title>
       <Testimonials>
@@ -53,6 +65,8 @@ const Container = styled.div`
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   padding: 4rem 0;
+  opacity: 0;
+  transform: translateY(30%);
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
   }
@@ -83,6 +97,15 @@ const Container = styled.div`
   }
   .slick-dots li {
     margin: 0;
+  }
+  &.visible {
+    animation: animateClients 1s forwards;
+  }
+  @keyframes animateClients {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 const Testimonials = styled.div`

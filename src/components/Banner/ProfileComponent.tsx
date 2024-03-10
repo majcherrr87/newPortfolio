@@ -4,7 +4,6 @@ import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
 import { headerData } from './header-data';
 import IconBxlReact from '../../assets/svg/react';
-import IconStyledComponents from '../../assets/svg/styled';
 import IconTypescript from '../../assets/svg/typescript';
 import IconRedux from '../../assets/svg/redux';
 import IconJavascript from '../../assets/svg/javascript';
@@ -65,7 +64,6 @@ function ProfileComponent() {
       <Profile color={mainColor}>
         <img id="my" loading="lazy" src={profileImg} alt="Adrian Majcher" />
         <IconBxlReact />
-        <IconStyledComponents />
         <IconTypescript />
         <IconRedux />
         <IconJavascript />

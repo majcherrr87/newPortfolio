@@ -47,9 +47,8 @@ const Container = styled.section`
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   padding: 3rem 0;
-  scale: 0;
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(30%);
 
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
@@ -59,7 +58,6 @@ const Container = styled.section`
   }
   @keyframes animateService {
     to {
-      scale: 1;
       opacity: 1;
       transform: translateY(0);
     }

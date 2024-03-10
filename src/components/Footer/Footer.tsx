@@ -1,4 +1,5 @@
-import { useRef, useState, FormEvent } from 'react';
+import { useRef, useState, FormEvent, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { MdAlternateEmail } from 'react-icons/md';
 import { CgProfile } from 'react-icons/cg';
@@ -60,10 +61,15 @@ function Footer() {
       e.currentTarget.reset();
     }
   };
+  const { ref: FooterRef, inView } = useInView();
+  const [view, setView] = useState('');
+  useEffect(() => {
+    if (inView) setView('visible');
+  }, [inView]);
 
   return (
-    <Container id="Contact">
-      <Profile color={mainColor}>
+    <Container id="Contact" className={view}>
+      <Profile color={mainColor} ref={FooterRef}>
         <H1Title>Portfolio</H1Title>
 
         <div className="address">
@@ -166,6 +172,22 @@ const Container = styled.div`
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     flex-direction: column;
     gap: 3rem;
+  }
+  &.visible > div:nth-child(1) {
+    animation: animateFooterLeft 1s forwards;
+  }
+  &.visible > div:nth-child(2) {
+    animation: animateFooterRight 1s forwards;
+  }
+  @keyframes animateFooterLeft {
+    from {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes animateFooterRight {
+    from {
+      transform: translateX(-100%);
+    }
   }
 `;
 const Profile = styled.div`
