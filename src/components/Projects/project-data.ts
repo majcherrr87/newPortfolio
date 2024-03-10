@@ -41,7 +41,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 1,
         title: 'Portfolio',
-        disc: `To jest polski text którę zmieni .`,
+        disc: `To jest polski text którę zmieni ;).`,
         linkGitHub: ``,
         linkDemo: ``,
         srcImg: img2,
