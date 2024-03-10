@@ -43,7 +43,7 @@ const Container = styled.footer`
   }
   @keyframes animateCopy {
     from {
-      transform: translateY(200%);
+      transform: translateY(100%);
     }
   }
 `;
