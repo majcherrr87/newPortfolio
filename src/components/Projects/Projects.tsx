@@ -1,4 +1,5 @@
-import { useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import SliderComp from './Slider';
 import { Disc, Span, Title } from '../../assets/smallComponent';
@@ -17,9 +18,15 @@ function Projects() {
     lang
   );
 
+  const { ref: projectRef, inView } = useInView();
+  const [view, setView] = useState('');
+  useEffect(() => {
+    if (inView) setView('visible');
+  }, [inView]);
+
   return (
-    <Container id="allProject">
-      <Title id="allProject-title">
+    <Container id="allProject" className={view}>
+      <Title id="allProject-title" ref={projectRef}>
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </Title>
       <Disc id="allProject-description">{disc}</Disc>
@@ -37,8 +44,20 @@ const Container = styled.section`
   margin: 0 auto;
   padding: 3rem 0;
   text-align: center;
+  scale: 0;
+  opacity: 0;
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
+  }
+  &.visible {
+    animation: animateProject 1s forwards;
+  }
+
+  @keyframes animateProject {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
   }
 `;
 const Slide = styled.div``;

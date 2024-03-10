@@ -1,4 +1,5 @@
-import { useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
@@ -11,9 +12,15 @@ export function Education() {
   const { sectionTitle, name, description, data }: EducationDataType =
     selectLang(dataEducation, lang);
 
+  const { ref: EducationRef, inView } = useInView();
+  const [view, setView] = useState('');
+  useEffect(() => {
+    if (inView) setView('visible');
+  }, [inView]);
+
   return (
-    <Container id="Education">
-      <h4 id="Education-title">
+    <Container id="Education" className={view}>
+      <h4 id="Education-title" ref={EducationRef}>
         Edu<Span color={mainColor}>{sectionTitle}</Span>
       </h4>
       <Content id="Education-content">
@@ -35,6 +42,14 @@ const Container = styled.section`
   padding: 3rem 0;
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
+  }
+  &.visible {
+    animation: animateEducation 1s forwards;
+  }
+  @keyframes animateEducation {
+    from {
+      transform: translateX(100%);
+    }
   }
 `;
 const Content = styled.div`

@@ -1,6 +1,6 @@
-import { useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
-import { nanoid } from 'nanoid';
 import Card from './Card';
 import { H1Title, Span } from '../../assets/smallComponent';
 import { useMyContext } from '../../utils/context/ContextProvider';
@@ -13,17 +13,22 @@ function Services() {
     serviceData,
     lang
   );
+  const { ref: ServicesRef, inView } = useInView();
+  const [view, setView] = useState('');
+  useEffect(() => {
+    if (inView) setView('visible');
+  }, [inView]);
 
   return (
-    <Container id="Service">
-      <h4 id="service-titleSecond">
+    <Container id="Service" className={view}>
+      <h4 id="service-titleSecond" ref={ServicesRef}>
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </h4>
       <H1Title id="service-title">{txtTitleBig}</H1Title>
-      <Cards id="kot">
+      <Cards>
         {card.map(({ img, title, disc, link, skills }: CardType) => (
           <Card
-            key={nanoid()}
+            key={title}
             link={link}
             img={img}
             title={title}
@@ -42,8 +47,22 @@ const Container = styled.section`
   max-width: ${({ theme }) => theme.size.ld};
   margin: 0 auto;
   padding: 3rem 0;
+  scale: 0;
+  opacity: 0;
+  transform: translateY(-100%);
+
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;
+  }
+  &.visible {
+    animation: animateService 1s forwards;
+  }
+  @keyframes animateService {
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 const Cards = styled.div`

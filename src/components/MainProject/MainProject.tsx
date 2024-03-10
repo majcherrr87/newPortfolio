@@ -17,14 +17,14 @@ function MainProject() {
   const { projects }: ProjectDataType = selectLang(ProjectData, lang);
 
   const { ref: MainProjectRef, inView } = useInView();
-  const [view, setView] = useState(false);
+  const [view, setView] = useState('');
   useEffect(() => {
-    if (inView) setView(true);
+    if (inView) setView('visible');
   }, [inView]);
 
   return (
     <Container id="Project">
-      <Title ref={MainProjectRef} className={`${view && 'visible'}`}>
+      <Title ref={MainProjectRef} className={view}>
         {txtTitleFirst} <Span color={mainColor}>{txtTitleSecond}</Span>
       </Title>
 
