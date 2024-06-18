@@ -6,6 +6,7 @@ import { Disc, Span, Title } from '../../assets/smallComponent';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { data, ProjectDataType } from './Slider-data';
 import { selectLang } from '../../utils/changeLang';
+import { HandSwipe } from '../../assets/svg/handSwipe';
 
 import './style.css';
 import 'slick-carousel/slick/slick.css';
@@ -33,6 +34,7 @@ function Projects() {
       <Slide id="allProject-slide">
         <SliderComp />
       </Slide>
+      <HandSwipe />
     </Container>
   );
 }

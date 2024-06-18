@@ -54,8 +54,6 @@ const Container = styled.section`
   padding: 2rem 0;
   h1 {
     text-align: center;
-    scale: 0;
-    opacity: 0;
   }
   @media (max-width: ${({ theme }) => theme.size.md}) {
     width: 90%;

@@ -14,7 +14,7 @@ export function CVMain({ switchTheme }: CvSwitchThemeType) {
   );
 }
 const MainContainer = styled.main`
-  width: 100%;
+  max-width: 1200px;
   @media screen and (min-width: 968px) {
     margin-left: auto;
     margin-right: auto;

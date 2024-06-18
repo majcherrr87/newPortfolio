@@ -38,12 +38,25 @@ export default function FeaturedProject({
         <div>
           <h1>{projects[project].title}</h1>
           <p>{projects[project].disc}</p>
+          <div>
+            {projects[project].technologies.map((technology) => (
+              <span key={technology}>{technology}</span>
+            ))}
+          </div>
         </div>
         <ShowProject>
-          <a href={projects[project].linkGitHub}>
+          <a
+            href={projects[project].linkGitHub}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <IconMarkGithub16 />
           </a>
-          <a href={projects[project].linkDemo}>
+          <a
+            href={projects[project].linkDemo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button type="button">{txtButton}</button>
           </a>
         </ShowProject>
@@ -97,9 +110,25 @@ const RightSiteProject = styled.div<{ isReversed: boolean }>`
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
     margin-bottom: 1rem;
   }
-  div > p {
-    text-align: justify;
+  div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: ${({ isReversed }) =>
+      isReversed ? 'flex-end' : 'flex-start'};
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    span {
+      color: black;
+      background: #505062;
+      border-radius: 10px;
+      padding: 4px;
+      &:hover {
+        color: #9999c2;
+      }
+    }
   }
+
   @media (max-width: calc(${({ theme }) => theme.size.md} + 150px)) {
     h1 {
       font-size: 1.5rem;

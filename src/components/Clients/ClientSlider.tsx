@@ -44,6 +44,7 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.background};
   padding: 1.5rem 1rem;
   margin: 0 1rem;
+  height: 220px;
 `;
 const Header = styled.div`
   display: flex;
