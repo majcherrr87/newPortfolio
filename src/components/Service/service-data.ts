@@ -1,4 +1,3 @@
-import udemy from '../../assets/img/courses/udemy.webp';
 import alx from '../../assets/img/courses/alx.webp';
 import megaK from '../../assets/img/courses/megak.webp';
 import zrozumiecReact from '../../assets/img/courses/zrozumiecReact.webp';
