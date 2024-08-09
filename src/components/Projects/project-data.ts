@@ -3,8 +3,10 @@ import img2 from '../../assets/img/project/project2.webp';
 import img3 from '../../assets/img/project/project3.webp';
 import img4 from '../../assets/img/project/project4.webp';
 import img5 from '../../assets/img/project/project5.webp';
-import fdf from '../../assets/video/fdf.webm';
 import imageFdf from '../../assets/img/project/ImageFdf.webp';
+import ProjectReactNative from '../../assets/img/project/ProjectReactNative.webp';
+import fdf from '../../assets/video/fdf.webm';
+import WeatherApp from '../../assets/video/weatherapp2.webm';
 
 import proj1 from '../../assets/video/qqqq.webm';
 
@@ -65,8 +67,8 @@ export const ProjectData: ProjectDataType[] = [
         linkGitHub: ``,
         linkDemo: ``,
         technologies: [],
-        srcImg: img3,
-        srcVideo: '',
+        srcImg: ProjectReactNative,
+        srcVideo: WeatherApp,
       },
       {
         index: 3,
