@@ -2,7 +2,8 @@ import { ProjectType } from '../Projects/project-data';
 
 export interface MainProjectTypes {
   projects: ProjectType[];
-  txtButton: string;
+  txtButtonLiveDemo: string;
+  txtButtonGithub: string;
   project: number;
   isReversed: boolean;
 }

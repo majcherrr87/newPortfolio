@@ -10,10 +10,12 @@ import FeaturedProject from './FeaturedProject';
 
 function MainProject() {
   const { mainColor, lang, indexMainProject } = useMyContext();
-  const { txtTitleFirst, txtTitleSecond, txtButton }: DataType = selectLang(
-    mainProjectData,
-    lang
-  );
+  const {
+    txtTitleFirst,
+    txtTitleSecond,
+    txtButtonGithub,
+    txtButtonLiveDemo,
+  }: DataType = selectLang(mainProjectData, lang);
   const { projects }: ProjectDataType = selectLang(ProjectData, lang);
 
   const { ref: MainProjectRef, inView } = useInView();
@@ -31,14 +33,16 @@ function MainProject() {
       <FeaturedProject
         projects={projects}
         project={0}
-        txtButton={txtButton}
+        txtButtonLiveDemo={txtButtonLiveDemo}
+        txtButtonGithub={txtButtonGithub}
         isReversed={false}
       />
       <div id="MainProject">
         <FeaturedProject
           projects={projects}
           project={indexMainProject}
-          txtButton={txtButton}
+          txtButtonLiveDemo={txtButtonLiveDemo}
+          txtButtonGithub={txtButtonGithub}
           isReversed
         />
       </div>

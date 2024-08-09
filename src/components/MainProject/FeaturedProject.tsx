@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
+import { ViewDemo } from '../../assets/svg/ViewDemo';
 import IconMarkGithub16 from '../../assets/svg/github';
 import { MainProjectTypes } from './MainProjectTypes';
 
 export default function FeaturedProject({
   projects,
-  txtButton,
+  txtButtonLiveDemo,
+  txtButtonGithub,
   isReversed,
   project,
 }: MainProjectTypes) {
-  const { ref: fratureProjectRef, inView } = useInView();
+  const { ref: fraturedProjectRef, inView } = useInView();
   const [view, setView] = useState(false);
   useEffect(() => {
     if (inView) setView(true);
@@ -20,10 +23,10 @@ export default function FeaturedProject({
     <Container
       isReversed={isReversed}
       id="FeaturedProject"
-      ref={fratureProjectRef}
-      className={`${view && 'visible'}`}
+      ref={fraturedProjectRef}
+      className={view ? 'visible' : ''}
     >
-      <LeftSiteProject>
+      <ProjectMediaSection>
         {projects[project].srcVideo === '' ? (
           <img src={projects[project].srcImg} key={project} alt="" />
         ) : (
@@ -33,34 +36,39 @@ export default function FeaturedProject({
             <p>`Sorry, Your Browser Doesn`t Support Embedded Videos.</p>
           </video>
         )}
-      </LeftSiteProject>
-      <RightSiteProject isReversed={isReversed}>
+      </ProjectMediaSection>
+      <ProjectDetails isReversed={isReversed}>
         <div>
           <h1>{projects[project].title}</h1>
           <p>{projects[project].disc}</p>
-          <div>
+          <TechStack isReversed={isReversed}>
+            <p>Tech:</p>
             {projects[project].technologies.map((technology) => (
               <span key={technology}>{technology}</span>
             ))}
-          </div>
+          </TechStack>
         </div>
         <ShowProject>
-          <a
-            href={projects[project].linkGitHub}
+          <Link
+            to={projects[project].linkGitHub}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconMarkGithub16 />
-          </a>
-          <a
-            href={projects[project].linkDemo}
+            <button type="button">
+              {txtButtonGithub} <IconMarkGithub16 />
+            </button>
+          </Link>
+          <Link
+            to={projects[project].linkDemo}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button type="button">{txtButton}</button>
-          </a>
+            <button type="button">
+              {txtButtonLiveDemo} <ViewDemo />
+            </button>
+          </Link>
         </ShowProject>
-      </RightSiteProject>
+      </ProjectDetails>
     </Container>
   );
 }
@@ -83,7 +91,7 @@ const Container = styled.article<{ isReversed: boolean }>`
   }
 `;
 
-const LeftSiteProject = styled.div`
+const ProjectMediaSection = styled.div`
   width: 50%;
   display: flex;
   flex: 1;
@@ -98,7 +106,7 @@ const LeftSiteProject = styled.div`
     border-radius: 2rem;
   }
 `;
-const RightSiteProject = styled.div<{ isReversed: boolean }>`
+const ProjectDetails = styled.div<{ isReversed: boolean }>`
   width: 50%;
   flex: 1;
   display: flex;
@@ -106,27 +114,11 @@ const RightSiteProject = styled.div<{ isReversed: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   align-items: ${({ isReversed }) => (isReversed ? 'flex-end' : 'flex-start')};
-  div > h1 {
+  cursor: default;
+  div > h1,
+  p {
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};
     margin-bottom: 1rem;
-  }
-  div > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: ${({ isReversed }) =>
-      isReversed ? 'flex-end' : 'flex-start'};
-    gap: 0.5rem;
-    margin-top: 1rem;
-
-    span {
-      color: black;
-      background: #505062;
-      border-radius: 10px;
-      padding: 4px;
-      &:hover {
-        color: #9999c2;
-      }
-    }
   }
 
   @media (max-width: calc(${({ theme }) => theme.size.md} + 150px)) {
@@ -151,10 +143,39 @@ const ShowProject = styled.div`
 
   button {
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    border-radius: 10px;
+    align-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    svg {
+      font-size: 1.7rem;
+    }
   }
-  a:first-of-type {
-    margin-top: 1rem;
-    color: white;
+`;
+const TechStack = styled.div<{ isReversed: boolean }>`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: ${({ isReversed }) =>
+    isReversed ? 'flex-end' : 'flex-start'};
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  span {
+    color: black;
+    font-size: 0.8rem;
+    background: #505062;
+    border-radius: 8px;
+    padding: 5px;
+
+    &:hover {
+      color: #9999c2;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.size.sm}) {
+    justify-content: left;
   }
 `;

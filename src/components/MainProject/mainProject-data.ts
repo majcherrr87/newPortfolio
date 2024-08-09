@@ -3,7 +3,8 @@ export interface DataType {
   lang: string;
   txtTitleFirst: string;
   txtTitleSecond: string;
-  txtButton: string;
+  txtButtonGithub: string;
+  txtButtonLiveDemo: string;
 }
 
 export const mainProjectData: DataType[] = [
@@ -12,13 +13,15 @@ export const mainProjectData: DataType[] = [
     lang: 'POL',
     txtTitleFirst: 'Moje',
     txtTitleSecond: 'Projekty',
-    txtButton: 'Zobacz Projekt',
+    txtButtonLiveDemo: 'Pokaz na żywo',
+    txtButtonGithub: 'Zobacz kod',
   },
   {
     id: 2,
     lang: 'ENG',
     txtTitleFirst: 'My',
     txtTitleSecond: 'Projects',
-    txtButton: 'Live demo',
+    txtButtonLiveDemo: 'Live demo',
+    txtButtonGithub: 'View code',
   },
 ];
