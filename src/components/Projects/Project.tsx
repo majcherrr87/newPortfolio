@@ -48,7 +48,7 @@ const Container = styled.div`
     text-align: left;
     padding: 0.5rem;
     transition: all 400ms ease-in-out;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
     a {
       margin-left: 0.8rem;
       color: white;

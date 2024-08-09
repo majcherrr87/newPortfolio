@@ -54,7 +54,7 @@ export default function FeaturedProject({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button type="button">
+            <button type="button" disabled={!projects[project].linkGitHub}>
               {txtButtonGithub} <IconMarkGithub16 />
             </button>
           </Link>
