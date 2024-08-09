@@ -227,10 +227,10 @@ const Options = styled.div<{ btnOption: boolean }>`
   }
   .container-color-list {
     text-align: center;
-    color: darkred;
+    color: white;
     position: absolute;
     padding: 1rem;
-    background: white;
+    background: #191923;
     visibility: ${({ btnOption }) => (btnOption ? 'visible' : 'hidden')};
 
     .color-list {

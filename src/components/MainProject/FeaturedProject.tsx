@@ -40,9 +40,9 @@ export default function FeaturedProject({
       <ProjectDetails isReversed={isReversed}>
         <div>
           <h1>{projects[project].title}</h1>
-          <p>{projects[project].disc}</p>
+          <span>{projects[project].disc}</span>
           <TechStack isReversed={isReversed}>
-            <p>Tech:</p>
+            <span>Tech:</span>
             {projects[project].technologies.map((technology) => (
               <span key={technology}>{technology}</span>
             ))}
@@ -63,7 +63,7 @@ export default function FeaturedProject({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button type="button">
+            <button type="button" disabled={!projects[project].linkDemo}>
               {txtButtonLiveDemo} <ViewDemo />
             </button>
           </Link>
@@ -164,7 +164,7 @@ const TechStack = styled.div<{ isReversed: boolean }>`
   gap: 0.5rem;
   margin-top: 1rem;
 
-  span {
+  span:not(:first-child) {
     color: black;
     font-size: 0.8rem;
     background: #505062;

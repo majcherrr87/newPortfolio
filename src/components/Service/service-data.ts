@@ -33,12 +33,11 @@ const data: DataType[] = [
         link: 'https://www.megak.pl/',
         skills: [
           'JavaScript, TypeScript',
-          'Node.js, Express.js, Handlebars',
-          'Bazy relacyjne i nierelacyjne, MySQL, MongoDb',
-          'React',
-          'NestJS, TypeORM,',
+          'React, ReactNative',
+          'Node.js, Express.js, NestJS',
+          'Bazy danych, MySQL, MongoDb',
           'Figma',
-          'Git, Scrum,',
+          'Git',
         ],
       },
       {
@@ -83,12 +82,11 @@ const data: DataType[] = [
         link: 'https://www.megak.pl/',
         skills: [
           'JavaScript, TypeScript',
-          'Node.js, Express.js, Handlebars',
-          'Relational and non-relational databases, MySQL, MongoDb',
-          'React',
-          'NestJS, TypeORM,',
+          'React, ReactNative',
+          'Node.js, Express.js, NestJS',
+          'Bazy danych, MySQL, MongoDb',
           'Figma',
-          'Git, Scrum,',
+          'Git',
         ],
       },
       {
