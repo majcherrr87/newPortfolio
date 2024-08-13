@@ -20,7 +20,7 @@ export function Nav() {
             return (
               <li role="none" key={name} onClick={handleClick}>
                 <a href={`${link}`}>
-                  {icon()} {name}
+                  {icon({ title: name })} {name}
                 </a>
               </li>
             );

@@ -100,7 +100,7 @@ const ProjectMediaSection = styled.div`
   }
   img,
   video {
-    max-height: 350px;
+    width: 100%;
     object-fit: cover;
     border: 1px solid #000;
     border-radius: 2rem;

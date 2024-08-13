@@ -13,35 +13,35 @@ export function ExperienceSection() {
   const data: DataType[] = [
     {
       id: '1',
-      name: 'MEGA KURS JAVASCRIPTU',
+      name: 'MEGA KURS',
       description:
-        '14-miesięczny kurs JavaScriptu. Przygotowujący uczestników do pracy jako junior JavaScript Developer, na kursie poznałem między innymi:',
+        '14-miesięczny kurs on-line. Przygotowujący uczestników do pracy jako junior JavaScript Developer, na kursie poznałem między innymi:',
       details: [
-        'JavaScript, TypeScript, OOP, FP, ES6+, asynchroniczność',
-        'Node.js, Express.js, React.js, NestJS, TypeORM, REST, API, TDD',
-        'Bazy relacyjne i nierelacyjne, MySQL, MongoDb, Git, Scrum',
+        'JavaScript, TypeScript, React, ReactNative',
+        'Node, Express, SQL, MongoDB',
+        'Css, Styled-Components',
+        'Git, Figma',
       ],
     },
     {
       id: '2',
-      name: 'KURS STACJONARNY - PROGRAMISTA PHP',
+      name: 'Zrozumieć React',
+      description: 'Zaawansowany kurs react',
+      details: [
+        'Programowanie w TypeScript',
+        'React router, Redux, TanstackQuery',
+        'Next.js, Css in JS',
+      ],
+    },
+    {
+      id: '3',
+      name: '#!/ALX - PROGRAMISTA PHP',
       description:
         '6-miesięczny stacjonarny kurs programowania w języku PHP na którym uczyłem się między innymi:',
       details: [
         'Wstęp do PHP, HTML, CSS, XML',
         'MySQL, Postgres, Diagramy ERD, UML',
         'Programowanie Obiektowe JavaScript',
-      ],
-    },
-    {
-      id: '3',
-      name: 'KURSY ON-LINE',
-      details: [
-        'Programowanie w JavaScript',
-        'React od podstaw',
-        'Zaawansowane projekty w CSS i JavaScript',
-        'Node.js, Express i MongoDB',
-        'Wprowadzenie do Git i GitHub',
       ],
     },
   ];

@@ -45,17 +45,15 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
             </BtnDownload>
           </HomeData>
           <HomeAddress>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={`http://www.${userWww} `}
-            >
-              {TbWorldWww()} {userWww}
+            <a target="_blank" rel="noopener noreferrer" href={userWww}>
+              {TbWorldWww({ title: 'Visit my website.' })} {userWww}
             </a>
             <Link to="mailto:majcherrr87@gmail.com">
-              {BiEnvelope()} majcherrr87@gmail.com
+              {BiEnvelope({ title: 'Write to me' })} majcherrr87@gmail.com
             </Link>
-            <Link to="tel:513354369">{BiPhone()} 513-354-369</Link>
+            <Link to="tel:513354369">
+              {BiPhone({ title: 'Call me' })} 513-354-369
+            </Link>
           </HomeAddress>
         </HomeContainer>
         <SwitchMode switchTheme={switchTheme} />

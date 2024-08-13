@@ -4,8 +4,8 @@ type DataType = [string[], string[]];
 
 export function SkillsSection() {
   const data: DataType = [
-    ['JavaScript', 'TypeScript', 'StyledComponent', 'React'],
-    ['Node', 'Express', 'SQL'],
+    ['JavaScript', 'TypeScript', 'React', 'StyledComponent'],
+    ['Node', 'Express', 'SQL', 'ReactNative'],
   ];
   return (
     <Container id="skills">

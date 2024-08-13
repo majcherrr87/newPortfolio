@@ -12,7 +12,7 @@ export function EduSection() {
   const data: DataType[] = [
     {
       id: '1',
-      name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I ADMINISTRACJI',
+      name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I\u00A0ADMINISTRACJI',
       direction: 'Inżynier Oprogramowania',
       city: 'Zamość',
       years: '2013 - 2017',

@@ -1,12 +1,12 @@
 import img1 from '../../assets/img/project/project1.webp';
-import img2 from '../../assets/img/project/project2.webp';
+import thisApp from '../../assets/img/project/ThisApp.webp';
 import img3 from '../../assets/img/project/project3.webp';
 import img4 from '../../assets/img/project/project4.webp';
 import img5 from '../../assets/img/project/project5.webp';
 import imageFdf from '../../assets/img/project/ImageFdf.webp';
 import ProjectReactNative from '../../assets/img/project/ProjectReactNative.webp';
 import fdf from '../../assets/video/fdf.webm';
-import WeatherApp from '../../assets/video/weatherapp2.webm';
+import WeatherApp from '../../assets/video/weatherApp.webm';
 
 import proj1 from '../../assets/video/qqqq.webm';
 
@@ -38,11 +38,21 @@ export const ProjectData: ProjectDataType[] = [
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
         linkDemo: `https://majcher.netlify.app/`,
         technologies: ['TypeSctipt', 'React', 'Redux', 'StyledComponent'],
-        srcImg: img2,
+        srcImg: thisApp,
         srcVideo: proj1,
       },
       {
         index: 1,
+        title: 'WeatherApp',
+        disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
+        linkGitHub: 'https://github.com/majcherrr87/LearningReactNative',
+        linkDemo: ``,
+        technologies: [],
+        srcImg: ProjectReactNative,
+        srcVideo: WeatherApp,
+      },
+      {
+        index: 2,
         title: 'Fabryka dobrej formy',
         disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się 
         To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .
@@ -59,16 +69,6 @@ export const ProjectData: ProjectDataType[] = [
         ],
         srcImg: imageFdf,
         srcVideo: fdf,
-      },
-      {
-        index: 2,
-        title: 'Project 3',
-        disc: `To jest polski text który jest tutaj tylko na próbę jak będzie wiadomo co tu wpisać to się zmieni .`,
-        linkGitHub: ``,
-        linkDemo: ``,
-        technologies: [],
-        srcImg: ProjectReactNative,
-        srcVideo: WeatherApp,
       },
       {
         index: 3,
@@ -103,7 +103,7 @@ export const ProjectData: ProjectDataType[] = [
         linkGitHub: ``,
         linkDemo: ``,
         technologies: [],
-        srcImg: img2,
+        srcImg: thisApp,
         srcVideo: proj1,
       },
       {

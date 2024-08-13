@@ -8,13 +8,14 @@ export function SocialSection() {
       <h2 className="section-title">SOCIAL</h2>
       <Social>
         <Link to="https://github.com/majcherrr87" target="_blank">
-          {BsGithub()} majcherrr87
+          {BsGithub({ title: 'Check me out on GitHub.' })} majcherrr87
         </Link>
         <Link
           to="https://www.linkedin.com/in/adrian-majcher-46a529163/"
           target="_blank"
         >
-          {BsLinkedin()} adrian-majcher-46a529163
+          {BsLinkedin({ title: 'Check me out on Linkedin.' })}{' '}
+          adrian-majcher-46a529163
         </Link>
       </Social>
     </Container>
