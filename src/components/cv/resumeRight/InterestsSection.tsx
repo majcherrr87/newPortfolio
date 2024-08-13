@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FaHeadphonesAlt } from 'react-icons/fa';
-import { BiSolidPlaneAlt, BiBook, BiDumbbell } from 'react-icons/bi';
+import { FaHeadphonesAlt, FaHiking } from 'react-icons/fa';
+import { BiSolidPlaneAlt, BiBook, BiDumbbell, BiRun } from 'react-icons/bi';
 
 export function InterestsSection() {
   return (
@@ -9,23 +9,28 @@ export function InterestsSection() {
 
       <Container>
         <Content>
-          {FaHeadphonesAlt()}
+          {BiRun({ title: 'Cross-country running' })}
+          <span>Run</span>
+        </Content>
+
+        <Content>
+          {FaHiking({ title: 'Hiking trips' })}
+          <span>Hiking trips</span>
+        </Content>
+
+        <Content>
+          {BiDumbbell({ title: 'Spending time at the gym' })}
+          <span>Fitness</span>
+        </Content>
+
+        <Content>
+          {FaHeadphonesAlt({ title: '"Listen to rock music"' })}
           <span>Music</span>
         </Content>
 
         <Content>
-          {BiSolidPlaneAlt()}
-          <span>Travel</span>
-        </Content>
-
-        <Content>
-          {BiBook()}
+          {BiBook({ title: 'Reading about healthy lifestyle' })}
           <span>Read</span>
-        </Content>
-
-        <Content>
-          {BiDumbbell()}
-          <span>Fitness</span>
         </Content>
       </Container>
     </ContainerSection>
@@ -40,7 +45,7 @@ const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   margin-top: ${({ theme }) => theme.margins.mb_2};
   @media screen and (min-width: 968px) {
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(5, max-content);
     gap: 3.5rem;
   }
 `;

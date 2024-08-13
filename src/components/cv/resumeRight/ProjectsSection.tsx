@@ -9,6 +9,15 @@ type DataType = {
 export function ProjectsSection() {
   const data: DataType[] = [
     {
+      name: 'Portfolio [React]',
+      description:
+        'Aplikacja portfolio została napisana z wykorzystaniem biblioteki React, można na niej dowiedzieć się więcej na temat mojej osoby, zobaczyć ukończone projekty a także wysłać z niej e-maila do mnie.',
+      link: [
+        'https://github.com/majcherrr87/newPortfolio',
+        'https://majcher.netlify.app/',
+      ],
+    },
+    {
       name: 'Head Hunter [NestJS React TypeScript]',
       description:
         'Projekt Head Hunter to ostatni etap rocznego Bootcampu Full Stack JS, tworzony był w systemie Scrum 6 osobowym zespole. Aplikacja łączy w sobie całą wiedze i technologie, którą uczyliśmy sie podczas bootcampu. Aplikacja została stworzona,aby łączyć przyszłych programistów z rekruterami.',
@@ -24,15 +33,6 @@ export function ProjectsSection() {
       link: [
         'https://github.com/majcherrr87/zamowienia_email_front',
         'https://github.com/majcherrr87/zamowienia_email_back',
-      ],
-    },
-    {
-      name: 'Portfolio [React]',
-      description:
-        'Aplikacja portfolio została napisana z wykorzystaniem biblioteki React, można na niej dowiedzieć się więcej na temat mojej osoby, zobaczyć ukończone projekty a także wysłać z niej e-maila do mnie.',
-      link: [
-        'https://github.com/majcherrr87/Portfolio',
-        'https://www.majcher.networkmanager.pl',
       ],
     },
   ];
@@ -94,6 +94,9 @@ export const Content = styled.div`
     // margin-bottom: ${({ theme }) => theme.margins.mb_1};
     svg {
       font-size: ${({ theme }) => theme.font.h2_font_size};
+    }
+    a {
+      color: #00a29c;
     }
   }
 `;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LiaCertificateSolid } from 'react-icons/lia';
 import { Content, ContainerSection, Container } from './ProjectsSection';
 
@@ -8,6 +9,10 @@ type DataType = {
 
 export function CertificateSection() {
   const data: DataType[] = [
+    {
+      name: 'Kurs Zrozumieć React',
+      link: 'https://drive.google.com/file/d/1tEme4gg6umZ8yLG9hYdh9yBq2ytPFc6o/view?usp=sharing',
+    },
     {
       name: 'Kurs programista PHP',
       link: 'https://www.alx.pl/certyfikat/adrian-majcher/9a73e1ffdf7b415eb22e0ac70384827f/',
@@ -29,14 +34,11 @@ export function CertificateSection() {
           <Content key={name}>
             <div>
               <LiaCertificateSolid />
-              <h3>{name}</h3>
+              <h3>
+                {name}
+                <Link to={link}> zobacz</Link>
+              </h3>
             </div>
-
-            <p>
-              <a href={link} target="_blank" rel="noopener noreferrer">
-                {link}
-              </a>
-            </p>
           </Content>
         ))}
       </Container>
