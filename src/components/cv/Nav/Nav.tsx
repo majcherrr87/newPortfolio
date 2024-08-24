@@ -70,10 +70,10 @@ const CvNavMenu = styled.div<{ toggleMenu: boolean }>`
         flex-direction: column;
         align-items: center;
         font-size: ${({ theme }) => theme.font.smaller_font_size};
-        color: ${({ theme }) => theme.colors.text_color_light};
+        color: ${({ theme }) => theme.colors.title_color};
         font-weight: ${({ theme }) => theme.font.font_weight_medium};
         :hover {
-          color: ${({ theme }) => theme.colors.title_color};
+          color: ${({ theme }) => theme.colors.text_color_light};
         }
         svg {
           font-size: 1.2rem;
