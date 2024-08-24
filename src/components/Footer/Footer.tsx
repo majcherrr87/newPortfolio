@@ -21,8 +21,8 @@ function Footer() {
   const { mainColor, lang } = useMyContext();
   const [message, setMessage] = useState('');
   const [captchaIsDone, setCaptchaIsDone] = useState(false);
-  const key = '6LfntZYnAAAAAEKlmNCyDwFjvmRKsEFMnAi31N2n';
   const form = useRef<HTMLFormElement>(null);
+  const key = import.meta.env.VITE_RECAPTCHA;
   const {
     txtAddress,
     txtContact,
@@ -42,17 +42,14 @@ function Footer() {
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const serviceID = import.meta.env.VITE_SERVICEID;
+    const templateID = import.meta.env.VITE_TEMPLATEID;
+    const userID = import.meta.env.VITE_USERID;
+
     if (captchaIsDone && form.current) {
-      emailjs
-        .sendForm(
-          'service_z03hcrd',
-          'template_x5pb2kr',
-          form.current,
-          'BG1c2DDI-NkQ3m80R'
-        )
-        .then(() => {
-          setMessage(txtFormSendMessage);
-        });
+      emailjs.sendForm(serviceID, templateID, form.current, userID).then(() => {
+        setMessage(txtFormSendMessage);
+      });
       setTimeout(() => {
         setMessage('');
         setCaptchaIsDone(false);
@@ -81,7 +78,7 @@ function Footer() {
           <H1Footer>{txtContact}:</H1Footer>
           {contactProfile.map(({ id, name, icon, address }) => (
             <div key={id}>
-              <span>{icon()}</span>
+              <span>{icon({})}</span>
               <a href={address} target="_blank" rel="noopener noreferrer">
                 {name}
               </a>
@@ -95,7 +92,7 @@ function Footer() {
             {socialProfile.map(({ id, icon, href }) => (
               <span key={id}>
                 <a href={href} target="_blank" rel="noopener noreferrer">
-                  {icon()}
+                  {icon({})}
                 </a>
               </span>
             ))}
