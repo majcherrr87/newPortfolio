@@ -14,6 +14,9 @@ export function Copyright() {
 
   const { ref: copyrightRef, inView } = useInView();
   const [view, setView] = useState(false);
+
+  const env = import.meta.env.VITE_REACT_KOT;
+
   useEffect(() => {
     if (inView) setView(true);
   }, [inView]);
@@ -21,9 +24,8 @@ export function Copyright() {
   return (
     <Container ref={copyrightRef} className={`${view && 'animateCopyright'}`}>
       <h1>
-        {txt} &copy; Adrian Majcher {process.env.VITE_REACT_KOT} {year}
+        {txt} &copy; Adrian Majcher {env} {year}
       </h1>
-      <code>{JSON.stringify(import.meta.env)}</code>
     </Container>
   );
 }
