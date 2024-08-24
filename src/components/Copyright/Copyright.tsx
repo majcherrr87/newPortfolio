@@ -21,7 +21,7 @@ export function Copyright() {
   return (
     <Container ref={copyrightRef} className={`${view && 'animateCopyright'}`}>
       <h1>
-        {txt} &copy; Adrian Majcher {process.env.kot} {year}
+        {txt} &copy; Adrian Majcher {process.env.VITE_REACT_KOT} {year}
       </h1>
     </Container>
   );
