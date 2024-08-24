@@ -3,8 +3,7 @@ import img4 from '../../assets/img/project/project4.webp';
 import imageFdf from '../../assets/img/project/ImageFdf.webp';
 import ProjectReactNative from '../../assets/img/project/ProjectReactNative.webp';
 import fdf from '../../assets/video/fdf.webm';
-import WeatherApp from '../../assets/video/weatherApp.webm';
-
+import WeatherApp from '../../assets/video/WeatherApp.webm';
 import proj1 from '../../assets/video/qqqq.webm';
 
 export interface ProjectDataType {
