@@ -23,12 +23,13 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
         setUserAvatar(data.avatar_url);
         setUserWww(data.blog);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        throw new Error(`Error fetching user data: ${error}`);
       }
     };
 
     fetchData();
   }, []);
+  console.log(userWww);
 
   return (
     <CVResumeLeft>
@@ -45,7 +46,11 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
             </BtnDownload>
           </HomeData>
           <HomeAddress>
-            <a target="_blank" rel="noopener noreferrer" href={userWww}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={`http://${userWww}`}
+            >
               {TbWorldWww({ title: 'Visit my website.' })} {userWww}
             </a>
             <Link to="mailto:majcherrr87@gmail.com">

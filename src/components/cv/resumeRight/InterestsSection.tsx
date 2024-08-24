@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { FaHeadphonesAlt, FaHiking } from 'react-icons/fa';
-import { BiSolidPlaneAlt, BiBook, BiDumbbell, BiRun } from 'react-icons/bi';
+import { FaHiking } from 'react-icons/fa';
+import { MdDirectionsBike } from 'react-icons/md';
+import { BiBook, BiDumbbell, BiRun } from 'react-icons/bi';
 
 export function InterestsSection() {
   return (
@@ -10,27 +11,27 @@ export function InterestsSection() {
       <Container>
         <Content>
           {BiRun({ title: 'Cross-country running' })}
-          <span>Run</span>
+          <span>Bieganie</span>
         </Content>
 
         <Content>
           {FaHiking({ title: 'Hiking trips' })}
-          <span>Hiking trips</span>
+          <span>Wycieczki</span>
         </Content>
 
         <Content>
           {BiDumbbell({ title: 'Spending time at the gym' })}
-          <span>Fitness</span>
+          <span>CrossFit</span>
         </Content>
 
         <Content>
-          {FaHeadphonesAlt({ title: '"Listen to rock music"' })}
-          <span>Music</span>
+          {MdDirectionsBike({ title: 'I love to ride my bike.' })}
+          <span>Rower</span>
         </Content>
 
         <Content>
           {BiBook({ title: 'Reading about healthy lifestyle' })}
-          <span>Read</span>
+          <span>Ksiązki</span>
         </Content>
       </Container>
     </ContainerSection>

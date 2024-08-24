@@ -14,8 +14,8 @@ export function SocialSection() {
           to="https://www.linkedin.com/in/adrian-majcher-46a529163/"
           target="_blank"
         >
-          {BsLinkedin({ title: 'Check me out on Linkedin.' })}{' '}
-          adrian-majcher-46a529163
+          {BsLinkedin({ title: 'Check me out on Linkedin.' })}
+          adrian-majcher
         </Link>
       </Social>
     </Container>

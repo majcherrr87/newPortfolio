@@ -36,7 +36,10 @@ export function CertificateSection() {
               <LiaCertificateSolid />
               <h3>
                 {name}
-                <Link to={link}> zobacz</Link>
+                <Link to={link} target="_blank">
+                  {' '}
+                  zobacz
+                </Link>
               </h3>
             </div>
           </Content>
