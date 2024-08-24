@@ -21,8 +21,8 @@ function Footer() {
   const { mainColor, lang } = useMyContext();
   const [message, setMessage] = useState('');
   const [captchaIsDone, setCaptchaIsDone] = useState(false);
-  const form = useRef<HTMLFormElement>(null);
   const key = import.meta.env.VITE_RECAPTCHA;
+  const form = useRef<HTMLFormElement>(null);
   const {
     txtAddress,
     txtContact,
