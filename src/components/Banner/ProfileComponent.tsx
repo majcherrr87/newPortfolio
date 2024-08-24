@@ -53,7 +53,7 @@ function ProfileComponent() {
                   rel="noopener noreferrer"
                   aria-label={ariaLabel}
                 >
-                  {icon()}
+                  {icon({})}
                 </a>
               </span>
             ))}

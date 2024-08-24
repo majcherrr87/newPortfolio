@@ -10,6 +10,8 @@ export function VisitCounter() {
   const { mainColor, lang } = useMyContext();
 
   useEffect(() => {
+    const ApiKey = import.meta.env.VITE_VISITE_COUNTER;
+
     const getCounter = () =>
       axios
         .request({
@@ -19,7 +21,7 @@ export function VisitCounter() {
             : '/v1/counter?id=visit&hit=true',
           baseURL: 'https://api.api-ninjas.com',
           headers: {
-            'X-Api-Key': 'yXIxAV2O9sSIOvjTYZOeD9uoX5kesVXR88WVRcNb',
+            'X-Api-Key': ApiKey,
             'Content-Type': 'application/json',
           },
         })
@@ -28,7 +30,7 @@ export function VisitCounter() {
           sessionStorage.setItem('counter', 'true');
         })
         .catch((err) => {
-          console.error('something went wrong', err);
+          throw new Error('something went wrong', err);
         });
     getCounter();
 
