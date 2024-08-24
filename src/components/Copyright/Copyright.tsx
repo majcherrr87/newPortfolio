@@ -23,6 +23,7 @@ export function Copyright() {
       <h1>
         {txt} &copy; Adrian Majcher {process.env.VITE_REACT_KOT} {year}
       </h1>
+      <code>{JSON.stringify(import.meta.env)}</code>
     </Container>
   );
 }
