@@ -11,7 +11,7 @@ export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
     setIsDarkTheme(!isDarkTheme);
     setIsMoonIcon((prev) => !prev);
   };
-  const foo = false;
+  const foo = true;
   if (foo) return null;
 
   return (
