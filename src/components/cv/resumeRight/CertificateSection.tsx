@@ -38,7 +38,7 @@ export function CertificateSection() {
                 {name}
                 <Link to={link} target="_blank">
                   {' '}
-                  zobacz
+                  see
                 </Link>
               </h3>
             </div>
