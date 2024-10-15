@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { BiEnvelope, BiPhone } from 'react-icons/bi';
 import { TbWorldWww } from 'react-icons/tb';
 import { SwitchMode } from './SwitchMode';
-import { Download } from './download';
+// import { Download } from './download';
 import CvLink from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
 import { CvSwitchThemeType } from '../CvTypes';
 
