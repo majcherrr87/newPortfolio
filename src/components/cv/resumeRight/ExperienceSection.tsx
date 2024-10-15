@@ -17,7 +17,7 @@ export function ExperienceSection() {
       id: '1',
       name: 'MEGA KURS frontowcy',
       description:
-        '14-miesięczny kurs on-line. Przygotowujący uczestników do pracy jako junior JavaScript Developer, na kursie poznałem między innymi:',
+        'A 14-month online course preparing participants for work as a Junior JavaScript Developer. During the course, I learned, among other things:',
       details: [
         'JavaScript, TypeScript',
         'React, ReactNative',
@@ -31,9 +31,9 @@ export function ExperienceSection() {
     {
       id: '2',
       name: 'Zrozumieć React',
-      description: 'Zaawansowany kurs react',
+      description: 'Advanced React Course',
       details: [
-        'Programowanie w TypeScript',
+        'Programming in TypeScript',
         'React router, Redux, TanstackQuery',
         'Next.js, Css in JS',
       ],
@@ -41,20 +41,20 @@ export function ExperienceSection() {
     },
     {
       id: '3',
-      name: '#!/ALX - PROGRAMISTA PHP',
+      name: '#!/ALX - PHP Developer',
       description:
-        '6-miesięczny stacjonarny kurs programowania w języku PHP na którym uczyłem się między innymi:',
+        'A 6-month in-person PHP programming course, where I learned, among other things:',
       details: [
-        'Wstęp do PHP, HTML, CSS, XML',
+        'Introduction to PHP, HTML, CSS, XML',
         'MySQL, Postgres, Diagramy ERD, UML',
-        'Programowanie Obiektowe JavaScript',
+        'Object-Oriented Programming in JavaScript',
       ],
       url: 'https://www.alx.pl/',
     },
   ];
   return (
     <ContainerSection id="experience">
-      <h2 className="section-title">KURSY I SZKOLENIA</h2>
+      <h2 className="section-title">COURSES AND TRAININGS</h2>
       <Container>
         {data.map(({ id, name, description, details, url }, index, tab) => (
           <Content key={id}>

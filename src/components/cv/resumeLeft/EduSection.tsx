@@ -13,14 +13,14 @@ export function EduSection() {
     {
       id: '1',
       name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I\u00A0ADMINISTRACJI',
-      direction: 'Inżynier Oprogramowania',
+      direction: 'Software Engineer',
       city: 'Zamość',
       years: '2013 - 2017',
     },
     {
       id: '2',
-      name: 'LICEUM PROFILOWANE',
-      direction: 'o profilu Zarządzanie informacją',
+      name: 'Profiled high school',
+      direction: 'Information Management profile',
       city: 'Hrubieszów',
       years: ' 2003 - 2006',
     },
@@ -28,7 +28,7 @@ export function EduSection() {
 
   return (
     <Container id="education">
-      <h2 className="section-title">Edukacja</h2>
+      <h2 className="section-title">Education</h2>
 
       <Education>
         {data.map(({ id, name, direction, years, city }, index, tab) => (

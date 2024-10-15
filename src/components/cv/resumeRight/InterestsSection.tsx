@@ -11,12 +11,12 @@ export function InterestsSection() {
       <Container>
         <Content>
           {BiRun({ title: 'Cross-country running' })}
-          <span>Bieganie</span>
+          <span>Running</span>
         </Content>
 
         <Content>
           {FaHiking({ title: 'Hiking trips' })}
-          <span>Wycieczki</span>
+          <span>Trips</span>
         </Content>
 
         <Content>
@@ -26,12 +26,12 @@ export function InterestsSection() {
 
         <Content>
           {MdDirectionsBike({ title: 'I love to ride my bike.' })}
-          <span>Rower</span>
+          <span>Bicycle</span>
         </Content>
 
         <Content>
           {BiBook({ title: 'Reading about healthy lifestyle' })}
-          <span>Ksiązki</span>
+          <span>Books</span>
         </Content>
       </Container>
     </ContainerSection>

@@ -11,7 +11,7 @@ export function ProjectsSection() {
     {
       name: 'Portfolio [React]',
       description:
-        'Aplikacja portfolio została napisana z wykorzystaniem biblioteki React, można na niej dowiedzieć się więcej na temat mojej osoby, zobaczyć ukończone projekty a także wysłać z niej e-maila do mnie.',
+        'The portfolio application was built using the React library. It provides more information about me, showcases completed projects, and allows users to send me an email.',
       link: [
         'https://github.com/majcherrr87/newPortfolio',
         'https://majcher.netlify.app/',
@@ -20,16 +20,16 @@ export function ProjectsSection() {
     {
       name: 'Head Hunter [NestJS React TypeScript]',
       description:
-        'Projekt Head Hunter to ostatni etap rocznego Bootcampu Full Stack JS, tworzony był w systemie Scrum 6 osobowym zespole. Aplikacja łączy w sobie całą wiedze i technologie, którą uczyliśmy sie podczas bootcampu. Aplikacja została stworzona,aby łączyć przyszłych programistów z rekruterami.',
+        'The Head Hunter project is the final stage of a year-long Full Stack JS Bootcamp, developed in a Scrum framework by a team of six. The application integrates all the knowledge and technologies we learned during the bootcamp. It was created to connect future developers with recruiters.',
       link: [
         'https://github.com/tomczer2t/head_hunter_front',
         'https://github.com/tomczer2t/head_hunter_back',
       ],
     },
     {
-      name: 'Zamówienia e-mail [Express React TypeScript]',
+      name: 'Email Orders [Express React TypeScript]',
       description:
-        'Projekt Zamówienia e-mail został stworzony na potrzeby restauracji. Dzięki Aplikacji można storzyć baze dostawców towaru oraz przypisać do nich produkty, a następnie dokonywać zamówień drogą e-mail.',
+        "The Email Orders project was created for a restaurant's needs. The application allows users to create a database of suppliers and assign products to them, and then place orders via email.",
       link: [
         'https://github.com/majcherrr87/zamowienia_email_front',
         'https://github.com/majcherrr87/zamowienia_email_back',
@@ -38,7 +38,7 @@ export function ProjectsSection() {
   ];
   return (
     <ContainerSection id="projects">
-      <h2 className="section-title">Projekty</h2>
+      <h2 className="section-title">Projects</h2>
       <Container>
         {data.map(({ name, description, link }) => (
           <Content key={name}>

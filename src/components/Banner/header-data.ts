@@ -1,5 +1,5 @@
-import Cv_pol from '../../assets/pdf/CV-POL_AdrianMajcher.pdf';
-import Cv_eng from '../../assets/pdf/CV-ENG_AdrianMajcher.pdf';
+import Cv_pol from '../../assets/pdf/Adrian_Majcher_CV_POL.pdf';
+import Cv_eng from '../../assets/pdf/Adrian_Majcher_CV_POL2.pdf';
 
 export interface HeaderDataType {
   id: number;

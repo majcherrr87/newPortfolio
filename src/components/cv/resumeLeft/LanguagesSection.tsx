@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export function LanguagesSection() {
-  const data = ['Polski (ojczysty)', 'Angielski (B2)'];
+  const data = ['Polish (Native)', 'English (B2)'];
   return (
     <ContainerSection id="languages">
-      <h2 className="section-title">Języki</h2>
+      <h2 className="section-title">Languages</h2>
 
       <Container>
         <ul>
