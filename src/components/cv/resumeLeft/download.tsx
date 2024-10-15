@@ -1,6 +1,6 @@
 import { FaRegFilePdf } from 'react-icons/fa6';
 import styled from 'styled-components';
-import Cv from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
+import Cv from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
 
 export function Download() {
   return (

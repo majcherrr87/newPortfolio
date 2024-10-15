@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { BiEnvelope, BiPhone } from 'react-icons/bi';
 import { TbWorldWww } from 'react-icons/tb';
 import { SwitchMode } from './SwitchMode';
-// import { Download } from './download';
-import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_POL.pdf';
+import { Download } from './download';
+import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
 import { CvSwitchThemeType } from '../CvTypes';
 
 export function HomeSection({ switchTheme }: CvSwitchThemeType) {
@@ -61,7 +61,7 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
           </HomeAddress>
         </HomeContainer>
         <SwitchMode switchTheme={switchTheme} />
-        {/* <Download /> */}
+        <Download />
       </CVSection>
     </CVResumeLeft>
   );
