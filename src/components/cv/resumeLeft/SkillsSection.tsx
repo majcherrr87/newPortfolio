@@ -4,7 +4,7 @@ type DataType = [string[], string[]];
 
 export function SkillsSection() {
   const data: DataType = [
-    ['JavaScript', 'TypeScript', 'React', 'StyledComponent'],
+    ['JavaScript', 'TypeScript', 'React', 'Angular', 'StyledComponent'],
     ['Node', 'Express', 'SQL', 'ReactNative'],
   ];
   return (

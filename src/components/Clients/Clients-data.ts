@@ -17,28 +17,28 @@ export const clients: ClientsDatatype[] = [
     position: 'Tester oprogramowania w Craftware',
     imgUrl: avatar2,
     start: 3,
-    disc: 'Solidny partner, polecam',
+    disc: 'Pracując z Adrianem, mogę powiedzieć, że to naprawdę utalentowany programista. Polecam',
   },
   {
     name: 'Andrzej Tracz',
     position: 'Specjalista ds. automatyki w Caterpillar Inc.',
     imgUrl: avatar3,
     start: 4,
-    disc: 'Rzetelny i dokładny deweloper, polecam współpracę',
+    disc: 'Rzetelny i dokładny deweloper, z łatwością współpracuje z innymi, dzieląc się swoją wiedzą i doświadczeniem.',
   },
   {
     name: 'Rafał Pośpiech',
     position: 'RTR Specialist w firmie Bystronic',
     imgUrl: avatar4,
     start: 5,
-    disc: 'Bardzo polecam Wszystkim! Doskonała współpraca!',
+    disc: 'Adrian to osoba, która z zapałem podchodzi do nauki i rozwoju.',
   },
   {
     name: 'Ilona Majcher',
     position: 'PMO / CANAL+ Poland / Project Portfolio Management ',
     imgUrl: avatar1,
-    start: 2,
-    disc: 'Polecam! Solidna osoba :)',
+    start: 4,
+    disc: 'Jestem pod wrażeniem kreatywności i umiejętności Adriana. Zawsze dostarcza wysokiej jakości kod',
   },
 ];
 

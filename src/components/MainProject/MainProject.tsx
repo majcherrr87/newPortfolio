@@ -8,7 +8,7 @@ import { mainProjectData, DataType } from './mainProject-data';
 import { ProjectData, ProjectDataType } from '../Projects/project-data';
 import FeaturedProject from './FeaturedProject';
 
-function MainProject() {
+export function MainProject() {
   const { mainColor, lang, indexMainProject } = useMyContext();
   const {
     txtTitleFirst,
@@ -49,7 +49,6 @@ function MainProject() {
     </Container>
   );
 }
-export default MainProject;
 
 const Container = styled.section`
   width: 80%;

@@ -7,10 +7,10 @@ import Projects from '../components/Projects/Projects';
 import Clients from '../components/Clients/Clients';
 import Footer from '../components/Footer/Footer';
 import { ContextProvider } from '../utils/context/ContextProvider';
-import '../index.css';
-import MainProject from '../components/MainProject/MainProject';
+import { MainProject } from '../components/MainProject/MainProject';
 import { Copyright } from '../components/Copyright/Copyright';
 import { Education } from '../components/Education/Education';
+import '../index.css';
 
 function PortfolioView() {
   return (

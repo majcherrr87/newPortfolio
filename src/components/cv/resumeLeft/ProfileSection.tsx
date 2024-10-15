@@ -5,8 +5,11 @@ export function ProfileSection() {
     <Container id="profile">
       <h2 className="section-title">Profil</h2>
       <p>
-        Jestem początkującym programistą języka Javascript, specjalizującym się
-        w backendzie. Jestem gotowy do podjęcia nowych wyzwań.
+        Jestem początkującym programistą JavaScript z pasją do tworzenia
+        estetycznych i funkcjonalnych stron internetowych. Mam doświadczenie w
+        pracy z narzędziami frontendowymi, takimi jak React, TypeScript, SASS i
+        Styled Components. Obecnie uczę się Angulara. W wolnym czasie rozwijam
+        swoje umiejętności, ucząc się nowych technologii
       </p>
     </Container>
   );

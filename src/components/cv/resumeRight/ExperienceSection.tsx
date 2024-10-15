@@ -19,7 +19,9 @@ export function ExperienceSection() {
       description:
         '14-miesięczny kurs on-line. Przygotowujący uczestników do pracy jako junior JavaScript Developer, na kursie poznałem między innymi:',
       details: [
-        'JavaScript, TypeScript, React, ReactNative',
+        'JavaScript, TypeScript',
+        'React, ReactNative',
+        'Angula',
         'Node, Express, SQL, MongoDB',
         'Css, Styled-Components',
         'Git, Figma',

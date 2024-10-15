@@ -115,6 +115,9 @@ const ProjectDetails = styled.div<{ isReversed: boolean }>`
   justify-content: space-between;
   align-items: ${({ isReversed }) => (isReversed ? 'flex-end' : 'flex-start')};
   cursor: default;
+  div > h1 {
+    font-size: 26px;
+  }
   div > h1,
   p {
     text-align: ${({ isReversed }) => (isReversed ? 'right' : 'left')};

@@ -34,10 +34,10 @@ const data: DataType[] = [
         skills: [
           'JavaScript, TypeScript',
           'React, ReactNative',
+          'Angular',
           'Node.js, Express.js, NestJS',
           'Bazy danych, MySQL, MongoDb',
-          'Figma',
-          'Git',
+          'Git, Figma',
         ],
       },
       {
@@ -47,7 +47,7 @@ const data: DataType[] = [
         link: 'https://drive.google.com/file/d/1tEme4gg6umZ8yLG9hYdh9yBq2ytPFc6o/view?usp=drive_link',
         skills: [
           'React',
-          'React Router',
+          'React Router, TanstackQuery',
           'Wstęp do Next.js',
           'CSS Modules, CSS in JS, Tailwind CSS',
           'Testowanie',
@@ -83,10 +83,10 @@ const data: DataType[] = [
         skills: [
           'JavaScript, TypeScript',
           'React, ReactNative',
+          'Angular',
           'Node.js, Express.js, NestJS',
           'Bazy danych, MySQL, MongoDb',
-          'Figma',
-          'Git',
+          'Git, Figma',
         ],
       },
       {
@@ -96,7 +96,7 @@ const data: DataType[] = [
         link: 'https://drive.google.com/file/d/1tEme4gg6umZ8yLG9hYdh9yBq2ytPFc6o/view?usp=drive_link',
         skills: [
           'React',
-          'React Router',
+          'React Router, TanstackQuery',
           'Introduction to Next.js',
           'CSS Modules, CSS in JS, Tailwind CSS',
           'Testing',
