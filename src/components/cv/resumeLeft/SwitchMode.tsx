@@ -12,9 +12,10 @@ export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
     setIsMoonIcon((prev) => !prev);
   };
 
-  return (
-    <Switch onClick={handleClick}>{isMoonIcon ? BiMoon({}) : BiSun({})}</Switch>
-  );
+  // return (
+  //   <Switch onClick={handleClick}>{isMoonIcon ? BiMoon({}) : BiSun({})}</Switch>
+  // );
+  return null;
 }
 
 const Switch = styled.span`

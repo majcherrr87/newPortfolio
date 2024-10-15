@@ -60,7 +60,7 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
             </Link>
           </HomeAddress>
         </HomeContainer>
-        {/* <SwitchMode switchTheme={switchTheme} /> */}
+        <SwitchMode switchTheme={switchTheme} />
         {/* <Download /> */}
       </CVSection>
     </CVResumeLeft>

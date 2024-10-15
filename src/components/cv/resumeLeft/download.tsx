@@ -5,7 +5,7 @@ import Cv from '../../../assets/pdf/CV-POL_AdrianMajcher.pdf';
 export function Download() {
   return (
     <a href={Cv} download>
-      <Icon>{FaRegFilePdf()}</Icon>
+      <Icon>{FaRegFilePdf({})}</Icon>
     </a>
   );
 }
