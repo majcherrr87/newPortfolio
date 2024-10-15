@@ -13,7 +13,7 @@ export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
   };
 
   return (
-    <Switch onClick={handleClick}>{isMoonIcon ? BiMoon() : BiSun()}</Switch>
+    <Switch onClick={handleClick}>{isMoonIcon ? BiMoon({}) : BiSun({})}</Switch>
   );
 }
 

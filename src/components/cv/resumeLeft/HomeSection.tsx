@@ -29,7 +29,6 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
 
     fetchData();
   }, []);
-  console.log(userWww);
 
   return (
     <CVResumeLeft>
@@ -61,8 +60,8 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
             </Link>
           </HomeAddress>
         </HomeContainer>
-        <SwitchMode switchTheme={switchTheme} />
-        <Download />
+        {/* <SwitchMode switchTheme={switchTheme} /> */}
+        {/* <Download /> */}
       </CVSection>
     </CVResumeLeft>
   );
