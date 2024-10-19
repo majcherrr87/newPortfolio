@@ -24,7 +24,7 @@ export function ScrollTop({ isVisibleMenu }: VisibleBtnScrollTypes) {
       isVisibleBtnScroll={isVisibleBtnScroll}
       onClick={() => isVisibleMenu(false)}
     >
-      {BsArrowUpSquare()}
+      {BsArrowUpSquare({})}
     </Top>
   );
 }
