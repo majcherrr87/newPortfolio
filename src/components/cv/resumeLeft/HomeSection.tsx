@@ -6,9 +6,8 @@ import { TbWorldWww } from 'react-icons/tb';
 import { SwitchMode } from './SwitchMode';
 import { Download } from './download';
 import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
-import { CvSwitchThemeType } from '../CvTypes';
 
-export function HomeSection({ switchTheme }: CvSwitchThemeType) {
+export function HomeSection() {
   const [userAvatar, setUserAvatar] = useState('');
   const [userWww, setUserWww] = useState('');
 
@@ -60,7 +59,7 @@ export function HomeSection({ switchTheme }: CvSwitchThemeType) {
             </Link>
           </HomeAddress>
         </HomeContainer>
-        <SwitchMode switchTheme={switchTheme} />
+        <SwitchMode />
         <Download />
       </CVSection>
     </CVResumeLeft>

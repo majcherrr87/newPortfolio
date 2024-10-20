@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import { ResumeLeft } from './resumeLeft/ResumeLeft';
 import { ResumeRight } from './resumeRight/ResumeRight';
-import { CvSwitchThemeType } from './CvTypes';
 
-export function CVMain({ switchTheme }: CvSwitchThemeType) {
+export function CVMain() {
   return (
     <MainContainer>
       <Resume>
-        <ResumeLeft switchTheme={switchTheme} />
+        <ResumeLeft />
         <ResumeRight />
         <CVClause>
           I hereby give my consent for the processing of my personal data for

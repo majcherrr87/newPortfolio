@@ -1,22 +1,44 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { BiGridAlt } from 'react-icons/bi';
 import { navData } from './nav-data';
 import { ScrollTop } from './ScrollTop';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
 
 export function Nav() {
   const [isToggleMenu, setIsToggleMenu] = useState(false);
+  const context = useContext(CvContext);
+
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+
+  const { language, setLanguage } = context;
 
   const handleClick = () => {
     setIsToggleMenu((prev) => !prev);
   };
+  const handleSwichLanguage = () => {
+    setLanguage(language === 'english' ? 'polish' : 'english');
+    handleClick();
+  };
+  const data = selectLang(navData, language);
 
   return (
     <CvNav>
       <a href="#home">Adrian Majcher</a>
       <CvNavMenu toggleMenu={isToggleMenu}>
         <ul>
-          {navData[1].item.map(({ link, name, icon }) => {
+          {data?.item.map(({ link, name, icon }) => {
+            if (name === 'lang')
+              return (
+                <li role="none" key={language} onClick={handleSwichLanguage}>
+                  <a href={`${link}`}>
+                    {icon({ title: language })} {language}
+                  </a>
+                </li>
+              );
             return (
               <li role="none" key={name} onClick={handleClick}>
                 <a href={`${link}`}>

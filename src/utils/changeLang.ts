@@ -1,3 +1,6 @@
-export const selectLang = (data: any, lang: string) => {
-  return data.find((el: any) => el.lang === lang);
+export const selectLang = <T extends { lang: string }>(
+  data: T[],
+  lang: string
+): T | undefined => {
+  return data.find((el) => el.lang === lang);
 };

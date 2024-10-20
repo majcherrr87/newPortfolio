@@ -1,11 +1,14 @@
 import { BiMoon, BiSun } from 'react-icons/bi';
 import styled from 'styled-components';
-import { useState } from 'react';
-import { CvSwitchThemeType } from '../CvTypes';
+import { useContext, useState } from 'react';
+import { CvContext } from '../context/cvContext';
 
-export function SwitchMode({ switchTheme }: CvSwitchThemeType) {
+export function SwitchMode() {
   const [isMoonIcon, setIsMoonIcon] = useState(true);
-  const [isDarkTheme, setIsDarkTheme] = switchTheme;
+  const context = useContext(CvContext);
+  if (!context)
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  const { isDarkTheme, setIsDarkTheme } = context;
 
   const handleClick = () => {
     setIsDarkTheme(!isDarkTheme);

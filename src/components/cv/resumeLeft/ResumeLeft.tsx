@@ -5,12 +5,11 @@ import { ProfileSection } from './ProfileSection';
 import { EduSection } from './EduSection';
 import { SkillsSection } from './SkillsSection';
 import { LanguagesSection } from './LanguagesSection';
-import { CvSwitchThemeType } from '../CvTypes';
 
-export function ResumeLeft({ switchTheme }: CvSwitchThemeType) {
+export function ResumeLeft() {
   return (
     <Container>
-      <HomeSection switchTheme={switchTheme} />
+      <HomeSection />
       <SocialSection />
       <ProfileSection />
       <EduSection />

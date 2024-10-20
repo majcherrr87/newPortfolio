@@ -5,13 +5,13 @@ import {
   BiBriefcaseAlt,
   BiAward,
 } from 'react-icons/bi';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineGlobal } from 'react-icons/ai';
 import { GoProjectSymlink } from 'react-icons/go';
 
 export const navData = [
   {
     id: 1,
-    lang: 'ENG',
+    lang: 'english',
     item: [
       {
         link: '#home',
@@ -48,11 +48,16 @@ export const navData = [
         name: 'Certificates',
         icon: BiAward,
       },
+      {
+        link: '#home',
+        name: 'lang',
+        icon: AiOutlineGlobal,
+      },
     ],
   },
   {
     id: 2,
-    lang: 'POL',
+    lang: 'polish',
     item: [
       {
         link: '#home',
@@ -88,6 +93,11 @@ export const navData = [
         link: '#certificates',
         name: 'Certyfikaty',
         icon: BiAward,
+      },
+      {
+        link: '#home',
+        name: 'lang',
+        icon: AiOutlineGlobal,
       },
     ],
   },

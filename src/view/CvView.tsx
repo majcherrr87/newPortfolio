@@ -1,19 +1,29 @@
 import styled, { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { lightThemeCv, darkThemeCv } from '../components/cv/themeCv';
 import { Nav } from '../components/cv/Nav/Nav';
 import { CVMain } from '../components/cv/CVMain';
+import { CvContext } from '../components/cv/context/cvContext';
 
 function CvView() {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+  const [language, setLanguage] = useState<string>('english');
+
+  const value = useMemo(
+    () => ({ language, setLanguage, isDarkTheme, setIsDarkTheme }),
+    [language, isDarkTheme]
+  );
+
   return (
     <ThemeProvider theme={isDarkTheme ? darkThemeCv : lightThemeCv}>
-      <Container>
-        <Header>
-          <Nav />
-        </Header>
-        <CVMain switchTheme={[isDarkTheme, setIsDarkTheme]} />
-      </Container>
+      <CvContext.Provider value={value}>
+        <Container>
+          <Header>
+            <Nav />
+          </Header>
+          <CVMain />
+        </Container>
+      </CvContext.Provider>
     </ThemeProvider>
   );
 }
