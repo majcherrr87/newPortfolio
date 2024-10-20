@@ -35,7 +35,8 @@ export function Nav() {
               return (
                 <li role="none" key={language} onClick={handleSwichLanguage}>
                   <a href={`${link}`}>
-                    {icon({ title: language })} {language}
+                    {icon({ title: language })}{' '}
+                    {language === 'english' ? 'Polish' : 'English'}
                   </a>
                 </li>
               );

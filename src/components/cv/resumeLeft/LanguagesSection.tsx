@@ -1,14 +1,42 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
+
+type DataTxt = {
+  id: number;
+  lang: string;
+  languages: string[];
+};
 
 export function LanguagesSection() {
-  const data = ['Polish (Native)', 'English (B2)'];
+  const context = useContext(CvContext);
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+  const { language } = context;
+
+  const dataTxt: DataTxt[] = [
+    {
+      id: 1,
+      lang: 'english',
+      languages: ['Polish (Native)', 'English (B2)'],
+    },
+    {
+      id: 2,
+      lang: 'polish',
+      languages: ['Polski (ojczysty)', 'Angielski (B2)'],
+    },
+  ];
+
+  const data = selectLang(dataTxt, language);
   return (
     <ContainerSection id="languages">
       <h2 className="section-title">Languages</h2>
 
       <Container>
         <ul>
-          {data.map((item) => (
+          {data?.languages.map((item) => (
             <li key={item}>
               <span /> {item}
             </li>

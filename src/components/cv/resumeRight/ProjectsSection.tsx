@@ -1,46 +1,22 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
-
-type DataType = {
-  name: string;
-  description: string;
-  link: string[];
-};
+import { projectsData } from './projectsData';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
 
 export function ProjectsSection() {
-  const data: DataType[] = [
-    {
-      name: 'Portfolio [React]',
-      description:
-        'The portfolio application was built using the React library. It provides more information about me, showcases completed projects, and allows users to send me an email.',
-      link: [
-        'https://github.com/majcherrr87/newPortfolio',
-        'https://majcher.netlify.app/',
-      ],
-    },
-    {
-      name: 'Head Hunter [NestJS React TypeScript]',
-      description:
-        'The Head Hunter project is the final stage of a year-long Full Stack JS Bootcamp, developed in a Scrum framework by a team of six. The application integrates all the knowledge and technologies we learned during the bootcamp. It was created to connect future developers with recruiters.',
-      link: [
-        'https://github.com/tomczer2t/head_hunter_front',
-        'https://github.com/tomczer2t/head_hunter_back',
-      ],
-    },
-    {
-      name: 'Email Orders [Express React TypeScript]',
-      description:
-        "The Email Orders project was created for a restaurant's needs. The application allows users to create a database of suppliers and assign products to them, and then place orders via email.",
-      link: [
-        'https://github.com/majcherrr87/zamowienia_email_front',
-        'https://github.com/majcherrr87/zamowienia_email_back',
-      ],
-    },
-  ];
+  const context = useContext(CvContext);
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+  const { language } = context;
+
+  const data = selectLang(projectsData, language);
   return (
     <ContainerSection id="projects">
-      <h2 className="section-title">Projects</h2>
+      <h2 className="section-title">{data?.title}</h2>
       <Container>
-        {data.map(({ name, description, link }) => (
+        {data?.project.map(({ name, description, link }) => (
           <Content key={name}>
             <h3>{name}</h3>
             <ul>

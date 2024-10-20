@@ -1,36 +1,24 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { LiaCertificateSolid } from 'react-icons/lia';
 import { Content, ContainerSection, Container } from './ProjectsSection';
-
-type DataType = {
-  name: string;
-  link: string;
-};
+import { certificatesData } from './certificateData';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
 
 export function CertificateSection() {
-  const data: DataType[] = [
-    {
-      name: 'Course Understanding React',
-      link: 'https://drive.google.com/file/d/1tEme4gg6umZ8yLG9hYdh9yBq2ytPFc6o/view?usp=sharing',
-    },
-    {
-      name: 'Course PHP Developer',
-      link: 'https://www.alx.pl/certyfikat/adrian-majcher/9a73e1ffdf7b415eb22e0ac70384827f/',
-    },
-    {
-      name: 'Course Programming in JavaScript',
-      link: 'https://www.udemy.com/certificate/UC-b8482c60-374a-41f7-9c30-205a21f24eba/',
-    },
-    {
-      name: 'Course React from Scratch',
-      link: 'https://www.udemy.com/certificate/UC-19729b91-bda1-4d71-9487-e64de6c1a84d/',
-    },
-  ];
+  const context = useContext(CvContext);
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+  const { language } = context;
+
+  const data = selectLang(certificatesData, language);
   return (
     <ContainerSection id="certificates">
-      <h2 className="section-title">Certificates</h2>
+      <h2 className="section-title">{data?.title}</h2>
       <Container>
-        {data.map(({ name, link }) => (
+        {data?.certificate.map(({ name, link }) => (
           <Content key={name}>
             <div>
               <LiaCertificateSolid />
@@ -38,7 +26,7 @@ export function CertificateSection() {
                 {name}
                 <Link to={link} target="_blank">
                   {' '}
-                  see
+                  {data.subTitle}
                 </Link>
               </h3>
             </div>

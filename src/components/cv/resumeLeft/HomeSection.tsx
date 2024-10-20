@@ -6,6 +6,7 @@ import { TbWorldWww } from 'react-icons/tb';
 import { SwitchMode } from './SwitchMode';
 import { Download } from './download';
 import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
+import { ChangeLang } from './ChangeLang';
 
 export function HomeSection() {
   const [userAvatar, setUserAvatar] = useState('');
@@ -61,6 +62,7 @@ export function HomeSection() {
         </HomeContainer>
         <SwitchMode />
         <Download />
+        <ChangeLang />
       </CVSection>
     </CVResumeLeft>
   );

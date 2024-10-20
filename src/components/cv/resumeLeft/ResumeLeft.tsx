@@ -22,7 +22,6 @@ export function ResumeLeft() {
 const Container = styled.div`
   @media screen and (min-width: 968px) {
     background-color: ${({ theme }) => theme.colors.container_color_alt};
-    //padding: 0 1.5rem;
     transition: all 0.5s ease;
   }
 `;

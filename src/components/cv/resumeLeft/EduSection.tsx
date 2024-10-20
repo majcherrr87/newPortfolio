@@ -1,51 +1,97 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
 
 export type DataType = {
-  id: string;
+  id: number;
   name: string;
   direction: string;
   city: string;
   years: string;
 };
+type TypeDataWithLang = {
+  id: number;
+  lang: string;
+  schools: DataType[];
+};
 
 export function EduSection() {
-  const data: DataType[] = [
+  const dataTxt: TypeDataWithLang[] = [
     {
-      id: '1',
-      name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I\u00A0ADMINISTRACJI',
-      direction: 'Software Engineer',
-      city: 'Zamość',
-      years: '2013 - 2017',
+      id: 1,
+      lang: 'english',
+      schools: [
+        {
+          id: 1,
+          name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I\u00A0ADMINISTRACJI',
+          direction: 'Software Engineer',
+          city: 'Zamość',
+          years: '2013 - 2017',
+        },
+        {
+          id: 2,
+          name: 'Profiled high school',
+          direction: 'Information Management profile',
+          city: 'Hrubieszów',
+          years: ' 2003 - 2006',
+        },
+      ],
     },
     {
-      id: '2',
-      name: 'Profiled high school',
-      direction: 'Information Management profile',
-      city: 'Hrubieszów',
-      years: ' 2003 - 2006',
+      id: 2,
+      lang: 'polish',
+      schools: [
+        {
+          id: 3,
+          name: 'WYŻSZA SZKOŁA ZARZĄDZANIA I\u00A0ADMINISTRACJI',
+          direction: 'Inżynieria oprogramowania',
+          city: 'Zamość',
+          years: '2013 - 2017',
+        },
+        {
+          id: 4,
+          name: 'Liceum profilowane',
+          direction: 'Zarządzanie informacją',
+          city: 'Hrubieszów',
+          years: ' 2003 - 2006',
+        },
+      ],
     },
   ];
+
+  const context = useContext(CvContext);
+
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+
+  const { language } = context;
+
+  const data = selectLang(dataTxt, language);
 
   return (
     <Container id="education">
       <h2 className="section-title">Education</h2>
 
       <Education>
-        {data.map(({ id, name, direction, years, city }, index, tab) => (
-          <Content key={id}>
-            <Time>
-              <span className="rounder" />
-              {index < tab.length - 1 ? <span className="line" /> : null}
-            </Time>
-            <Data>
-              <h3>{name}</h3>
-              <span className="studies">{direction}</span>
-              <span className="year">
-                {city} {years}
-              </span>
-            </Data>
-          </Content>
-        ))}
+        {data?.schools.map(
+          ({ id, name, direction, years, city }, index, tab) => (
+            <Content key={id}>
+              <Time>
+                <span className="rounder" />
+                {index < tab.length - 1 ? <span className="line" /> : null}
+              </Time>
+              <Data>
+                <h3>{name}</h3>
+                <span className="studies">{direction}</span>
+                <span className="year">
+                  {city} {years}
+                </span>
+              </Data>
+            </Content>
+          )
+        )}
       </Education>
     </Container>
   );

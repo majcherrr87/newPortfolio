@@ -1,38 +1,28 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
-import { FaHiking } from 'react-icons/fa';
-import { MdDirectionsBike } from 'react-icons/md';
-import { BiBook, BiDumbbell, BiRun } from 'react-icons/bi';
+import { CvContext } from '../context/cvContext';
+import { selectLang } from '../../../utils/changeLang';
+import { intrestData } from './interestsData';
 
 export function InterestsSection() {
+  const context = useContext(CvContext);
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+  const { language } = context;
+
+  const data = selectLang(intrestData, language);
   return (
     <ContainerSection id="interests">
-      <h2 className="section-title">Interests</h2>
+      <h2 className="section-title">{data?.title}</h2>
 
       <Container>
-        <Content>
-          {BiRun({ title: 'Cross-country running' })}
-          <span>Running</span>
-        </Content>
-
-        <Content>
-          {FaHiking({ title: 'Hiking trips' })}
-          <span>Trips</span>
-        </Content>
-
-        <Content>
-          {BiDumbbell({ title: 'Spending time at the gym' })}
-          <span>CrossFit</span>
-        </Content>
-
-        <Content>
-          {MdDirectionsBike({ title: 'I love to ride my bike.' })}
-          <span>Bicycle</span>
-        </Content>
-
-        <Content>
-          {BiBook({ title: 'Reading about healthy lifestyle' })}
-          <span>Books</span>
-        </Content>
+        {data?.intrest.map(({ id, title, subTitle, icon }) => (
+          <Content key={id}>
+            {icon({ title: subTitle })}
+            <span>{title}</span>
+          </Content>
+        ))}
       </Container>
     </ContainerSection>
   );
