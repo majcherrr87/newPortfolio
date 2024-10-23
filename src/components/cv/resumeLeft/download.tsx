@@ -1,10 +1,22 @@
-import { FaRegFilePdf } from 'react-icons/fa6';
+import { useContext } from 'react';
 import styled from 'styled-components';
-import Cv from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
+import { FaRegFilePdf } from 'react-icons/fa6';
+import { CvContext } from '../context/cvContext';
+import CvEng from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
+import CvPol from '../../../assets/pdf/Adrian_Majcher_CV_POL.pdf';
 
 export function Download() {
+  const context = useContext(CvContext);
+
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+
+  const { language } = context;
+  const cv = language === 'english' ? CvEng : CvPol;
+
   return (
-    <a href={Cv} download>
+    <a href={cv} download>
       <Icon>{FaRegFilePdf({})}</Icon>
     </a>
   );

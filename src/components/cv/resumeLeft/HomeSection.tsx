@@ -1,16 +1,24 @@
+import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { BiEnvelope, BiPhone } from 'react-icons/bi';
 import { TbWorldWww } from 'react-icons/tb';
-// import { SwitchMode } from './SwitchMode';
-// import { Download } from './download';
+import { SwitchMode } from './SwitchMode';
+import { Download } from './download';
 import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
-// import { ChangeLang } from './ChangeLang';
+import { ChangeLang } from './ChangeLang';
+import { CvContext } from '../context/cvContext';
 
 export function HomeSection() {
   const [userAvatar, setUserAvatar] = useState('');
   const [userWww, setUserWww] = useState('');
+  const context = useContext(CvContext);
+
+  if (!context) {
+    throw new Error('LanguageToggle must be used within a LanguageProvider');
+  }
+
+  const { language } = context;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +48,7 @@ export function HomeSection() {
             <h3>Web developer</h3>
             <BtnDownload>
               <a download href={CvLink}>
-                download
+                {language === 'english' ? 'Download' : 'Pobierz'}
               </a>
             </BtnDownload>
           </HomeData>
@@ -60,9 +68,9 @@ export function HomeSection() {
             </Link>
           </HomeAddress>
         </HomeContainer>
-        {/* <SwitchMode />
+        <SwitchMode />
         <Download />
-        <ChangeLang /> */}
+        <ChangeLang />
       </CVSection>
     </CVResumeLeft>
   );
