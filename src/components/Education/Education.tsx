@@ -10,7 +10,7 @@ import { dataEducation, EducationDataType } from './edukation-data';
 export function Education() {
   const { mainColor, lang } = useMyContext();
   const { sectionTitle, name, description, data }: EducationDataType =
-    selectLang(dataEducation, lang);
+    selectLang(dataEducation, lang) ?? dataEducation[0];
 
   const { ref: EducationRef, inView } = useInView();
   const [view, setView] = useState('');

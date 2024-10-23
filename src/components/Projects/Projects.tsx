@@ -14,10 +14,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 function Projects() {
   const { mainColor, lang } = useMyContext();
-  const { txtTitleFirst, txtTitleSecond, disc }: ProjectDataType = selectLang(
-    data,
-    lang
-  );
+  const { txtTitleFirst, txtTitleSecond, disc }: ProjectDataType =
+    selectLang(data, lang) ?? data[0];
 
   const { ref: projectRef, inView } = useInView();
   const [view, setView] = useState('');

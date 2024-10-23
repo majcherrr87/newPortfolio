@@ -33,7 +33,7 @@ function Footer() {
     txtFormBtn,
     txtFormSendMessage,
     langReCaptcha,
-  }: FooterDataType = selectLang(FooterData, lang);
+  }: FooterDataType = selectLang(FooterData, lang) ?? FooterData[0];
 
   const handleOnChange = () => {
     setCaptchaIsDone(true);

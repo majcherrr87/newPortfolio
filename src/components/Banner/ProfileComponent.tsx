@@ -21,7 +21,7 @@ function ProfileComponent() {
     txtSocial,
     linkBtnShowCv,
     linkBtnDownloadCv,
-  } = selectLang(headerData, lang);
+  } = selectLang(headerData, lang) ?? headerData[0];
 
   return (
     <Container>

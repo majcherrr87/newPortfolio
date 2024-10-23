@@ -7,7 +7,7 @@ import { CopyrightData } from './copyright-data';
 
 export function Copyright() {
   const { lang } = useMyContext();
-  const { txt } = selectLang(CopyrightData, lang);
+  const { txt } = selectLang(CopyrightData, lang) ?? CopyrightData[0];
 
   const today = new Date();
   const year = today.getFullYear();

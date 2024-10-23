@@ -9,10 +9,8 @@ import serviceData, { CardType } from './service-data';
 
 function Services() {
   const { mainColor, lang } = useMyContext();
-  const { txtTitleFirst, txtTitleSecond, txtTitleBig, card } = selectLang(
-    serviceData,
-    lang
-  );
+  const { txtTitleFirst, txtTitleSecond, txtTitleBig, card } =
+    selectLang(serviceData, lang) ?? serviceData[0];
   const { ref: ServicesRef, inView } = useInView();
   const [view, setView] = useState('');
   useEffect(() => {

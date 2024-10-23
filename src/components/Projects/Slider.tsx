@@ -11,7 +11,8 @@ import { selectLang } from '../../utils/changeLang';
 function SliderComp() {
   const arrowRef = useRef<Slider>(null);
   const { lang } = useMyContext();
-  const { projects }: ProjectDataType = selectLang(ProjectData, lang);
+  const { projects }: ProjectDataType =
+    selectLang(ProjectData, lang) ?? ProjectData[0];
 
   const handlePrev = () => {
     if (arrowRef.current) {

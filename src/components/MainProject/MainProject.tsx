@@ -15,8 +15,9 @@ export function MainProject() {
     txtTitleSecond,
     txtButtonGithub,
     txtButtonLiveDemo,
-  }: DataType = selectLang(mainProjectData, lang);
-  const { projects }: ProjectDataType = selectLang(ProjectData, lang);
+  }: DataType = selectLang(mainProjectData, lang) ?? mainProjectData[0];
+  const { projects }: ProjectDataType =
+    selectLang(ProjectData, lang) ?? ProjectData[0];
 
   const { ref: MainProjectRef, inView } = useInView();
   const [view, setView] = useState('');

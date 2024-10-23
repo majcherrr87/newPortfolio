@@ -12,7 +12,7 @@ import { selectLang } from '../../utils/changeLang';
 function Clients() {
   const arrowRef = useRef<Slider>(null);
   const { mainColor, lang } = useMyContext();
-  const { title, subTitle } = selectLang(langData, lang);
+  const { title, subTitle } = selectLang(langData, lang) ?? langData[0];
   let clientDisc = [];
   clientDisc = clients.map((item) => (
     <ClientSlider item={item} key={item.name} />

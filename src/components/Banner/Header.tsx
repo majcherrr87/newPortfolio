@@ -16,7 +16,8 @@ function Header() {
   const [hamburgerMenu, setHamburgerMenu] = useState(false);
   const { changeMainColor, mainColor, lang, changeLang } = useMyContext();
   const colors = theme.colors.selectColors;
-  const { linkName, linkId, txtOptionalMenu } = selectLang(headerData, lang);
+  const { linkName, linkId, txtOptionalMenu } =
+    selectLang(headerData, lang) ?? headerData[0];
 
   return (
     <Container bar={hamburgerMenu} id="Home">
