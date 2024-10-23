@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { BiEnvelope, BiPhone } from 'react-icons/bi';
 import { TbWorldWww } from 'react-icons/tb';
-import { SwitchMode } from './SwitchMode';
-import { Download } from './download';
+// import { SwitchMode } from './SwitchMode';
+// import { Download } from './download';
 import CvLink from '../../../assets/pdf/Adrian_Majcher_CV_ENG.pdf';
-import { ChangeLang } from './ChangeLang';
+// import { ChangeLang } from './ChangeLang';
 
 export function HomeSection() {
   const [userAvatar, setUserAvatar] = useState('');
