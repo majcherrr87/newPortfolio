@@ -26,7 +26,7 @@ export const headerData: HeaderDataType[] = [
     txtOptionalMenu: 'Wybierz kolor',
     txtHello: 'Cześć ',
     txtIam: 'Jestem',
-    txtLong: `Jestem początkującym programistą JavaScript z pasją do tworzenia estetycznych i funkcjonalnych stron internetowych. Mam doświadczenie w pracy z narzędziami frontendowymi, takimi jak React, TypeScript, SASS i Styled Components. Obecnie uczę się Angulara. W wolnym czasie rozwijam swoje umiejętności, ucząc się nowych technologii`,
+    txtLong: `Jestem programistą JavaScript, tworzę aplikacje internetowe w React i TypeScript, wykorzystując w codziennej pracy takie narzędzia jak Zustand, Styled Components, Redux oraz TanStack Query. Moje doświadczenie z narzędziami backendowymi, takimi jak Express, oraz znajomość SQL pozwalają mi lepiej rozumieć pełen cykl tworzenia aplikacji i zapewniać kompleksowe rozwiązania. Z pasją podchodzę do rozwiązywania złożonych problemów technologicznych oraz stale rozwijam swoje umiejętności, aby tworzyć wydajne i nowoczesne aplikacje webowe.`,
     txtBtnShowCv: 'Zobacz CV',
     linkBtnShowCv: '/cv',
     txtBtnDownloadCv: 'Pobierz CV',

@@ -31,7 +31,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 0,
         title: 'Portfolio',
-        disc: `Strona internetowa zbudowana została przy użyciu języka programowania TypeScript i biblioteki frameworka React. Do stylizacji komponentów React użyto biblioteki Styled Components. Dodatkowo strona internetowa posiada funkcjonalność wysyłania e-maili bezpośrednio do użytkownika za pomocą biblioteki EmailJS. Strona korzysta również z API Ninjas do zliczania liczby odwiedzających oraz zawiera informacje o ukończonych kursach i edukacji użytkownika.`,
+        disc: `Strona internetowa zbudowana została przy użyciu TypeScript i biblioteki React. Do stylizacji komponentów React użyto biblioteki Styled Components. Dodatkowo strona internetowa posiada funkcjonalność wysyłania e-maili bezpośrednio do użytkownika za pomocą biblioteki EmailJS. Strona korzysta również z API Ninjas do zliczania liczby odwiedzających oraz zawiera informacje o ukończonych kursach i edukacji użytkownika.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
         linkDemo: `https://majcher.netlify.app/`,
         technologies: ['TypeSctipt', 'React', 'Redux', 'StyledComponent'],
@@ -83,7 +83,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 0,
         title: 'Portfolio',
-        disc: `The website was built using TypeScript and the React framework. Styled Components was used for styling React components. Additionally, the website has a functionality that allows sending emails directly to the user via the EmailJS library. The site also uses the API Ninjas to track the number of visitors and includes information about completed courses and the user's education.`,
+        disc: `The website was built using TypeScript and the React library. For styling React components, the Styled Components library was used. Additionally, the website features email functionality, allowing emails to be sent directly to the user via the EmailJS library. The website also uses the Ninja API to track the number of visitors and includes information about the user's completed courses and education.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
         linkDemo: `https://majcher.netlify.app/`,
         technologies: ['TypeScript', 'React', 'Redux', 'StyledComponents'],
