@@ -41,7 +41,7 @@ export const headerData: HeaderDataType[] = [
     txtOptionalMenu: 'Select Color',
     txtHello: 'Hello ',
     txtIam: 'I`am',
-    txtLong: `I am a beginner JavaScript developer with a passion for creating aesthetic and functional websites. I have experience working with frontend tools such as React, TypeScript, SASS, and Styled Components. I am currently learning Angular. In my free time, I enhance my skills by learning new technologies.`,
+    txtLong: `I am a JavaScript developer, creating web applications in React and TypeScript, using tools such as Zustand, Styled Components, Redux, and TanStack Query in my daily work. My experience with backend tools like Express and my knowledge of SQL allow me to better understand the full application development cycle and provide comprehensive solutions. I approach solving complex technological problems with passion and continually develop my skills to create efficient and modern web applications.`,
     txtBtnShowCv: 'Watch CV',
     linkBtnShowCv: '/cv',
     txtBtnDownloadCv: 'Download CV',
