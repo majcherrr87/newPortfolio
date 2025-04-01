@@ -31,7 +31,7 @@ function ProfileComponent() {
           <span>{txtIam}</span>
         </h4>
         <h1>Adrian Majcher</h1>
-        <h3>Junior web developer</h3>
+        <h3>Web developer</h3>
         <p>{txtLong}</p>
         <CvButtons>
           <a href={linkBtnShowCv} target="_blank" rel="noopener noreferrer">
