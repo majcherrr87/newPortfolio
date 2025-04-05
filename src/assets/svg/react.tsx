@@ -16,8 +16,8 @@ const ReactIcon = styled.svg`
   left: 10px;
   top: 10px;
   font-size: 5rem;
-  animation: moveReact 15s linear infinite;
   fill: #61dbfb;
+  /* animation: moveReact 15s linear infinite;
   @keyframes moveReact {
     0% {
       transform: rotate(0deg);
@@ -28,7 +28,7 @@ const ReactIcon = styled.svg`
   }
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     font-size: 3rem;
-  }
+  } */
 `;
 
 export default IconBxlReact;

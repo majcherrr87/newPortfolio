@@ -19,7 +19,7 @@ const TypescriptIcon = styled.svg`
   top: 10px;
   fill: #007acc;
   font-size: 3rem;
-  animation: moveTypescript 5s ease infinite;
+  /* animation: moveTypescript 5s ease infinite;
   @keyframes moveTypescript {
     0%,
     100% {
@@ -37,7 +37,7 @@ const TypescriptIcon = styled.svg`
   }
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     font-size: 2rem;
-  }
+  } */
 `;
 
 export default IconTypescript;

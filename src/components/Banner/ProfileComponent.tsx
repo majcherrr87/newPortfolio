@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
 import profileImg from '../../assets/img/home/Adrian.webp';
 import { useMyContext } from '../../utils/context/ContextProvider';
 import { selectLang } from '../../utils/changeLang';
@@ -22,10 +24,65 @@ function ProfileComponent() {
     linkBtnShowCv,
     linkBtnDownloadCv,
   } = selectLang(headerData, lang) ?? headerData[0];
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const icons = gsap.utils.toArray<HTMLSpanElement>('.social-icons span');
+    const texts = containerRef.current.querySelector('[data-section="texts"]');
+    const profile = containerRef.current.querySelector(
+      '[data-section="profile"]'
+    );
+
+    // sanity check — jeśli coś nie istnieje, nie animujemy wcale
+    if (!texts || !profile || icons.length === 0) {
+      console.warn('Elementy nie istnieją jeszcze w DOM – animacja przerwana');
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: { ease: 'power3.out', duration: 1 },
+      });
+
+      tl.from(
+        texts,
+        {
+          x: -1000,
+          opacity: 0,
+          force3D: true,
+        },
+        0.5
+      )
+        .from(
+          profile,
+          {
+            x: 500,
+            opacity: 0,
+            force3D: true,
+          },
+          0.5
+        )
+        .from(
+          icons,
+          {
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'back.out(1.7)',
+            force3D: true,
+          },
+          2
+        );
+    }, containerRef);
+
+    // eslint-disable-next-line consistent-return
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <Container>
-      <Texts color={mainColor} className="kot">
+    <Container ref={containerRef}>
+      <Texts color={mainColor} data-section="texts">
         <h4>
           {txtHello}
           <span>{txtIam}</span>
@@ -42,7 +99,7 @@ function ProfileComponent() {
           </a>
         </CvButtons>
 
-        <Social color={mainColor}>
+        <Social color={mainColor} data-section="social">
           <p>{txtSocial}</p>
           <div className="social-icons">
             {socialProfile.map(({ icon, href, id, ariaLabel }) => (
@@ -61,7 +118,7 @@ function ProfileComponent() {
         </Social>
         <VisitCounter />
       </Texts>
-      <Profile color={mainColor}>
+      <Profile color={mainColor} data-section="profile">
         <img id="my" loading="lazy" src={profileImg} alt="Adrian Majcher" />
         <IconBxlReact />
         <IconTypescript />
@@ -93,13 +150,6 @@ const Texts = styled.div<{ color: string }>`
   position: relative;
   display: flex;
   flex-direction: column;
-  animation: animateTexts 1s;
-
-  @keyframes animateTexts {
-    from {
-      transform: translateX(-100%);
-    }
-  }
 
   h4 {
     padding: 1rem 0;
@@ -185,13 +235,6 @@ const Profile = styled.div<{ color: string }>`
   flex: 1;
   justify-content: center;
   position: relative;
-  animation: animateProfile 1s;
-
-  @keyframes animateProfile {
-    from {
-      transform: translateX(100%);
-    }
-  }
 
   img#my {
     width: 16rem;

@@ -21,7 +21,7 @@ const JavascriptIcon = styled.svg`
   font-size: 5rem;
   right: 10px;
   bottom: 10px;
-  animation: moveStyled 5s ease infinite;
+  /* animation: moveStyled 5s ease infinite;
   @keyframes moveStyled {
     0% {
       transform: scale(1);
@@ -35,7 +35,7 @@ const JavascriptIcon = styled.svg`
   }
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     font-size: 3rem;
-  }
+  } */
 `;
 
 export default IconJavascript;

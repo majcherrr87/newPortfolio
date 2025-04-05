@@ -13,7 +13,7 @@ const ReactIcon = styled.svg`
   bottom: 10px;
   fill: #764abc;
   font-size: 3rem;
-  animation: moveRedux 3s ease infinite;
+  /* animation: moveRedux 3s ease infinite;
   @keyframes moveRedux {
     0%,
     100% {
@@ -40,7 +40,7 @@ const ReactIcon = styled.svg`
     75% {
       transform: translateX(-6px) rotate(-1.2deg);
     }
-  }
+  } */
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     font-size: 2rem;
   }
