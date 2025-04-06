@@ -7,10 +7,10 @@ import { selectLang } from '../../utils/changeLang';
 import { headerData } from './header-data';
 import IconBxlReact from '../../assets/svg/react';
 import IconTypescript from '../../assets/svg/typescript';
-import IconRedux from '../../assets/svg/redux';
 import IconJavascript from '../../assets/svg/javascript';
 import { socialProfile } from '../Footer/footer-data';
 import { VisitCounter } from '../VisitCounter/VisitCounter';
+import IconNext from '../../assets/svg/nextjs';
 
 function ProfileComponent() {
   const { mainColor, lang } = useMyContext();
@@ -34,16 +34,15 @@ function ProfileComponent() {
     const profile = containerRef.current.querySelector(
       '[data-section="profile"]'
     );
+    const svg = gsap.utils.toArray<HTMLSpanElement>(
+      '[data-section="profile"] svg'
+    );
 
-    // sanity check — jeśli coś nie istnieje, nie animujemy wcale
-    if (!texts || !profile || icons.length === 0) {
-      console.warn('Elementy nie istnieją jeszcze w DOM – animacja przerwana');
-      return;
-    }
+    if (!texts || !profile || icons.length === 0 || svg.length === 0) return;
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: 'power3.out', duration: 1 },
+        defaults: { ease: 'power3.out', duration: 1, delay: 4 },
       });
 
       tl.from(
@@ -68,6 +67,17 @@ function ProfileComponent() {
           icons,
           {
             opacity: 0,
+            stagger: 0.2,
+            ease: 'back.out(1.7)',
+            force3D: true,
+          },
+          2
+        )
+        .from(
+          svg,
+          {
+            opacity: 0,
+
             stagger: 0.2,
             ease: 'back.out(1.7)',
             force3D: true,
@@ -122,7 +132,7 @@ function ProfileComponent() {
         <img id="my" loading="lazy" src={profileImg} alt="Adrian Majcher" />
         <IconBxlReact />
         <IconTypescript />
-        <IconRedux />
+        <IconNext />
         <IconJavascript />
       </Profile>
     </Container>
@@ -235,27 +245,94 @@ const Profile = styled.div<{ color: string }>`
   flex: 1;
   justify-content: center;
   position: relative;
+  align-items: center;
 
   img#my {
     width: 16rem;
+    height: auto;
+    object-fit: contain;
     filter: drop-shadow(0px 10px 10px ${({ color }) => color + 70});
-    transition: transform 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
     z-index: 2;
 
-    @media (max-width: calc(${({ theme }) => theme.size.md} - 50px)) {
-      //790
+    margin-top: 10px;
+    max-height: 350px;
+
+    @media (max-width: ${({ theme }) => theme.size.md}) {
       width: 14rem;
     }
-    @media (max-width: calc(${({ theme }) => theme.size.sm} + 40px)) {
-      //680
-      width: 13rem;
-    }
     @media (max-width: ${({ theme }) => theme.size.sm}) {
-      width: 40%;
+      width: 12rem;
+    }
+    @media (max-width: 550px) {
+      width: 80%;
+      max-width: 12rem;
     }
 
     :hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.02);
+      filter: drop-shadow(0px 15px 15px ${({ color }) => color + 90});
+    }
+  }
+
+  svg {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.2));
+    transition: transform 300ms ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  svg:nth-of-type(1) {
+    top: 10%;
+    right: 20%;
+    width: 4rem;
+    height: 4rem;
+
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      top: 5%;
+      right: 15%;
+    }
+  }
+
+  svg:nth-of-type(2) {
+    top: 30%;
+    right: 10%;
+
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      top: 25%;
+      right: 5%;
+    }
+  }
+
+  svg:nth-of-type(3) {
+    bottom: 30%;
+    right: 10%;
+    width: 6rem;
+    height: 4rem;
+
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      bottom: 25%;
+      right: 5%;
+    }
+  }
+
+  svg:nth-of-type(4) {
+    bottom: 10%;
+    right: 20%;
+
+    @media (max-width: ${({ theme }) => theme.size.sm}) {
+      bottom: 5%;
+      right: 15%;
     }
   }
 `;

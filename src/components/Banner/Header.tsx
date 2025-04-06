@@ -1,5 +1,5 @@
-import { useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 import { AiOutlineLike } from 'react-icons/ai';
 import { GoGear } from 'react-icons/go';
 import styled from 'styled-components';
@@ -19,14 +19,47 @@ function Header() {
   const { linkName, linkId, txtOptionalMenu } =
     selectLang(headerData, lang) ?? headerData[0];
 
+  const logoRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!logoRef.current || !containerRef.current) return;
+
+    // Zapisujemy oryginalną pozycję logo
+    // const containerRect = containerRef.current.getBoundingClientRect();
+    const logoRect = logoRef.current.getBoundingClientRect();
+
+    // Obliczamy przesunięcie do środka ekranu
+    const windowCenterX = window.innerWidth / 2;
+    const windowCenterY = window.innerHeight / 2;
+
+    const moveToX = windowCenterX - (logoRect.left + logoRect.width / 2);
+    const moveToY = windowCenterY - (logoRect.top + logoRect.height / 2);
+
+    // Tworzymy timeline animacji
+    const timeline = gsap.timeline();
+
+    // Przesuwamy logo na środek
+    timeline.fromTo(
+      logoRef.current,
+      { x: moveToX, y: moveToY, scale: 2 },
+      { x: 0, y: 0, scale: 1, delay: 4, duration: 1.2, ease: 'power3.inOut' }
+    );
+
+    // eslint-disable-next-line consistent-return
+    return () => {
+      timeline.kill();
+    };
+  }, []);
+
   return (
-    <Container bar={hamburgerMenu} id="Home">
-      <Logo color={mainColor}>
+    <Container ref={containerRef} bar={hamburgerMenu} id="Home">
+      <Logo color={mainColor} ref={logoRef}>
         <span>
           <AiOutlineLike />
         </span>
 
-        <Portfolio />
+        <Portfolio data-section="logo" />
       </Logo>
       <Nav bar={hamburgerMenu}>
         {linkName.map((link: string, index: number) => {
