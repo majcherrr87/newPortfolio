@@ -31,7 +31,7 @@ export const experienseData: DataTypeWithLang[] = [
           'Css, Styled-Components',
           'Git, Figma',
         ],
-        url: 'https://frontowcy.pl/',
+        url: 'https://www.linkedin.com/company/megak/?originalSubdomain=pl',
       },
       {
         id: 2,

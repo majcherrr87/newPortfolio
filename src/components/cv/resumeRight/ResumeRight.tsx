@@ -3,10 +3,12 @@ import { ExperienceSection } from './ExperienceSection';
 import { CertificateSection } from './CertificateSection';
 import { ProjectsSection } from './ProjectsSection';
 import { InterestsSection } from './InterestsSection';
+import { CoursesSection } from './CoursesSection';
 
 export function ResumeRight() {
   return (
     <Container>
+      <CoursesSection />
       <ExperienceSection />
       <ProjectsSection />
       <CertificateSection />
