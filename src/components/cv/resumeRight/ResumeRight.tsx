@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import { ExperienceSection } from './ExperienceSection';
 import { CertificateSection } from './CertificateSection';
 import { ProjectsSection } from './ProjectsSection';
 import { InterestsSection } from './InterestsSection';
 import { CoursesSection } from './CoursesSection';
+import { ExperienceSection } from './ExperienceSection';
 
 export function ResumeRight() {
   return (
     <Container>
-      <CoursesSection />
       <ExperienceSection />
       <ProjectsSection />
+      <CoursesSection />
       <CertificateSection />
       <InterestsSection />
     </Container>

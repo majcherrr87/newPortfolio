@@ -12,44 +12,94 @@ type DataTypeWithLang = {
   courses: Course[];
 };
 
-export const CoursesData: DataTypeWithLang[] = [
+export const experienseData: DataTypeWithLang[] = [
   {
-    id: 2,
+    id: 1,
     lang: 'english',
-    title: 'Experience',
+    title: 'COURSES AND TRAININGS',
     courses: [
       {
         id: 1,
-        name: 'Fabryka Dobrej Formy',
+        name: 'MEGA KURS frontowcy',
         description:
-          "I developed a responsive website for Fabryka Dobrej Formy. The project's goal was to showcase the company's services and facilitate easy contact and service booking for clients.",
+          'A 14-month online course preparing participants for work as a Junior JavaScript Developer. During the course, I learned, among other things:',
         details: [
-          "Designed a user interface aligned with the brand's visual identity",
-          'Optimized the website for (SEO) and loading speed',
-          'Adapted the website for mobile devices (RWD)',
-          'Implemented the WordPress content management system (CMS)',
+          'JavaScript, TypeScript',
+          'React, ReactNative',
+          'Angula',
+          'Node, Express, SQL, MongoDB',
+          'Css, Styled-Components',
+          'Git, Figma',
         ],
-        url: 'https://fabrykadobrejformy.pl/',
+        url: 'https://www.linkedin.com/company/megak/?originalSubdomain=pl',
+      },
+      {
+        id: 2,
+        name: 'Zrozumieć React',
+        description: 'Advanced React Course',
+        details: [
+          'Programming in TypeScript',
+          'React router, Redux, TanstackQuery',
+          'Next.js, Css in JS',
+        ],
+        url: 'https://zrozumiecreact.pl/',
+      },
+      {
+        id: 3,
+        name: '#!/ALX - PHP Developer',
+        description:
+          'A 6-month in-person PHP programming course, where I learned, among other things:',
+        details: [
+          'Introduction to PHP, HTML, CSS, XML',
+          'MySQL, Postgres, Diagramy ERD, UML',
+          'Object-Oriented Programming in JavaScript',
+        ],
+        url: 'https://www.alx.pl/',
       },
     ],
   },
   {
     id: 2,
     lang: 'polish',
-    title: 'Dośwaiadczenie',
+    title: 'KURSY I SZKOLENIA',
     courses: [
       {
         id: 1,
-        name: 'Fabryka dobrej formy',
+        name: 'MEGA KURS frontowcy',
         description:
-          'Stworzyłem responsywną stronę internetową dla Fabryki Dobrej Formy. Celem projektu było zaprezentowanie oferty firmy oraz umożliwienie klientom łatwego kontaktu i zapisu na usługi',
+          '14-miesięczny kurs online przygotowujący uczestników do pracy jako Junior JavaScript Developer. Podczas kursu nauczyłem się między innymi:',
         details: [
-          'Projektowanie interfejsu użytkownika zgodnego wizerunkiem marki',
-          'Optymalizacja strony pod kątem (SEO) i szybkości ładowania',
-          'Dostosowanie strony do urządzeń mobilnych (RWD)',
-          'Wdrożenie systemu zarządzania treścią (CMS) WordPress',
+          'JavaScript, TypeScript',
+          'React, ReactNative',
+          'Angular',
+          'Node, Express, SQL, MongoDB',
+          'CSS, Styled-Components',
+          'Git, Figma',
         ],
-        url: 'https://fabrykadobrejformy.pl/',
+        url: 'https://frontowcy.pl/',
+      },
+      {
+        id: 2,
+        name: 'Zrozumieć React',
+        description: 'Zaawansowany kurs React',
+        details: [
+          'Programowanie w TypeScript',
+          'React Router, Redux, TanstackQuery',
+          'Next.js, CSS w JS',
+        ],
+        url: 'https://zrozumiecreact.pl/',
+      },
+      {
+        id: 3,
+        name: '#!/ALX - PHP Developer',
+        description:
+          '6-miesięczny stacjonarny kurs programowania PHP, podczas którego nauczyłem się między innymi:',
+        details: [
+          'Wprowadzenie do PHP, HTML, CSS, XML',
+          'MySQL, Postgres, Diagramy ERD, UML',
+          'Programowanie obiektowe w JavaScript',
+        ],
+        url: 'https://www.alx.pl/',
       },
     ],
   },

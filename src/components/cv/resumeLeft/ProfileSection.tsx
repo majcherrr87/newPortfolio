@@ -15,17 +15,12 @@ export function ProfileSection() {
     {
       id: 1,
       lang: 'english',
-      text: `I am a junior JavaScript developer passionate about crafting
-        aesthetically pleasing and functional web applications. I have
-        experience working with frontend tools such as React, TypeScript, SASS,
-        and Styled Components. I am currently learning Angular. In my spare
-        time, I am dedicated to expanding my skill set by learning new
-        technologies.`,
+      text: `Front-end developer specializing in JavaScript and TypeScript, with expertise in React and Next.js frameworks. Proficient in using Styled Components and the SASS preprocessor. Additionally, I possess practical experience in developing back-end solutions.`,
     },
     {
       id: 2,
       lang: 'polish',
-      text: `Jestem początkującym programistą JavaScript z pasją do tworzenia estetycznych i funkcjonalnych stron internetowych. Mam doświadczenie w pracy z narzędziami frontendowymi, takimi jak React, TypeScript, SASS i Styled Components. Obecnie uczę się Angulara. W wolnym czasie rozwijam swoje umiejętności, ucząc się nowych technologii`,
+      text: `Programista specjalizujący się w technologiach front-endowych, w szczególności w językach JavaScript i TypeScript oraz frameworkach React i Next.js. Sprawnie posługuję się bibliotekami Styled Components i preprocesorem SASS. Dodatkowo posiadam praktyczne doświadczenie w tworzeniu rozwiązań backendowych.`,
     },
   ];
   const data = selectLang(dataTxt, language);

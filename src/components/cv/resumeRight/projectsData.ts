@@ -33,15 +33,6 @@ export const projectsData: ProjectDataType[] = [
           'https://github.com/tomczer2t/head_hunter_back',
         ],
       },
-      {
-        name: 'Email Orders [Express React TypeScript]',
-        description:
-          "The Email Orders project was created for a restaurant's needs. The application allows users to create a database of suppliers and assign products to them, and then place orders via email.",
-        link: [
-          'https://github.com/majcherrr87/zamowienia_email_front',
-          'https://github.com/majcherrr87/zamowienia_email_back',
-        ],
-      },
     ],
   },
   {
@@ -65,15 +56,6 @@ export const projectsData: ProjectDataType[] = [
         link: [
           'https://github.com/tomczer2t/head_hunter_front',
           'https://github.com/tomczer2t/head_hunter_back',
-        ],
-      },
-      {
-        name: 'Zamówienia E-mail [Express React TypeScript]',
-        description:
-          'Projekt Zamówienia E-mail został stworzony na potrzeby restauracji. Aplikacja umożliwia użytkownikom tworzenie bazy dostawców i przypisywanie do nich produktów, a następnie składanie zamówień za pośrednictwem e-maila.',
-        link: [
-          'https://github.com/majcherrr87/zamowienia_email_front',
-          'https://github.com/majcherrr87/zamowienia_email_back',
         ],
       },
     ],
