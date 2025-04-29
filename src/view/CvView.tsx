@@ -7,7 +7,7 @@ import { CvContext } from '../components/cv/context/cvContext';
 
 function CvView() {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
-  const [language, setLanguage] = useState<string>('polish');
+  const [language, setLanguage] = useState<string>('english');
 
   const value = useMemo(
     () => ({ language, setLanguage, isDarkTheme, setIsDarkTheme }),
@@ -77,7 +77,7 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 968px) {
-    /* padding: 3rem; */
+    padding: 3rem;
     margin-bottom: 0;
   }
 `;
