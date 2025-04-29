@@ -76,10 +76,10 @@ const Container = styled.div`
     }
   }
 
-  @media screen and (min-width: 968px) {
+  /* @media screen and (min-width: 968px) {
     padding: 3rem;
     margin-bottom: 0;
-  }
+  } */
 `;
 const Header = styled.header`
   width: 100%;
