@@ -6,6 +6,8 @@ import ProjectReactNative from '../../assets/img/project/ProjectReactNative.webp
 import WeatherApp from '../../assets/video/WeatherApp.webm';
 import cvVideo from '../../assets/video/CVvideo.webm';
 import cvImage from '../../assets/img/project/CVImage.webp';
+import videoAppVideo from '../../assets/video/videoApp.webm';
+import videoAppImage from '../../assets/img/project/VideoApp.webp';
 
 export interface ProjectDataType {
   id: number;
@@ -40,6 +42,22 @@ export const ProjectData: ProjectDataType[] = [
       },
       {
         index: 1,
+        title: 'YouTube Video Learn',
+        disc: `Aplikacja mobilna napisana w React Native z wykorzystaniem Expo i\u00A0TypeScript, umożliwiająca wyszukiwanie oraz wyświetlanie filmów z\u00A0serwisu YouTube. Po stronie backendu zastosowałem Express, aby bezpiecznie ukryć klucz API YouTube. Użytkownik może w intuicyjny sposób przeszukiwać zasoby YouTube i oglądać wybrane materiały wideo bezpośrednio w aplikacji.`,
+        linkGitHub: `https://github.com/majcherrr87/ReactNativeVideoApp`,
+        linkDemo: `https://expo.dev/accounts/adrianmajcher/projects/ReactNativeVideoApp`,
+        technologies: [
+          'React Native',
+          'Expo',
+          'TypeSctipt',
+          'YouTube API',
+          'Express',
+        ],
+        srcImg: videoAppImage,
+        srcVideo: videoAppVideo,
+      },
+      {
+        index: 2,
         title: 'Web CV',
         disc: `Web CV to projekt stworzony przy użyciu React z TypeScript oraz StyledComponents, który umożliwia prezentację mojego CV w atrakcyjnej i interaktywnej formie. Użytkownicy mogą przeglądać wszystkie sekcje mojego CV bezpośrednio na stronie oraz mają opcję pobrania go w formacie PDF, co ułatwia dostęp do wersji offline.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
@@ -49,7 +67,7 @@ export const ProjectData: ProjectDataType[] = [
         srcVideo: cvVideo,
       },
       {
-        index: 2,
+        index: 3,
         title: 'WeatherApp',
         disc: `Aplikacja mobilna stworzona przy użyciu React Native umożliwia użytkownikom pobieranie aktualnych informacji o pogodzie. Użytkownicy mogą uzyskać prognozę pogody na podstawie swojej bieżącej lokalizacji dzięki wykorzystaniu geolokalizacji, jak również poprzez ręczne wprowadzenie nazwy miejscowości. Dane pogodowe są prezentowane w czytelny sposób, a za stylizację komponentów odpowiada Styled Components, co pozwala na dynamiczne i eleganckie dopasowanie interfejsu do potrzeb użytkownika. Aplikacja charakteryzuje się nowoczesnym designem i intuicyjną obsługą.`,
         linkGitHub: 'https://github.com/majcherrr87/LearningReactNative',
@@ -59,7 +77,7 @@ export const ProjectData: ProjectDataType[] = [
         srcVideo: WeatherApp,
       },
       {
-        index: 3,
+        index: 4,
         title: 'Fabryka dobrej formy',
         disc: `Obecnie pracuję nad stroną internetową dla Fabryki Dobrej Formy. \u00A0 Strona będzie oparta na technologii React i napisana w TypeScript.  Do zarządzania danymi wykorzystam TanStack Query, a za stylowanie odpowiedzialne będą Styled Components`,
         linkGitHub: ``,
@@ -92,6 +110,22 @@ export const ProjectData: ProjectDataType[] = [
       },
       {
         index: 1,
+        title: 'YouTube Video Learn',
+        disc: `A mobile application developed in React Native using Expo and TypeScript, allowing users to search for and display videos from YouTube. On the backend, I used Express to securely hide the YouTube API key. Users can intuitively browse YouTube content and watch selected videos directly within the app.`,
+        linkGitHub: `https://github.com/majcherrr87/ReactNativeVideoApp`,
+        linkDemo: `https://expo.dev/accounts/adrianmajcher/projects/ReactNativeVideoApp`,
+        technologies: [
+          'React Native',
+          'Expo',
+          'TypeSctipt',
+          'YouTube API',
+          'Express',
+        ],
+        srcImg: videoAppImage,
+        srcVideo: videoAppVideo,
+      },
+      {
+        index: 2,
         title: 'Web CV',
         disc: `Web CV is a project created using React with TypeScript and Styled Components, allowing the presentation of my CV in an attractive and interactive form. Users can browse all sections of my CV directly on the website and have the option to download it as a PDF, making it easier to access offline versions.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
@@ -101,7 +135,7 @@ export const ProjectData: ProjectDataType[] = [
         srcVideo: cvVideo,
       },
       {
-        index: 2,
+        index: 3,
         title: 'WeatherApp',
         disc: `This mobile application, created using React Native, allows users to retrieve current weather information. Users can get weather forecasts based on their current location using geolocation or by manually entering the city name. The weather data is presented in a clear format, and Styled Components is used for styling, enabling dynamic and elegant interface adjustments according to user needs. The app features a modern design and intuitive operation.`,
         linkGitHub: 'https://github.com/majcherrr87/LearningReactNative',
@@ -111,7 +145,7 @@ export const ProjectData: ProjectDataType[] = [
         srcVideo: WeatherApp,
       },
       {
-        index: 3,
+        index: 4,
         title: 'Fabryka Dobrej Formy',
         disc: `I am currently working on a website for Fabryka Dobrej Formy. The site will be built using React and TypeScript. TanStack Query will be used for data management, and Styled Components will handle styling.`,
         linkGitHub: ``,

@@ -308,6 +308,7 @@ const Form = styled.div`
       background-color: ${({ color }) => color};
       border: none;
       border-radius: 5px;
+      color: #fff;
       filter: drop-shadow(0px 4px 5px #01be9551);
 
       :hover {

@@ -5,6 +5,8 @@ export interface DataType {
   txtTitleSecond: string;
   txtButtonGithub: string;
   txtButtonLiveDemo: string;
+  txtShowMore: string;
+  txtShowLess: string;
 }
 
 export const mainProjectData: DataType[] = [
@@ -15,6 +17,8 @@ export const mainProjectData: DataType[] = [
     txtTitleSecond: 'Projekty',
     txtButtonLiveDemo: 'Pokaz na żywo',
     txtButtonGithub: 'Zobacz kod',
+    txtShowMore: 'Pokaż więcej',
+    txtShowLess: 'Pokaż mniej',
   },
   {
     id: 2,
@@ -23,5 +27,7 @@ export const mainProjectData: DataType[] = [
     txtTitleSecond: 'Projects',
     txtButtonLiveDemo: 'Live demo',
     txtButtonGithub: 'View code',
+    txtShowMore: 'Show more',
+    txtShowLess: 'Show less',
   },
 ];
