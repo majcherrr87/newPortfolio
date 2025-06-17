@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
+import CountUp from 'react-countup';
 import EyeSvg from '../../assets/svg/EyeSvg';
 import { useMyContext } from '../../utils/context/ContextProvider';
 
@@ -44,7 +45,9 @@ export function VisitCounter() {
       <Counter color={mainColor}>
         <EyeSvg />
         {counter.split('').map((num) => (
-          <p key={nanoid()}>{Number(num)}</p>
+          <p key={nanoid()}>
+            <CountUp start={0} end={Number(num)} duration={4} />
+          </p>
         ))}
       </Counter>
     </Container>

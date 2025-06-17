@@ -64,16 +64,6 @@ function ProfileComponent() {
           0.5
         )
         .from(
-          icons,
-          {
-            opacity: 0,
-            stagger: 0.2,
-            ease: 'back.out(1.7)',
-            force3D: true,
-          },
-          2
-        )
-        .from(
           svg,
           {
             opacity: 0,
@@ -227,7 +217,7 @@ const Social = styled.div`
       background-color: ${({ color }) => color};
       position: relative;
       transition: transform 200ms ease-in-out;
-      :hover {
+      &:hover {
         transform: scale(1.6);
       }
       a {

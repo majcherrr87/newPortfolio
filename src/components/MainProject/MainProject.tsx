@@ -99,7 +99,7 @@ const Container = styled.section<{ color: string }>`
       opacity: 1;
     }
   }
-  article.visible {
+  article.visible:nth-child(odd) {
     animation: animateMainProjectLeft 1s forwards;
   }
 
@@ -108,7 +108,7 @@ const Container = styled.section<{ color: string }>`
       transform: translateX(100%);
     }
   }
-  article.visible:nth-last-child(1) {
+  article.visible:nth-child(even) {
     animation: animateMainProjectRight 1s forwards;
   }
 

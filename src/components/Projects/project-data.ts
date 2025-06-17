@@ -33,7 +33,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 0,
         title: 'Portfolio',
-        disc: `Strona internetowa zbudowana została przy użyciu TypeScript i biblioteki React. Do stylizacji komponentów React użyto biblioteki Styled Components. Dodatkowo strona internetowa posiada funkcjonalność wysyłania e-maili bezpośrednio do użytkownika za pomocą biblioteki EmailJS. Strona korzysta również z API Ninjas do zliczania liczby odwiedzających oraz zawiera informacje o ukończonych kursach i edukacji użytkownika.`,
+        disc: `Strona internetowa zbudowana została przy użyciu TypeScript i\u00A0biblioteki React. Do stylizacji komponentów React użyto biblioteki Styled Components. Dodatkowo strona internetowa posiada funkcjonalność wysyłania e-maili bezpośrednio do użytkownika za pomocą biblioteki EmailJS. Strona korzysta również z API Ninjas do zliczania liczby odwiedzających oraz zawiera informacje o ukończonych kursach i\u00A0edukacji użytkownika.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
         linkDemo: `https://majcher.netlify.app/`,
         technologies: ['TypeSctipt', 'React', 'Redux', 'StyledComponent'],
@@ -43,7 +43,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 1,
         title: 'YouTube Video Learn',
-        disc: `Aplikacja mobilna napisana w React Native z wykorzystaniem Expo i\u00A0TypeScript, umożliwiająca wyszukiwanie oraz wyświetlanie filmów z\u00A0serwisu YouTube. Po stronie backendu zastosowałem Express, aby bezpiecznie ukryć klucz API YouTube. Użytkownik może w intuicyjny sposób przeszukiwać zasoby YouTube i oglądać wybrane materiały wideo bezpośrednio w aplikacji.`,
+        disc: `Aplikacja mobilna napisana w\u00A0React Native z\u00A0wykorzystaniem Expo i\u00A0TypeScript, umożliwiająca wyszukiwanie oraz wyświetlanie filmów z\u00A0serwisu YouTube. Po stronie backendu zastosowałem Express, aby bezpiecznie ukryć klucz API YouTube. Użytkownik może w\u00A0intuicyjny sposób przeszukiwać zasoby YouTube i\u00A0oglądać wybrane materiały wideo bezpośrednio w\u00A0aplikacji.`,
         linkGitHub: `https://github.com/majcherrr87/ReactNativeVideoApp`,
         linkDemo: `https://expo.dev/accounts/adrianmajcher/projects/ReactNativeVideoApp`,
         technologies: [
@@ -59,7 +59,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 2,
         title: 'Web CV',
-        disc: `Web CV to projekt stworzony przy użyciu React z TypeScript oraz StyledComponents, który umożliwia prezentację mojego CV w atrakcyjnej i interaktywnej formie. Użytkownicy mogą przeglądać wszystkie sekcje mojego CV bezpośrednio na stronie oraz mają opcję pobrania go w formacie PDF, co ułatwia dostęp do wersji offline.`,
+        disc: `Web CV to projekt stworzony przy użyciu React z\u00A0TypeScript oraz StyledComponents, który umożliwia prezentację mojego CV w\u00A0atrakcyjnej i\u00A0interaktywnej formie. Użytkownicy mogą przeglądać wszystkie sekcje mojego CV bezpośrednio na stronie oraz mają opcję pobrania go w\u00A0formacie PDF, co ułatwia dostęp do wersji offline.`,
         linkGitHub: `https://github.com/majcherrr87/newPortfolio`,
         linkDemo: `https://majcher.netlify.app/cv`,
         technologies: ['TypeSctipt', 'React', 'StyledComponent'],
@@ -69,7 +69,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 3,
         title: 'WeatherApp',
-        disc: `Aplikacja mobilna stworzona przy użyciu React Native umożliwia użytkownikom pobieranie aktualnych informacji o pogodzie. Użytkownicy mogą uzyskać prognozę pogody na podstawie swojej bieżącej lokalizacji dzięki wykorzystaniu geolokalizacji, jak również poprzez ręczne wprowadzenie nazwy miejscowości. Dane pogodowe są prezentowane w czytelny sposób, a za stylizację komponentów odpowiada Styled Components, co pozwala na dynamiczne i eleganckie dopasowanie interfejsu do potrzeb użytkownika. Aplikacja charakteryzuje się nowoczesnym designem i intuicyjną obsługą.`,
+        disc: `Aplikacja mobilna stworzona przy użyciu React Native umożliwia użytkownikom pobieranie aktualnych informacji o\u00A0pogodzie. Użytkownicy mogą uzyskać prognozę pogody na podstawie swojej bieżącej lokalizacji dzięki wykorzystaniu geolokalizacji, jak również poprzez ręczne wprowadzenie nazwy miejscowości. Dane pogodowe są prezentowane w czytelny sposób, a\u00A0za stylizację komponentów odpowiada Styled Components, co pozwala na dynamiczne i\u00A0eleganckie dopasowanie interfejsu do potrzeb użytkownika. Aplikacja charakteryzuje się nowoczesnym designem i\u00A0intuicyjną obsługą.`,
         linkGitHub: 'https://github.com/majcherrr87/LearningReactNative',
         linkDemo: ``,
         technologies: ['ReactNatve', 'StyledComponent'],
@@ -79,7 +79,7 @@ export const ProjectData: ProjectDataType[] = [
       {
         index: 4,
         title: 'Fabryka dobrej formy',
-        disc: `Obecnie pracuję nad stroną internetową dla Fabryki Dobrej Formy. \u00A0 Strona będzie oparta na technologii React i napisana w TypeScript.  Do zarządzania danymi wykorzystam TanStack Query, a za stylowanie odpowiedzialne będą Styled Components`,
+        disc: `Obecnie pracuję nad stroną internetową dla Fabryki Dobrej Formy. \u00A0Strona będzie oparta na technologii React i\u00A0napisana w TypeScript.  Do zarządzania danymi wykorzystam TanStack Query, a\u00A0za stylowanie odpowiedzialne będą Styled Components`,
         linkGitHub: ``,
         linkDemo: ``,
         technologies: [
