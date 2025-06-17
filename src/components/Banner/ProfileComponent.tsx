@@ -42,7 +42,7 @@ function ProfileComponent() {
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: 'power3.out', duration: 1, delay: 4 },
+        defaults: { ease: 'power3.out', duration: 1 },
       });
 
       tl.from(
@@ -319,16 +319,17 @@ const Profile = styled.div<{ color: string }>`
     right: 10%;
     width: 6rem;
     height: 4rem;
+    z-index: 3;
 
     @media (max-width: ${({ theme }) => theme.size.sm}) {
-      bottom: 25%;
-      right: 5%;
+      bottom: 10%;
+      right: 0%;
     }
   }
 
   svg:nth-of-type(4) {
     bottom: 10%;
-    right: 20%;
+    right: 0;
 
     @media (max-width: ${({ theme }) => theme.size.sm}) {
       bottom: 5%;

@@ -1,40 +1,11 @@
-import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
-import { gsap } from 'gsap';
+import styled, { keyframes } from 'styled-components';
 
 function IconBxlReact() {
-  const iconRef = useRef(null);
-
-  useEffect(() => {
-    if (!iconRef.current) return;
-
-    gsap.set(iconRef.current, {
-      rotation: 0,
-      transformOrigin: '50% 50%',
-    });
-
-    const rotation = gsap.to(iconRef.current, {
-      rotation: '+=360',
-      duration: 10,
-      ease: 'none',
-      repeat: -1,
-      transformOrigin: '50% 50%',
-      overwrite: true,
-    });
-
-    // eslint-disable-next-line consistent-return
-    return () => {
-      rotation.kill();
-    };
-  }, []);
-
   return (
     <ReactIcon
-      ref={iconRef}
       width="64"
-      height="57"
-      viewBox="0 0 64 57"
-      fill="none"
+      height="64"
+      viewBox="0 0 64 64"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -45,6 +16,11 @@ function IconBxlReact() {
   );
 }
 
+const rotate = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
+
 const ReactIcon = styled.svg`
   position: absolute;
   left: 10px;
@@ -53,6 +29,8 @@ const ReactIcon = styled.svg`
   fill: #61dbfb;
   will-change: transform;
   pointer-events: none;
+  animation: ${rotate} 10s linear infinite;
+  transform-origin: 50% 50%;
 
   @media (max-width: ${({ theme }) => theme.size.sm}) {
     font-size: 3rem;

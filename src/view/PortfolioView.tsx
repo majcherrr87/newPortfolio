@@ -45,7 +45,7 @@ export default PortfolioView;
 const Container = styled.main``;
 const Banner = styled.section`
   background: ${(props) => props.theme.colors.background};
-  height: 100vh;
+  min-height: 100vh;
   @media (max-width: ${(props) => props.theme.size.sm}) {
     height: 100%;
     padding-bottom: 2rem;
