@@ -68,9 +68,9 @@ export function HomeSection() {
             </Link>
           </HomeAddress>
         </HomeContainer>
-        <SwitchMode />
-        <Download />
-        <ChangeLang />
+        {/* <SwitchMode /> */}
+        {/* <Download /> */}
+        {/* <ChangeLang /> */}
       </CVSection>
     </CVResumeLeft>
   );

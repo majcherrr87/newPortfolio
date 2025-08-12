@@ -64,6 +64,7 @@ const Counter = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding-bottom: 1rem;
   svg {
     fill: ${({ color }) => color};
   }
