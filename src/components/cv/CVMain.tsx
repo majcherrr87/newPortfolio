@@ -15,7 +15,7 @@ export function CVMain() {
   );
 }
 const MainContainer = styled.main`
-  /* max-width: 1200px; */
+  max-width: 1200px;
   @media screen and (min-width: 968px) {
     margin-left: auto;
     margin-right: auto;
