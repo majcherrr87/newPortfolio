@@ -54,7 +54,7 @@ export const socialProfile = [
   },
   {
     id: '2',
-    href: 'https://www.linkedin.com/in/adrian-majcher-46a529163/',
+    href: 'https://www.linkedin.com/in/adrian-majcher-46a529163',
     ariaLabel: 'Read more about me on Linkedin',
     icon: AiFillLinkedin,
   },
